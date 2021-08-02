@@ -1,0 +1,13 @@
+**/*.spec.ts
+**/test/**/*.ts
+node_modules/
+assets
+e2e/
+artifacts
+jest*
+*.d.ts
+**/generated/**/*
+www
+packages/app/ios
+packages/app/android
+

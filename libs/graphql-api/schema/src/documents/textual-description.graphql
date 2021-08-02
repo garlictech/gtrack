@@ -1,0 +1,7 @@
+fragment textualDescriptionFields on TextualDescription {
+  languageKey
+  title
+  summary
+  fullDescription
+  type
+}

@@ -1,0 +1,88 @@
+.component-container {
+  background: var(--ion-color-primary-shade);
+  color: var(--ion-color-dark);
+  width: calc(25vh / 0.5625);
+  min-width: 20rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @apply rounded-lg border-4 border-black border-solid;
+}
+
+.image-place-color {
+  background-color: var(--ion-color-primary);
+}
+
+img.img-fit {
+  object-fit: cover;
+  width: 100%;
+}
+
+img {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.text-label,
+.route-label {
+  background-color: var(--ion-color-dark);
+  color: var(--ion-color-primary);
+  @apply uppercase;
+}
+
+.text-label {
+  @apply text-2xl;
+
+  @screen lg {
+    @apply text-xl;
+  }
+}
+
+.route-label {
+  @apply text-xs;
+}
+
+.card-text-title {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--ion-color-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @apply w-full;
+}
+
+.text-label-inverted,
+.icon-inverted {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--ion-color-dark);
+  @apply text-2xl;
+
+  @screen lg {
+    @apply text-xl;
+  }
+}
+
+.text-label-inverted {
+  background-color: var(--ion-color-primary-rgb-opaque);
+}
+
+.icon-inverted {
+  background-color: rgba(0, 0, 0, 0);
+}
+.component-aspect-ratio-box {
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%;
+  width: 100%;
+  position: relative;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.component-aspect-ratio-box-inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

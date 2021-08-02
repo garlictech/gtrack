@@ -1,0 +1,16 @@
+:host {
+  @apply pt-8;
+}
+
+.detail-base {
+  @apply uppercase text-center;
+}
+
+.detail-label {
+  @apply font-black;
+}
+
+ion-content {
+  --background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/assets/img/image2.jpg') no-repeat center center / cover;
+}

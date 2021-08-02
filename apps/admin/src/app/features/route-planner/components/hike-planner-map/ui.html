@@ -1,0 +1,59 @@
+<div>
+  <gtrack-hike-planner-location-search
+    id="search"
+    (search)="goToLocation($event)"
+  >
+  </gtrack-hike-planner-location-search>
+</div>
+
+<div class="map-container">
+  <gtrack-map
+    [routes$]="routes$"
+    [featureOverlays$]="featureOverlays$"
+    [stopMarkers$]="stopMarkers$"
+    (mapClick)="onMapClick($event)"
+    (map)="onMapReady($event)"
+  ></gtrack-map>
+</div>
+
+<div class="mt-4">
+  <div class="flex flex-row">
+    <gtrack-buffer-display-button
+      whichBuffer="SMALL"
+      class="m-1"
+    ></gtrack-buffer-display-button>
+    <gtrack-buffer-display-button
+      whichBuffer="BIG"
+      class="m-1"
+    ></gtrack-buffer-display-button>
+  </div>
+
+  <div class="flex flex-row mt-4">
+    <button
+      nbButton
+      class="mr-4"
+      [disabled]="(canCloseCircle$ | async) === false"
+      (onClick)="closeCircle()"
+    >
+      Close circle
+    </button>
+
+    <button
+      nbButton
+      hero
+      status="warning"
+      class="mr-4"
+      [disabled]="(hasRoute$ | async) === false"
+      (onClick)="removeLast()"
+    >
+      Remove last
+    </button>
+
+    <button class="mr-4" nbButton hero status="danger" (onClick)="deletePlan()">
+      Delete plan
+    </button>
+    <button class="mr-4" nbButton (onClick)="generateCheckpoints()">
+      Generate checkpoints
+    </button>
+  </div>
+</div>

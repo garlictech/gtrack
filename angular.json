@@ -1,0 +1,1605 @@
+{
+  "version": 1,
+  "projects": {
+    "website": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/website",
+      "sourceRoot": "apps/website/src",
+      "prefix": "gtrack",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "extraWebpackConfig": "webpack.config.js",
+            "outputPath": "dist/apps/website",
+            "index": "apps/website/src/index.html",
+            "main": "apps/website/src/main.ts",
+            "polyfills": "apps/website/src/polyfills.ts",
+            "ngswConfigPath": "apps/website/src/ngsw-config.json",
+            "webWorkerTsConfig": "tsconfig.worker.json",
+            "tsConfig": "apps/website/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "libs/angular/gtrack/src/lib/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/angular/gtrack/src/lib/gtrack-map/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/website/src/ngsw",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "svg"
+              },
+              "apps/website/src/favicon.ico",
+              "apps/website/src/assets"
+            ],
+            "scripts": ["./node_modules/pixi.js/dist/pixi.min.js"],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "apps/website/src/styles.scss"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/website/src/environments/environment.ts",
+                  "with": "apps/website/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/website/src/environments/environment.ts",
+                  "with": "apps/website/src/environments/environment.staging.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "port": 8081,
+            "extraWebpackConfig": "webpack.config.js",
+            "browserTarget": "website:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "website:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "website:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/website/src/**/*.ts",
+              "apps/website/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/website/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/website"]
+        }
+      }
+    },
+    "website-e2e": {
+      "root": "apps/website-e2e",
+      "sourceRoot": "apps/website-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/website-e2e/cypress.json",
+            "tsConfig": "apps/website-e2e/tsconfig.e2e.json",
+            "devServerTarget": "website:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "website:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/website-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/admin",
+      "sourceRoot": "apps/admin/src",
+      "prefix": "gtrack",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "extraWebpackConfig": "webpack.config.js",
+            "outputPath": "dist/apps/admin",
+            "index": "apps/admin/src/index.html",
+            "main": "apps/admin/src/main.ts",
+            "polyfills": "apps/admin/src/polyfills.ts",
+            "ngswConfigPath": "apps/admin/src/ngsw-config.json",
+            "webWorkerTsConfig": "tsconfig.worker.json",
+            "tsConfig": "apps/admin/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "libs/angular/gtrack/src/lib/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/angular/gtrack/src/lib/gtrack-map/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/admin/src/ngsw",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "svg"
+              },
+              "apps/admin/src/favicon.ico",
+              "apps/admin/src/assets"
+            ],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "apps/admin/src/styles.scss"
+            ],
+            "scripts": ["./node_modules/pixi.js/dist/pixi.min.js"]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/src/environments/environment.ts",
+                  "with": "apps/admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "port": 8082,
+            "extraWebpackConfig": "webpack.config.js",
+            "browserTarget": "admin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "admin:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/admin/src/**/*.ts",
+              "apps/admin/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/admin/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/admin"]
+        }
+      }
+    },
+    "admin-e2e": {
+      "root": "apps/admin-e2e",
+      "sourceRoot": "apps/admin-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/admin-e2e/cypress.json",
+            "tsConfig": "apps/admin-e2e/tsconfig.e2e.json",
+            "devServerTarget": "admin:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "admin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/admin-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/app",
+      "sourceRoot": "apps/app/src",
+      "prefix": "gtrack",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/apps/app",
+            "index": "apps/app/src/index.html",
+            "main": "apps/app/src/main.ts",
+            "polyfills": "apps/app/src/polyfills.ts",
+            "ngswConfigPath": "apps/app/src/ngsw-config.json",
+            "webWorkerTsConfig": "tsconfig.worker.json",
+            "tsConfig": "apps/app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "libs/angular/gtrack/src/lib/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/angular/gtrack/src/lib/gtrack-map/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/app/src/ngsw",
+                "output": "/"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "svg"
+              },
+              "apps/app/src/favicon.ico",
+              "apps/app/src/assets"
+            ],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "apps/app/src/styles.scss"
+            ],
+            "scripts": ["./node_modules/pixi.js/dist/pixi.min.js"]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/app/src/environments/environment.ts",
+                  "with": "apps/app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "port": 8083,
+            "extraWebpackConfig": "webpack.config.js",
+            "browserTarget": "app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/app/src/**/*.ts",
+              "apps/app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/app/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/app"]
+        }
+      }
+    },
+    "app-e2e": {
+      "root": "apps/app-e2e",
+      "sourceRoot": "apps/app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/app-e2e/cypress.json",
+            "tsConfig": "apps/app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "angular-gtrack": {
+      "projectType": "library",
+      "root": "libs/angular/gtrack",
+      "sourceRoot": "libs/angular/gtrack/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular/gtrack/src/**/*.ts",
+              "libs/angular/gtrack/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/angular/gtrack/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/angular/gtrack"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "nestjs-shared": {
+      "root": "libs/nestjs/shared",
+      "sourceRoot": "libs/nestjs/shared/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nestjs/shared/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nestjs/shared/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/nestjs/shared"]
+        }
+      }
+    },
+    "nestjs-gtrack": {
+      "root": "libs/nestjs/gtrack",
+      "sourceRoot": "libs/nestjs/gtrack/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nestjs/gtrack/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nestjs/gtrack/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/nestjs/gtrack"]
+        }
+      }
+    },
+    "nodejs-shared": {
+      "root": "libs/nodejs/shared",
+      "sourceRoot": "libs/nodejs/shared/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nodejs/shared/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nodejs/shared/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/nodejs/shared"]
+        }
+      }
+    },
+    "universal-gtrack": {
+      "root": "libs/universal/gtrack",
+      "sourceRoot": "libs/universal/gtrack/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/universal/gtrack/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/universal/gtrack/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/universal/gtrack"]
+        }
+      }
+    },
+    "shared-authentication-ui-ionic": {
+      "projectType": "library",
+      "root": "libs/shared/authentication/ui-ionic",
+      "sourceRoot": "libs/shared/authentication/ui-ionic/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/authentication/ui-ionic/src/**/*.ts",
+              "libs/shared/authentication/ui-ionic/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/authentication/ui-ionic/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/authentication/ui-ionic"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-authentication-feature-ionic": {
+      "projectType": "library",
+      "root": "libs/shared/authentication/feature-ionic",
+      "sourceRoot": "libs/shared/authentication/feature-ionic/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/authentication/feature-ionic/src/**/*.ts",
+              "libs/shared/authentication/feature-ionic/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/authentication/feature-ionic/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/authentication/feature-ionic"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-authentication-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/authentication/data-access",
+      "sourceRoot": "libs/shared/authentication/data-access/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/authentication/data-access/src/**/*.ts",
+              "libs/shared/authentication/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/authentication/data-access/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/authentication/data-access"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-router-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/router/data-access",
+      "sourceRoot": "libs/shared/router/data-access/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/router/data-access/src/**/*.ts",
+              "libs/shared/router/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/router/data-access/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/router/data-access"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-generic-ui-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/generic-ui/data-access",
+      "sourceRoot": "libs/shared/generic-ui/data-access/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/generic-ui/data-access/src/**/*.ts",
+              "libs/shared/generic-ui/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/generic-ui/data-access/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/generic-ui/data-access"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-generic-ui-feature-ionic": {
+      "projectType": "library",
+      "root": "libs/shared/generic-ui/feature-ionic",
+      "sourceRoot": "libs/shared/generic-ui/feature-ionic/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/generic-ui/feature-ionic/src/**/*.ts",
+              "libs/shared/generic-ui/feature-ionic/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/generic-ui/feature-ionic/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/generic-ui/feature-ionic"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-generic-ui-ui-ionic": {
+      "projectType": "library",
+      "root": "libs/shared/generic-ui/ui-ionic",
+      "sourceRoot": "libs/shared/generic-ui/ui-ionic/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/generic-ui/ui-ionic/src/**/*.ts",
+              "libs/shared/generic-ui/ui-ionic/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/generic-ui/ui-ionic/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/generic-ui/ui-ionic"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-localization-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/localization/data-access",
+      "sourceRoot": "libs/shared/localization/data-access/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/localization/data-access/src/**/*.ts",
+              "libs/shared/localization/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/localization/data-access/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/localization/data-access"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-localization-feature-ionic": {
+      "projectType": "library",
+      "root": "libs/shared/localization/feature-ionic",
+      "sourceRoot": "libs/shared/localization/feature-ionic/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/localization/feature-ionic/src/**/*.ts",
+              "libs/shared/localization/feature-ionic/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/localization/feature-ionic/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/localization/feature-ionic"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-localization-utils": {
+      "root": "libs/shared/localization/utils",
+      "sourceRoot": "libs/shared/localization/utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/localization/utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/localization/utils/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/localization/utils"]
+        }
+      }
+    },
+    "shared-localization-ui-angular": {
+      "projectType": "library",
+      "root": "libs/shared/localization/ui-angular",
+      "sourceRoot": "libs/shared/localization/ui-angular/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/localization/ui-angular/src/**/*.ts",
+              "libs/shared/localization/ui-angular/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/localization/ui-angular/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/localization/ui-angular"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "appsync-api": {
+      "root": "apps/appsync-api",
+      "sourceRoot": "apps/appsync-api/src",
+      "projectType": "application",
+      "prefix": "appsync-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/appsync-api",
+            "main": "apps/appsync-api/src/main.ts",
+            "tsConfig": "apps/appsync-api/tsconfig.app.json",
+            "assets": ["apps/appsync-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/appsync-api/src/environments/environment.ts",
+                  "with": "apps/appsync-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "sls offline",
+            "cwd": "apps/appsync-api"
+          }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "sls deploy",
+            "cwd": "apps/appsync-api"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/appsync-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/appsync-api/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/appsync-api"]
+        },
+        "schema-generate": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "graphql-codegen --config codegen.yml",
+            "cwd": "apps/appsync-api"
+          }
+        }
+      }
+    },
+    "elastic-search": {
+      "root": "apps/elastic-search",
+      "sourceRoot": "apps/elastic-search/src",
+      "projectType": "application",
+      "prefix": "elastic-search",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/elastic-search",
+            "main": "apps/elastic-search/src/main.ts",
+            "tsConfig": "apps/elastic-search/tsconfig.app.json",
+            "assets": ["apps/elastic-search/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/elastic-search/src/environments/environment.ts",
+                  "with": "apps/elastic-search/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "elastic-search:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/elastic-search/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/elastic-search/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/elastic-search"]
+        }
+      }
+    },
+    "shared-forms-feature": {
+      "projectType": "library",
+      "root": "libs/shared/forms/feature",
+      "sourceRoot": "libs/shared/forms/feature/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/forms/feature/src/**/*.ts",
+              "libs/shared/forms/feature/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/forms/feature/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/forms/feature"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-forms-feature-ionic": {
+      "projectType": "library",
+      "root": "libs/shared/forms/ui-ionic",
+      "sourceRoot": "libs/shared/forms/ui-ionic/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/forms/ui-ionic/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/forms/ui-ionic/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/forms/ui-ionic"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-hike-info-feature": {
+      "projectType": "library",
+      "root": "libs/admin/hike-info/feature",
+      "sourceRoot": "libs/admin/hike-info/feature/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin/hike-info/feature/src/**/*.ts",
+              "libs/admin/hike-info/feature/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/admin/hike-info/feature/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/admin/hike-info/feature"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-hike-images-feature": {
+      "projectType": "library",
+      "root": "libs/admin/hike-images/feature",
+      "sourceRoot": "libs/admin/hike-images/feature/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin/hike-images/feature/src/**/*.ts",
+              "libs/admin/hike-images/feature/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/admin/hike-images/feature/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/admin/hike-images/feature"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-hike-list-page": {
+      "projectType": "library",
+      "root": "libs/admin/hike-list/page",
+      "sourceRoot": "libs/admin/hike-list/page/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin/hike-list/page/src/**/*.ts",
+              "libs/admin/hike-list/page/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/admin/hike-list/page/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/admin/hike-list/page"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-hike-list-feature": {
+      "projectType": "library",
+      "root": "libs/admin/hike-list/feature",
+      "sourceRoot": "libs/admin/hike-list/feature/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin/hike-list/feature/src/**/*.ts",
+              "libs/admin/hike-list/feature/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/admin/hike-list/feature/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/admin/hike-list/feature"]
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "backend-e2e": {
+      "root": "apps/backend-e2e",
+      "sourceRoot": "apps/backend-e2e/src",
+      "projectType": "application",
+      "prefix": "backend-e2e",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/backend-e2e",
+            "main": "apps/backend-e2e/src/main.ts",
+            "tsConfig": "apps/backend-e2e/tsconfig.app.json",
+            "assets": ["apps/backend-e2e/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend-e2e/src/environments/environment.ts",
+                  "with": "apps/backend-e2e/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend-e2e:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/backend-e2e/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/backend-e2e/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/apps/backend-e2e"]
+        }
+      }
+    },
+    "gtrack-api": {
+      "root": "apps/gtrack-api",
+      "sourceRoot": "apps/gtrack-api/src",
+      "projectType": "application",
+      "prefix": "gtrack-api",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/gtrack-api",
+            "main": "apps/gtrack-api/src/main.ts",
+            "tsConfig": "apps/gtrack-api/tsconfig.app.json",
+            "assets": ["apps/gtrack-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/gtrack-api/src/environments/environment.ts",
+                  "with": "apps/gtrack-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "gtrack-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/gtrack-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/gtrack-api"],
+          "options": {
+            "jestConfig": "apps/gtrack-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "lambda-backend": {
+      "root": "apps/lambda-backend",
+      "sourceRoot": "apps/lambda-backend/src",
+      "projectType": "application",
+      "prefix": "lambda-backend",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/lambda-backend",
+            "main": "apps/lambda-backend/src/main.ts",
+            "tsConfig": "apps/lambda-backend/tsconfig.app.json",
+            "assets": ["apps/lambda-backend/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/lambda-backend/src/environments/environment.ts",
+                  "with": "apps/lambda-backend/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "lambda-backend:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/lambda-backend/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/lambda-backend"],
+          "options": {
+            "jestConfig": "apps/lambda-backend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "gtrack-api-process-route-segment": {
+      "root": "libs/gtrack-api/process-route-segment",
+      "sourceRoot": "libs/gtrack-api/process-route-segment/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/gtrack-api/process-route-segment/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/gtrack-api/process-route-segment"],
+          "options": {
+            "jestConfig": "libs/gtrack-api/process-route-segment/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "graphql-api-schema": {
+      "root": "libs/graphql-api/schema",
+      "sourceRoot": "libs/graphql-api/schema/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/graphql-api/schema/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/graphql-api/schema"],
+          "options": {
+            "jestConfig": "libs/graphql-api/schema/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "graphql-api-resolvers": {
+      "root": "libs/graphql-api/resolvers",
+      "sourceRoot": "libs/graphql-api/resolvers/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/graphql-api/resolvers/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/graphql-api/resolvers"],
+          "options": {
+            "jestConfig": "libs/graphql-api/resolvers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "graphql-api-resolvers-lambda": {
+      "root": "libs/graphql-api/resolvers-lambda",
+      "sourceRoot": "libs/graphql-api/resolvers-lambda/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/graphql-api/resolvers-lambda/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/graphql-api/resolvers-lambda"],
+          "options": {
+            "jestConfig": "libs/graphql-api/resolvers-lambda/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "infrastructure-build-pipeline": {
+      "root": "apps/infrastructure/build-pipeline",
+      "sourceRoot": "apps/infrastructure/build-pipeline/src",
+      "projectType": "application",
+      "prefix": "infrastructure-build-pipeline",
+      "architect": {
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cd apps/infrastructure/build-pipeline && yarn sst deploy"
+              }
+            ]
+          },
+          "outputs": ["{options.outputPath}"],
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/infrastructure/build-pipeline/src/environments/environment.ts",
+                  "with": "apps/infrastructure/build-pipeline/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/infrastructure/build-pipeline/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/infrastructure/build-pipeline"],
+          "options": {
+            "jestConfig": "apps/infrastructure/build-pipeline/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "infrastructure-gtrack-stack": {
+      "root": "apps/infrastructure/gtrack-stack",
+      "sourceRoot": "apps/infrastructure/gtrack-stack/src",
+      "projectType": "application",
+      "prefix": "infrastructure-gtrack-stack",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cd apps/infrastructure/gtrack-stack && yarn sls package"
+              }
+            ]
+          },
+          "outputs": ["{options.outputPath}"],
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/infrastructure/gtrack-stack/src/environments/environment.ts",
+                  "with": "apps/infrastructure/gtrack-stack/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "cd apps/infrastructure/gtrack-stack && yarn sst deploy"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/infrastructure/gtrack-stack/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/infrastructure/gtrack-stack"],
+          "options": {
+            "jestConfig": "apps/infrastructure/gtrack-stack/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "admin-general-info": {
+      "projectType": "library",
+      "root": "libs/admin/general-info",
+      "sourceRoot": "libs/admin/general-info/src",
+      "prefix": "gtrack",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/admin/general-info/src/**/*.ts",
+              "libs/admin/general-info/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/admin/general-info"],
+          "options": {
+            "jestConfig": "libs/admin/general-info/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "yarn",
+    "analytics": "bcc3c88a-f24b-49de-800f-88fd6a7ea050"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "website"
+}

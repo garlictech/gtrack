@@ -1,0 +1,16 @@
+.map-container {
+  width: 100%;
+}
+
+.custom-control {
+  @apply bg-white rounded text-black text-2xl px-1 shadow-lg;
+}
+
+ion-checkbox {
+  @apply pr-1;
+}
+
+ion-fab-button {
+  @apply mr-0 mb-0;
+  --box-shadow: 0px 0px 4px 3px #a52a2a80 !important;
+}

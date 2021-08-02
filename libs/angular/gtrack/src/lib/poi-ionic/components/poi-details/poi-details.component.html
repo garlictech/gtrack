@@ -1,0 +1,93 @@
+<div class="h-full">
+  <ng-container *ngIf="poi$ | async as poi; else loading">
+    <div class="container pt-2">
+      <div class="flex justify-center items-center flex-col">
+        <div class="text-center text-lg uppercase font-black">
+          <gtrack-description
+            field="title"
+            [description]="poi?.description"
+            class="gtrack-main-title text-3xl md:text-6xl"
+          >
+          </gtrack-description>
+        </div>
+
+        <div class="flex justify-center mt-4 mb-2" *ngIf="poi?.types">
+          <gtrack-poi-icons [types]="poi?.types"></gtrack-poi-icons>
+        </div>
+
+        <div class="mb-4 text-base uppercase justify-center">
+          {{ typeList$ | async }}
+        </div>
+      </div>
+    </div>
+
+    <gtrack-gallery
+      class="block mb-6"
+      *ngIf="imageUrls$ | async as imageUrls"
+      [imageUrls]="imageUrls"
+    ></gtrack-gallery>
+
+    <div class="container mb-5">
+      <div *ngIf="poi?.elevation" class="detail-base text-md mb-2">
+        <span class="detail-label">{{ 'elevation' | translate }}</span
+        >&nbsp; {{ poi?.elevation | distance | async }}
+      </div>
+
+      <div
+        class="flex flex-row justify-center uppercase text-sm font-normal mb-8"
+      >
+        <div class="mr-4">
+          <span class="font-black">{{ 'latitude' | translate }}</span
+          >&nbsp; {{ poi?.lat | number: '1.0' }}
+        </div>
+        <div>
+          <span class="font-black">{{ 'longitude' | translate }}</span
+          >&nbsp;
+          {{ poi?.lon | number: '1.0' }}
+        </div>
+      </div>
+
+      <div *ngIf="!!poi?.address" class="detail-base text-md mb-2">
+        <span class="detail-label">{{ 'address' | translate }}</span
+        >&nbsp; {{ poi?.address }}
+      </div>
+
+      <div *ngIf="poi?.phoneNumber" class="detail-base text-md mb-8">
+        <span class="detail-label">{{ 'phone number' | translate }}</span
+        >&nbsp; {{ poi?.phoneNumber }}
+      </div>
+
+      <gtrack-description
+        field="summary"
+        [description]="poi?.description"
+      ></gtrack-description>
+      <div class="text-lg text-center">
+        <gtrack-description
+          field="fullDescription"
+          [description]="poi?.description"
+        ></gtrack-description>
+      </div>
+
+      <div
+        class="flex flex-row justify-center mb-4"
+        *ngFor="let item of infoUrls$ | async"
+      >
+        <a class="mr-2" target="_blank" [href]="item.url">{{ item.urlType }}</a>
+      </div>
+
+      <div class="flex justify-center">
+        <!-- <button class="flex items-center bg-tertiary text-white rounded-lg p-2" (click)="showPoiComments(poi)">
+      {{ 'common.hike.leaveComment' | translate }}
+      <ion-icon class="pl-2" size="small" color="white" name="text"></ion-icon>
+    </button> -->
+      </div>
+
+      <div class="gtrack-leaflet-map mt-4">
+        <gtrack-poi-map [poi]="poi"></gtrack-poi-map>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<ng-template #loading>
+  <gtrack-data-coming></gtrack-data-coming>
+</ng-template>

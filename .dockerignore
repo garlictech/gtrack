@@ -1,0 +1,15 @@
+.git
+.gitignore
+README.md
+docker-compose.*
+docker
+e2e
+Dockerfile
+.travis.yml
+npm-debug.log
+README.md
+.vscode
+artifacts/cache
+artifacts/cypress
+artifacts/reports
+node_modules

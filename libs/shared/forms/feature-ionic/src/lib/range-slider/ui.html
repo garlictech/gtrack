@@ -1,0 +1,18 @@
+<!-- <p-slider [(ngModel)]="value" (onSlideEnd)="doChange()" [min]="min" [max]="max" [range]="true"></p-slider>
+<div>{{ value[0] }} - {{ value[1] }}</div> -->
+
+<ion-range
+  [(ngModel)]="valueObject"
+  (ionChange)="doChange()"
+  dualKnobs="true"
+  debounce="250"
+  [min]="min"
+  [max]="max"
+  pin="false"
+  ticks="false"
+  color="primary"
+  snaps="true"
+>
+  <ion-label slot="start">{{ min }}</ion-label>
+  <ion-label slot="end">{{ max }}</ion-label>
+</ion-range>

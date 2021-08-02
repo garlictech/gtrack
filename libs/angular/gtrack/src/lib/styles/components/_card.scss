@@ -1,0 +1,12 @@
+.card-shadow-search {
+  .hike-container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.1s ease-in-out;
+  }
+
+  &:hover {
+    .hike-container {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<ion-app>
+  <nb-layout>
+    <nb-layout-header fixed>
+      <div routerLink="/admin">gTrack Admin</div>
+    </nb-layout-header>
+    <nb-sidebar>
+      <gtrack-app-menu></gtrack-app-menu>
+    </nb-sidebar>
+
+    <nb-layout-column>
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+
+    <nb-layout-footer fixed>
+      <!-- <gtrack-footer></gtrack-footer> -->
+    </nb-layout-footer>
+  </nb-layout>
+</ion-app>

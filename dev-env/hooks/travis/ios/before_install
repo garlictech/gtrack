@@ -1,0 +1,40 @@
+#!/bin/sh
+set -e
+
+if [[ -z "$KEY_PASSWORD" ]]; then
+    echo "Error: Missing password for adding private key"
+    exit 1
+fi
+
+npm install -g yarn appcenter-cli
+
+if [[ "$TRAVIS_EVENT_TYPE" != "pull_request" ]]; then
+  openssl aes-256-cbc -K $encrypted_865d9fdd355f_key -iv $encrypted_865d9fdd355f_iv -in secrets.tgz.enc -out secrets.tgz -d
+  tar -zxvf secrets.tgz
+fi
+
+SECRET_DIR="./secrets"
+KEYCHAIN_NAME=ios-build.keychain
+
+# Create custom keychain
+security create-keychain -p travis $KEYCHAIN_NAME
+# Make the ios-build.keychain default, so xcodebuild will use it
+security default-keychain -s $KEYCHAIN_NAME
+# Unlock the keychain
+security unlock-keychain -p travis $KEYCHAIN_NAME
+# Set keychain timeout to 1 hour for long builds
+security set-keychain-settings -t 3600 -l ~/Library/Keychains/$KEYCHAIN_NAME
+
+security import $SECRET_DIR/AppleWWDRCA.cer -k $KEYCHAIN_NAME -A
+security import $SECRET_DIR/development-cert.cer -k $KEYCHAIN_NAME -A
+security import $SECRET_DIR/distribution-cert.cer -k $KEYCHAIN_NAME -A
+security import $SECRET_DIR/development-key.p12 -k $KEYCHAIN_NAME -A -P $KEY_PASSWORD
+security import $SECRET_DIR/distribution-key.p12 -k $KEYCHAIN_NAME -A -P $KEY_PASSWORD
+
+# Fix for OS X Sierra that hungs in the codesign step
+security set-key-partition-list -S apple-tool:,apple: -s -k travis ios-build.keychain > /dev/null
+
+mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+
+cp "$SECRET_DIR/development-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/
+cp "$SECRET_DIR/distribution-provisioning-profile.mobileprovision" ~/Library/MobileDevice/Provisioning\ Profiles/

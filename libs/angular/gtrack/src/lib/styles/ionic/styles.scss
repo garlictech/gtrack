@@ -1,0 +1,142 @@
+@import './pale-theme.scss';
+@import './utils.scss';
+
+/* Core CSS required for Ionic components to work properly */
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/core.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
+@import '@ionic/angular/css/display.css';
+
+//$ionicons-font-path: 'ionicons/dist/fonts';
+//@import 'ionicons/dist/scss/ionicons.scss';
+
+.input-wrapper {
+  display: block !important;
+}
+
+ion-list {
+  background: transparent !important;
+}
+
+ion-list-header {
+  color: var(--ion-primary-color);
+}
+
+ion-input {
+  --placeholder-color: var(--ion-color-medium-tint) !important;
+}
+
+ion-button {
+  fa-icon {
+    @apply pr-2 self-center;
+  }
+}
+
+ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-item {
+  --background: transparent;
+  --color: var(--ion-color-primary);
+  --border-color: var(--ion-color-dark);
+}
+
+ion-item:last-child {
+  --border-style: none !important;
+}
+
+ion-item-divider {
+  --color: light;
+  --background: var(--ion-color-dark-rgb-opaque);
+  @apply uppercase;
+}
+
+ion-checkbox {
+  @apply border border-solid border-primary border-2 rounded-full;
+}
+
+.alert-radio-label .sc-ion-alert-ios {
+  text-transform: uppercase !important;
+}
+
+.alert-wrapper {
+  box-shadow: 9px 9px 15px 5px #000000 !important;
+}
+
+.sc-ion-picker-ios-h {
+  --border-width: 0 !important;
+}
+::ng-deep {
+  .picker-above-highlight .sc-ion-picker-ios {
+    background: var(--ion-color-primary-tint) !important;
+  }
+  .picker-wrapper {
+    --border: none;
+  }
+  .picker-toolbar.sc-ion-picker-ios {
+    --border-bottom: 0px !important;
+  }
+}
+
+ion-alert {
+  --color: var(--ion-color-primary) !important;
+
+  @apply uppercase;
+
+  .alert-title,
+  .alert-head,
+  .alert-radio-label {
+    color: var(--ion-color-secondary) !important;
+  }
+  .alert-wrapper .sc-ion-alert-ios {
+    background: var(--ion-color-secondary-contrast) !important;
+    text-transform: uppercase !important;
+  }
+  .alert-message .sc-ion-alert-ios:empty {
+    padding-bottom: 0;
+  }
+}
+
+.animation-modal {
+  --background: transparent;
+}
+
+body {
+  color: var(--ion-color-primary);
+  font-family: 'Varela Round', sans-serif;
+}
+
+html {
+  font-size: 3.3vw;
+  @screen xs {
+    font-size: 3vw;
+  }
+  @screen sm {
+    font-size: 2.4vw;
+  }
+  @screen md {
+    font-size: 1.6vw;
+  }
+  @screen lg {
+    font-size: 1.3vw;
+  }
+  @screen xl {
+    font-size: 1vw;
+  }
+}
+
+* {
+  font-family: 'Varela Round', sans-serif;
+  border-color: var(--ionic-color-secondary);
+}
+
+*:focus {
+  outline: none;
+}

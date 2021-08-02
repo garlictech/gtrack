@@ -1,0 +1,288 @@
+name: ${self:custom.projectPrefix}
+authenticationType: AMAZON_COGNITO_USER_POOLS
+region: ${self:provider.region}
+schema: src/graphql-schema/schema.graphql
+serviceRole: ${self:custom.esRoleName}
+
+userPoolConfig:
+  awsRegion: ${self:provider.region}
+  defaultAction: ALLOW
+  userPoolId:
+    Ref: CognitoUserPool
+
+additionalAuthenticationProviders:
+  - authenticationType: API_KEY
+  - authenticationType: AWS_IAM
+
+mappingTemplates:
+  # Pois
+  - field: createPoi
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createPoi-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: createMultiplePois
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createMultiplePois-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: updatePoi
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'updatePoi-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: deletePoi
+    type: Mutation
+    dataSource: Pois
+    request: 'common-delete-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getPoi
+    dataSource: Pois
+    type: Query
+    request: 'common-get-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getMultiplePois
+    dataSource: Pois
+    type: Query
+    request: stage/${self:provider.stage}/get-multiple-pois-request-mapping-template.vtl
+    response: stage/${self:provider.stage}/get-multiple-pois-response-mapping-template.vtl
+
+  # Images
+  - field: createImage
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createImage-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: createMultipleImages
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createMultipleImages-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: updateImage
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'updateImage-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: deleteImage
+    type: Mutation
+    dataSource: Images
+    request: 'common-delete-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getImage
+    dataSource: Images
+    type: Query
+    request: 'common-get-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getMultipleImages
+    dataSource: Images
+    type: Query
+    request: stage/${self:provider.stage}/get-multiple-images-request-mapping-template.vtl
+    response: stage/${self:provider.stage}/get-multiple-images-response-mapping-template.vtl
+
+  # HikeGroups
+  - field: createHikeGroup
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createHikeGroup-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getHikeGroup
+    dataSource: HikeGroups
+    type: Query
+    request: 'common-get-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: updateHikeGroup
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'updateHikeGroup-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: listHikeGroups
+    type: Query
+    dataSource: HikeGroups
+    request: 'common-list-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: deleteHikeGroup
+    type: Mutation
+    dataSource: HikeGroups
+    request: 'common-delete-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  # Hikes
+  - field: createHike
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createHike-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: updateHike
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'updateHike-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: deleteHike
+    type: Mutation
+    dataSource: Hikes
+    request: 'common-delete-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getHike
+    dataSource: Hikes
+    type: Query
+    request: 'common-get-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: getMultipleHikes
+    dataSource: Hikes
+    type: Query
+    request: stage/${self:provider.stage}/get-multiple-hikes-request-mapping-template.vtl
+    response: stage/${self:provider.stage}/get-multiple-hikes-response-mapping-template.vtl
+
+  - field: listHikes
+    dataSource: Hikes
+    type: Query
+    request: 'common-list-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: createMultipleHikes
+    type: Mutation
+    dataSource: GraphqlLambda
+    request: 'createMultipleHikes-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  # Customer
+  - field: getCustomer
+    type: Query
+    dataSource: Customers
+    request: 'getCustomer-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: updateCustomerProfile
+    type: Mutation
+    dataSource: Customers
+    request: 'updateCustomerProfile-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  - field: updateCustomerSettings
+    type: Mutation
+    dataSource: Customers
+    request: 'updateCustomerSettings-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+  # Search
+  - dataSource: esInstance
+    type: Mutation
+    field: createPlace
+    request: geosearch/createPlace-request-mapping-template.txt
+    response: geosearch/createPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Query
+    field: searchPlaceInCircle
+    request: geosearch/searchPlaceInCircle-request-mapping-template.txt
+    response: geosearch/searchPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Query
+    field: searchSafeImageInCircle
+    request: geosearch/searchSafeImageInCircle-request-mapping-template.txt
+    response: geosearch/searchPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Query
+    field: searchUnsafeImageInCircle
+    request: geosearch/searchUnsafeImageInCircle-request-mapping-template.txt
+    response: geosearch/searchPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Query
+    field: searchPlaceInBox
+    request: geosearch/searchPlaceInBox-request-mapping-template.txt
+    response: geosearch/searchPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Query
+    field: searchPlaceByTitle
+    request: geosearch/searchPlaceByTitle-request-mapping-template.txt
+    response: geosearch/searchPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Query
+    field: searchPlaceByObjectId
+    request: geosearch/searchPlaceByObjectId-request-mapping-template.txt
+    response: geosearch/searchPlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Mutation
+    field: deletePlace
+    request: geosearch/deletePlace-request-mapping-template.txt
+    response: geosearch/deletePlace-response-mapping-template.txt
+
+  - dataSource: esInstance
+    type: Mutation
+    field: deleteAllPlaces
+    request: geosearch/deleteAllPlaces-request-mapping-template.txt
+    response: geosearch/deletePlace-response-mapping-template.txt
+
+    # Route segments
+  - field: processRouteSegment
+    type: Mutation
+    dataSource: RouteSegmentProcessingLambda
+    request: 'processRouteSegment-request-mapping-template.vtl'
+    response: 'common-response-mapping-template.vtl'
+
+dataSources:
+  - type: AMAZON_DYNAMODB
+    name: Pois
+    description: 'Pois table'
+    config:
+      tableName: '${self:service}-${self:provider.stage}-pois'
+  - type: AMAZON_DYNAMODB
+    name: HikeGroups
+    description: 'Hike groups table'
+    config:
+      tableName: '${self:service}-${self:provider.stage}-hikeGroups'
+  - type: AMAZON_DYNAMODB
+    name: Images
+    description: 'Images table'
+    config:
+      tableName: '${self:service}-${self:provider.stage}-images'
+  - type: AMAZON_DYNAMODB
+    name: Hikes
+    description: 'Hikes table'
+    config:
+      tableName: '${self:service}-${self:provider.stage}-hikes'
+  - type: AMAZON_DYNAMODB
+    name: Customers
+    description: 'Customers table'
+    config:
+      tableName: '${self:service}-${self:provider.stage}-customers'
+  - type: AWS_LAMBDA
+    name: GraphqlLambda
+    description: 'Lambda DataSource'
+    config:
+      functionName: graphql # The function name in your serverless.yml.
+  - type: AWS_LAMBDA
+    name: RouteSegmentProcessingLambda
+    description: 'Route segment processing lambda'
+    config:
+      functionName: process-route-segment # The function name in your serverless.yml.
+  - type: AMAZON_ELASTICSEARCH
+    name: esInstance
+    description: 'ElasticSearch'
+    config:
+      endpoint: ${self:custom.esEndpoint}
+      serviceRoleArn: { Fn::GetAtt: [AppSyncESServiceRole, Arn] }

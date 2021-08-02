@@ -1,0 +1,16 @@
+Outputs:
+  UserPoolId:
+    Value:
+      Ref: CognitoUserPool
+
+  UserPoolClientUserId:
+    Value:
+      Ref: CognitoUserPoolClientUser
+    Export:
+      Name: UserPoolClientUserId-${self:provider.stage}
+
+  UserPoolClientAdminId:
+    Value:
+      Ref: CognitoUserPoolClientAdmin
+    Export:
+      Name: UserPoolClientAdminId-${self:provider.stage}

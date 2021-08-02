@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-item [href]="privacyPolicySlug" target="_blank">
+    <ion-icon slot="start" name="document-text-outline"></ion-icon>
+    <ion-label>{{ 'info.privacyPolicy' | translate }} </ion-label>
+  </ion-item>
+  <ion-item [href]="termsAndCondSlug" target="_blank">
+    <ion-icon slot="start" name="document-text-outline"></ion-icon>
+    <ion-label>{{ 'info.termsAndCond' | translate }} </ion-label>
+  </ion-item>
+  <ion-item href="mailto://yo@gtracksport.com" target="_blank">
+    <ion-icon slot="start" name="mail-outline"></ion-icon>
+    <ion-label>{{ 'info.contact' | translate }}: yo@gtracksport.com </ion-label>
+  </ion-item>
+  <ion-item class="w-full text-center uppercase"
+    ><span class="text-sm">{{ 'info.copyright' | translate }}</span></ion-item
+  >
+</ion-list>

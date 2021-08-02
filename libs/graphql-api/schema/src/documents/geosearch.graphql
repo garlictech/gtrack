@@ -1,0 +1,109 @@
+mutation DeletePlace($objectId: ID!) {
+  deletePlace(objectId: $objectId) {
+    deleted
+  }
+}
+
+mutation CreatePlace($input: CreatePlaceInput!) {
+  createPlace(input: $input) {
+    ...placeFields
+  }
+}
+
+mutation SetPlaceAcceptance($id: ID!, $isAccepted: Boolean!) {
+  setPlaceAcceptance(id: $id, isAccepted: $isAccepted)
+}
+
+query SearchPlaceInCircle(
+  $lat: Float!
+  $lon: Float!
+  $radius: Float!
+  $type: PlaceType!
+  $from: Int
+  $pageSize: Int
+) {
+  searchPlaceInCircle(
+    lat: $lat
+    lon: $lon
+    radius: $radius
+    type: $type
+    from: $from
+    pageSize: $pageSize
+  ) {
+    ...placeFields
+  }
+}
+
+query SearchSafeImageInCircle(
+  $lat: Float!
+  $lon: Float!
+  $radius: Float!
+  $from: Int
+  $pageSize: Int
+) {
+  searchSafeImageInCircle(
+    lat: $lat
+    lon: $lon
+    radius: $radius
+    from: $from
+    pageSize: $pageSize
+  ) {
+    ...placeFields
+  }
+}
+
+query SearchUnsafeImageInCircle(
+  $lat: Float!
+  $lon: Float!
+  $radius: Float!
+  $from: Int
+  $pageSize: Int
+) {
+  searchUnsafeImageInCircle(
+    lat: $lat
+    lon: $lon
+    radius: $radius
+    from: $from
+    pageSize: $pageSize
+  ) {
+    ...placeFields
+  }
+}
+
+query SearchPlaceInBox($box: BoundingBoxInput!, $type: PlaceType!) {
+  searchPlaceInBox(box: $box, type: $type) {
+    ...placeFields
+  }
+}
+
+query SearchPlaceByTitle(
+  $title: String!
+  $type: PlaceType!
+  $from: Int
+  $pageSize: Int
+) {
+  searchPlaceByTitle(
+    title: $title
+    type: $type
+    from: $from
+    pageSize: $pageSize
+  ) {
+    ...placeFields
+  }
+}
+
+query SearchPlaceByObjectId($objectId: ID!) {
+  searchPlaceByObjectId(objectId: $objectId) {
+    ...placeFields
+  }
+}
+
+fragment placeFields on Place {
+  id
+  type
+  objectId
+  lat
+  lon
+  processed
+  banned
+}

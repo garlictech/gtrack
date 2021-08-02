@@ -1,0 +1,32 @@
+<div class="flex flex-col w-full h-full" *ngIf="viewInitialized">
+  <div class="trail-box-container">
+    <gtrack-trail-box
+      (elevationLineMove)="onElevationLineMove($event)"
+      (elevationLineOut)="onElevationLineOut()"
+      (elevationLineOver)="onElevationLineOver()"
+      (elevationLineClick)="onElevationLineClickMap($event)"
+      (elevationMarkerClick)="onElevationMarkerClick()"
+      [elevationMarkerPosition]="elevationMarkerPosition$ | async"
+      [elevationMarkerVisible]="elevationMarkerVisible$ | async"
+      [elevationMarkerLocked]="elevationMarkerLocked$ | async"
+      [calculatedHike$]="hike"
+    ></gtrack-trail-box>
+  </div>
+  <div class="flex-initial">
+<!--     <gtrack-elevation-profile
+      (elevationLineMove)="onElevationLineMove($event)"
+      (elevationLineOut)="onElevationLineOut()"
+      (elevationLineOver)="onElevationLineOver()"
+      (elevationLineClick)="onElevationLineClick($event)"
+      (elevationMarkerClick)="onElevationMarkerClick($event)"
+      [elevationMarkerPosition]="elevationMarkerPosition$ | async"
+      [elevationMarkerVisible]="elevationMarkerVisible$ | async"
+      [hike]="hike"
+      [route]="route"
+      [pois]="pois"
+      [startDate]="startDate"
+      [speed]="speed"
+      [weather]="weather"
+    ></gtrack-elevation-profile> -->
+  </div>
+</div>

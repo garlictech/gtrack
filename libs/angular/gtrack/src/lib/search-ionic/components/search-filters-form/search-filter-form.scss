@@ -1,0 +1,41 @@
+ion-item {
+  --border-color: var(--ion-color-tertiary-contrast) !important;
+  @apply m-0;
+
+  & > div {
+    @apply flex flex-col w-full;
+
+    & > div {
+      @apply flex justify-between;
+
+      ion-label {
+        @apply p-2;
+      }
+
+      ion-badge {
+        @apply m-2;
+      }
+    }
+  }
+}
+
+ion-range {
+  ion-label {
+    &:first-child {
+      @apply pr-2;
+    }
+
+    &:last-child {
+      @apply pl-2;
+    }
+  }
+}
+.badge-title {
+  line-height: 20px;
+}
+.filter-container {
+  background: #4c4332;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+}

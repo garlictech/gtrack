@@ -1,0 +1,27 @@
+@import '../base/variables.scss';
+
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+  // Others
+  --ion-safe-area-top: env(safe-area-inset-top, 0);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom, 0);
+  --gtrack-tabbar-height: calc(env(safe-area-inset-top) + 40px);
+  --gtrack-header-height: calc(env(safe-area-inset-bottom) + 35px);
+  --safe-area-padding: env(safe-area-inset-top, 30px);
+
+  @screen xxxl {
+    --safe-area-padding: env(safe-area-inset-top, 60px);
+  }
+  @screen md {
+    --gtrack-header-height: 44px;
+  }
+  @screen xxxl {
+    --gtrack-header-height: 88px;
+  }
+  @screen md {
+    --gtrack-tabbar-height: 0;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "field": "createHikeGroup",
+  "arguments": {
+    "description": "new hike group"
+  }
+}

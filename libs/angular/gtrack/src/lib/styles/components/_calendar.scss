@@ -1,0 +1,37 @@
+.ui-calendar {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  .ui-inputtext {
+    width: 100%;
+  }
+
+  .ui-datepicker {
+    .ui-datepicker-header {
+      background: transparent;
+    }
+
+    .ui-datepicker-calendar {
+      thead {
+        th {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .ui-datepicker-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .ui-datepicker-month {
+        margin-right: 0.5rem;
+      }
+
+      .ui-datepicker-year {
+        margin-top: 0;
+      }
+    }
+  }
+}

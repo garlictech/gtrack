@@ -1,0 +1,28 @@
+{
+  "appId": "com.gtracksport.app",
+  "appName": "gTrack",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www",
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "false",
+      "android-minSdkVersion": "19",
+      "BackupWebStorage": "none",
+      "Orientation": "portrait"
+    }
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false,
+      "iosSpinnerStyle": "large",
+      "spinnerColor": "#000000",
+      "showSpinner": true,
+      "splashFullScreen": true
+    }
+  },
+  "server": {
+    "url": "http://localhost:8100",
+    "cleartext": true
+  }
+}

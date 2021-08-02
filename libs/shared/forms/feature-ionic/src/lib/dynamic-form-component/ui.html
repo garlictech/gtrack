@@ -1,0 +1,34 @@
+<!-- <form
+  class="flex flex-col"
+  (ngSubmit)="onSubmit()"
+  [formGroup]="formInstance?.form"
+  *ngIf="formInstance?.form"
+>
+  <ion-list lines="full">
+    <ion-list-header>
+      <span *ngIf="formDescriptor?.titleLabel"
+        >{{ formDescriptor?.titleLabel | translate }}</span
+      >
+    </ion-list-header>
+    <ion-item
+      [ngClass]="field.containerCls"
+      *ngFor="let field of formInstance?.fields; trackBy: trackByFn"
+    >
+      <gtrack-form-field
+        [field]="field"
+        [form]="formInstance?.form"
+        (submit)="onSubmit()"
+        [formDescriptor]="formDescriptor"
+      ></gtrack-form-field>
+    </ion-item>
+  </ion-list>
+  <ion-button
+    type="submit"
+    class="w-full"
+    [disabled]="formDescriptor.submit?.disabled()"
+    *ngIf="formDescriptor.submit?.translatableLabel"
+  >
+    {{ formDescriptor.submit?.translatableLabel | translate }}
+  </ion-button>
+</form>
+ -->

@@ -1,0 +1,49 @@
+.header {
+  ion-back-button {
+    padding: 30px 0px 30px 30px;
+  }
+  height: calc(var(--gtrack-header-height));
+  z-index: 10000;
+
+  ion-header,
+  ion-toolbar {
+    --background-color: transparent !important;
+    --ion-color-base: transparent !important;
+  }
+  ion-toolbar {
+    padding-top: var(--safe-area-padding);
+    height: calc(var(--gtrack-header-height));
+  }
+
+  gtrack-menu {
+    background: var(--ion-color-secondary-contrast);
+  }
+  a {
+    position: absolute;
+    right: 21px;
+  }
+  .back-button {
+    color: var(--ion-color-primary);
+    @apply block uppercase;
+  }
+
+  @screen md {
+    ion-header,
+    ion-toolbar {
+      --background-color: transparent !important;
+      --ion-color-base: transparent !important;
+      height: var(--gtrack-header-height);
+    }
+
+    gtrack-menu {
+      background: var(--ion-color-secondary-contrast);
+    }
+  }
+
+  @screen xxxl {
+    ion-header,
+    ion-toolbar {
+      height: var(--gtrack-header-height);
+    }
+  }
+}

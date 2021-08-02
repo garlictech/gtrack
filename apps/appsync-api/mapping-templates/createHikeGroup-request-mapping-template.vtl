@@ -1,0 +1,16 @@
+#set($roles = $context.identity.claims.get("roles"))
+#if($roles.contains("admin"))
+  #set($isAdmin = true)
+#end
+#if($isAdmin)
+{
+  "version" : "2017-02-28",
+  "operation" : "Invoke",
+  "payload": {
+    "field": "createHikeGroup",
+    "arguments":  $utils.toJson($context.arguments.input)
+  }
+}
+#else
+  $utils.unauthorized()
+#end

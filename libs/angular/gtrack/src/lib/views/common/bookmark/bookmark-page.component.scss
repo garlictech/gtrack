@@ -1,0 +1,23 @@
+:host {
+  gtrack-bookmark-page {
+    .card-header {
+      .btn {
+        position: absolute;
+        right: 26px;
+        top: 16px;
+      }
+    }
+
+    table.table {
+      th:last-child,
+      td:last-child {
+        width: 200px;
+        text-align: right !important;
+
+        button:last-child {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

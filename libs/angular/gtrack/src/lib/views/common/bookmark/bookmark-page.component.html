@@ -1,0 +1,46 @@
+<!-- <ng-template #listItem let-item>
+  <div routerLink="/hike/{{ item.id }}" class="dynamic-list-item-content cursor-pointer">
+    <gtrack-hike-card [hike]="item"></gtrack-hike-card>
+  </div>
+</ng-template>
+
+<div *ngIf="(working$ | async) !== true">
+  <div class=" hike-list-wrapper " *ngIf="(hikes$ | async)?.length > 0; else no_hike_found">
+    <gtrack-common-hikes-map [hikes]="hikes$ | async"></gtrack-common-hikes-map>
+    <!- HIKE_LIST ->
+    <div class="hike-list-content-wrapper">
+      <garlictech-dynamic-list
+        [items$]="hikes$"
+        [itemTemplate]="listItem"
+        [containerClass]="['hike-list-wrapper']"
+        [itemClass]="['hike-list-item']"
+      ></garlictech-dynamic-list>
+    </div>
+  </div>
+
+  <ng-container *ngIf="hikes$ | async)?.length > 0; else no_hike_found">
+
+  </ng-container>
+
+  <!- NO HIKE ->
+  <ng-template #no_hike_found>
+    <div class="row ">{{ 'pages.common.home.page.noHikeFound' | translate }}</div>
+  </ng-template>
+</div> -->
+
+<ng-container *ngIf="hikes$ | async as hikes">
+  <div *ngIf="hikes.length > 0; else no_hike_found">
+    <!-- FEATURED_HIKE_LIST-->
+    <gtrack-hike-card-list
+      class="flex flex-wrap items-center justify-between align-middle"
+      [hikes$]="hikes$"
+    >
+    </gtrack-hike-card-list>
+  </div>
+  <!-- NO_HIKE -->
+  <ng-template #no_hike_found>
+    <div>
+      {{ 'pages.common.home.page.noHikeFound' | translate }}
+    </div>
+  </ng-template>
+</ng-container>

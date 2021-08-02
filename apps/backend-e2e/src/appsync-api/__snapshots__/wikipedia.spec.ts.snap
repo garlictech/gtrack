@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wikipedia poi integration tests it must download a wikipedia POI 1`] = `
+Array [
+  Object {
+    "description": Array [
+      Object {
+        "languageKey": "hu_HU",
+        "summary": "<p>Az <b>MTA Központi Fizikai Kutatóintézet</b> (röviden: <i>KFKI</i>) a Magyar Tudományos Akadémia öt kutatóintézetének telephelye Budapesten, Csillebércen. Korábban egyetlen intézmény volt, amit Központi Fizikai Kutató Intézet néven alapítottak 1950-ben (innen a rövidítés). 1992. január 1-jén vált szét öt intézménnyé. A telephely fenntartásáról azóta a KFKI Üzemeltető Kft. gondoskodik. Ezeken kívül több, részben a korábbi KFKI-ből kivált, főként technológiai és informatikai cég is a telephelyen működik, világviszonylatban is egyedülállónak mondható, nagyrészt természetes erdei környezetben.<span id=\\"back:Lovas_István_FSz_1992/2\\"></span>
+</p>",
+        "title": "MTA Központi Fizikai Kutatóintézet",
+        "type": "html",
+      },
+    ],
+    "lat": 47.48886,
+    "lon": 18.95442,
+    "sourceObject": Array [
+      Object {
+        "languageKey": "hu_HU",
+        "objectId": "14952",
+        "objectType": "wikipedia",
+        "url": "https://hu.wikipedia.org/?curid=14952",
+      },
+    ],
+    "types": Array [
+      "generic:sight",
+    ],
+  },
+]
+`;

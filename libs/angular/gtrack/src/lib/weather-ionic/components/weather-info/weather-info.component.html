@@ -1,0 +1,40 @@
+<div
+  class="forecast"
+  *ngIf="forecast$ | async as forecastDays; else no_forecast"
+>
+  <div
+    class="forecast-day"
+    *ngFor="let forecast of forecastDays; trackBy: trackByForecastDays"
+  >
+    <ng-container *ngIf="forecast.length > 0">
+      <div class="forecast-day-name text-secondary text-xl font-bold">
+        {{ forecast[0].dt * 1000 | date: 'MMM d.' }}
+      </div>
+      <div class="forecast-items">
+        <div
+          class="forecast-item"
+          *ngFor="let item of forecast; first as isFirst"
+        >
+          <span class="text-lg font-bold text-grey">{{
+            item.dt * 1000 | date: 'HH:mm'
+          }}</span>
+          <span>{{ item.main.temp | number: '1.0-0' }} °C</span>
+          <gtrack-weather-icon
+            *ngFor="let weather of item.weather"
+            [icon]="weather.icon"
+          ></gtrack-weather-icon>
+          <span class="wind">
+            <gtrack-wind-direction-icon
+              [deg]="item.wind.deg"
+            ></gtrack-wind-direction-icon>
+            {{ item.wind.speed * 3.6 | number: '1.0-1' }} km/h
+          </span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #no_forecast>
+  No forecast data is available for the selected hike start date.
+</ng-template>

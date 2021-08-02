@@ -1,0 +1,12 @@
+artifacts
+node_modules
+assets
+docs
+amplify
+platforms
+www
+plugins
+ios
+dev-env
+dist
+coverage

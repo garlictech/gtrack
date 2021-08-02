@@ -1,0 +1,16 @@
+{
+  "name": "@bit/garlictech.angular-features.common.marker-popup",
+  "version": "0.0.6",
+  "homepage": "https://bit.dev/garlictech/angular-features/common/marker-popup",
+  "main": "index.ts",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^8.2.2",
+    "lodash": "^4.17.15"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+    "env": {}
+  }
+}

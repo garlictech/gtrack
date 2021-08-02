@@ -1,0 +1,27 @@
+:host(.leaflet-control) {
+  margin: 0;
+}
+
+.label {
+  @apply font-black uppercase;
+}
+
+.info-row {
+  @apply flex flex-row justify-between flex-no-wrap text-black;
+
+  div {
+    &:first-child {
+      @apply pr-1;
+    }
+  }
+}
+
+.control-content {
+  background-color: rgba(255, 255, 255, 0.6);
+  @apply border border-solid rounded inline-block;
+}
+
+.info-control-host {
+  font-size: 3vw;
+  @apply inline-block absolute p-1 m-0;
+}

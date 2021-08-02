@@ -1,0 +1,10 @@
+<h2 class="mt-4 mb-8 text-2xl text-center uppercase text-secondary">
+  {{ titleLabel | translate }}
+</h2>
+<ng-container *ngIf="isContentReady; else spinner">
+  <ng-content></ng-content>
+</ng-container>
+
+<ng-template #spinner
+  ><ion-spinner class="block m-auto"></ion-spinner
+></ng-template>

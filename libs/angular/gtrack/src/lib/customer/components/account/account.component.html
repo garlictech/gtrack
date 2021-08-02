@@ -1,0 +1,11 @@
+<ion-list>
+  <ion-item button (click)="onLogin()" *ngIf="!isLoggedIn">
+    <ion-icon slot="start" name="log-in-outline"></ion-icon>
+    <ion-label> {{ 'menu.login' | translate }} </ion-label>
+  </ion-item>
+
+  <ion-item button (click)="onLogout()" *ngIf="isLoggedIn">
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    <ion-label>{{ 'menu.logout' | translate }}</ion-label>
+  </ion-item>
+</ion-list>

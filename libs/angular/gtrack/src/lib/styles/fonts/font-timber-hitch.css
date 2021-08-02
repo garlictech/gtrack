@@ -1,0 +1,16 @@
+/* @font-face {
+    font-family: 'Timber Hitch';
+    font-style: bold;
+    src: url(/assets/fonts/TimberHitch/TimberHitch-Bold.otf) format("opentype");
+  }
+  
+   */
+
+@font-face {
+  font-family: 'Timber Hitch';
+  src: url('/assets/fonts/TimberHitch/TimberHitch-Bold.woff2') format('woff2'),
+    url('/assets/fonts/TimberHitch/TimberHitch-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

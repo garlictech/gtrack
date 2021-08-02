@@ -1,0 +1,52 @@
+.search-background {
+  background-color: var(--ion-color-dark-rgb-opaque);
+}
+
+.hits-background {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.search-border {
+  @apply border-solid border border-2 rounded-lg;
+  border-color: var(--ion-color-secondary);
+}
+
+.search-text {
+  color: var(--ion-color-primary);
+  @apply uppercase;
+
+  @screen md {
+    @apply text-xl;
+  }
+}
+
+.search-container {
+  @apply rounded-lg font-semibold w-full h-12 flex flex-row content-center p-2 search-background search-text;
+
+  @screen md {
+    @apply h-12;
+  }
+
+  fa-icon {
+    @apply pr-2 self-center;
+    color: var(--ion-color-secondary);
+  }
+
+  input {
+    @apply h-full w-full bg-transparent uppercase;
+  }
+
+  ::placeholder {
+    color: var(--ion-color-secondary);
+    font-size: 0.875rem;
+    @apply opacity-25;
+
+    @screen md {
+      font-size: 1rem;
+    }
+  }
+
+  form {
+    @apply flex-grow m-0;
+  }
+}

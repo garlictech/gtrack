@@ -1,0 +1,22 @@
+:host {
+  .img {
+    float: left;
+    padding: 0 15px 0px 0;
+    img {
+      width: 80px;
+    }
+  }
+  .popup-data {
+    h3 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  gtrack-icon {
+    img {
+      width: 16px !important;
+    }
+  }
+}

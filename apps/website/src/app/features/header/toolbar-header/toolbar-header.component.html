@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="flex">
+    <ion-button fill="clear" (click)="onCogClick($event)">
+      <ion-icon name="cog-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button fill="clear" routerLink="/">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<!--<div class="flex items-center w-full h-full">
+    <div class="cursor-pointer">
+      <gtrack-language-selector></gtrack-language-selector>
+    </div>
+    <div class="pr-4 cursor-pointer">
+      <ion-item [routerLink]="'/'">
+        <ion-label>
+          <span>{{ 'menu.search' | translate }}</span>
+        </ion-label>
+      </ion-item>
+    </div>
+    <div class="pr-4 cursor-pointer">
+      <ion-item [routerLink]="['/', 'info']">
+        <ion-label>
+          <span>{{ 'menu.info' | translate }}</span>
+        </ion-label>
+      </ion-item>
+    </div>
+    <div class="pr-4 cursor-pointer" *ngIf="!isLoggedIn">
+      <ion-item (click)="login()">
+        <ion-label>
+          <span>
+            {{ 'menu.login' | translate }}
+          </span>
+        </ion-label>
+      </ion-item>
+    </div>
+
+    <div class="pr-4 cursor-pointer" *ngIf="isLoggedIn">
+      <ion-item (click)="logout()">
+        <ion-label>
+          <span>
+            {{ 'menu.logout' | translate }}
+          </span>
+        </ion-label>
+      </ion-item>
+    </div>
+
+     <div class="absolute right-0">
+    <ion-item (click)="logout()">
+      <ion-label>
+        <gtrack-profile-photo
+          *ngIf="profilePictured"
+          [role$]=""
+          [enableIcon]="true"
+        ></gtrack-profile-photo>
+      </ion-label>
+    </ion-item>
+  </div>
+  </div>
+-->

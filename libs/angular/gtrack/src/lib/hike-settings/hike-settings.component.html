@@ -1,0 +1,15 @@
+<div class="settings-container rounded-t-lg px-4 justify-around">
+  <span (click)="onStartDateClick()" class="cursor-pointer">
+    <fa-icon [icon]="calendarIcon"></fa-icon>
+    <span class="px-2" *ngIf="startDate$ | async as startDate">{{
+      startDate | date: 'MM.dd. HH:mm'
+    }}</span>
+  </span>
+
+  <span (click)="onSpeedClick()" class="cursor-pointer">
+    <fa-icon [icon]="speedIcon"></fa-icon>
+    <span class="px-2" *ngIf="speed$ | async as speed"
+      >{{ speed | distance | async }}/h</span
+    >
+  </span>
+</div>

@@ -1,0 +1,13 @@
+<ion-content>
+  <div class="flex flex-col w-full justify-start">
+    <ng-container *ngIf="loggedIn$ | async; else notAuthenticatedTemplate">
+      <h2 class="m-4">{{ 'menu.bookmark' | translate }}</h2>
+      <gtrack-bookmark-page class="w-11/12"></gtrack-bookmark-page>
+    </ng-container>
+    <ng-template #notAuthenticatedTemplate>
+      <span class="self-center">
+        {{ 'pages.activity.notAutenticatedMessage' | translate }}
+      </span>
+    </ng-template>
+  </div>
+</ion-content>

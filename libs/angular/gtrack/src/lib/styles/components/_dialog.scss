@@ -1,0 +1,19 @@
+body .ui-dialog {
+  box-shadow: none;
+  .ui-dialog-content {
+    background: #eeefe7;
+    color: #22282f;
+    border: none;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+  .ui-dialog-titlebar {
+    background: #22282f;
+    color: white;
+    border: none;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+
+  .ui-dialog-titlebar .ui-dialog-titlebar-icon {
+    margin-top: -1.5rem;
+  }
+}

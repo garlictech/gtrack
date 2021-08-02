@@ -1,0 +1,12 @@
+:host {
+  max-width: 80rem;
+
+  @screen md {
+    .row {
+      // width: 50%;
+      display: flex;
+      flex-direction: column;
+      // float: right;
+    }
+  }
+}

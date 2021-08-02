@@ -1,0 +1,43 @@
+<!-- <div class="flex flex-col justify-center h-full">
+  <ion-button click="purchase()" *ngIf="!isSubscribed">Purchase subscription</ion-button>
+  <div *ngIf="isSubscribed">PURCHASED!</div>
+
+  <ion-button click="restore()" expand="full">Restore</ion-button>
+</div>
+
+<ion-header>
+  <ion-toolbar color="primary" mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button color="white"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{ 'menu.about' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content *ngIf="storeAvailable$ | async; else storeNotAvailable">
+  <ion-list>
+    <ion-item
+      button
+      *ngFor="let p of products$ | async"
+      (click)="purchase(p)"
+      detail="false"
+    >
+      <ion-label class="ion-text-wrap">
+        {{ p.title }}
+        <p>{{ p.description }}</p>
+      </ion-label>
+      <ion-button slot="end"> {{ p.price }} </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button click="restore()" expand="full">Restore Purchases</ion-button>
+
+  <ion-item> Subscribed: {{ isSubscribed$ | async }} </ion-item>
+</ion-content>
+
+<ng-template #storeNotAvailable>
+  <div class="text-center pb-6">
+    In-App Store is not available on this platform.
+  </div>
+</ng-template>

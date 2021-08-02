@@ -1,0 +1,26 @@
+<div class="ui-fluid">
+  <div class="ui-g mt-50">
+    <div class="ui-md-4 ui-md-offset-4">
+      <p class="ui-card-title text-center">gtrack admin login</p>
+
+      <div class="ui-card-content text-center my-4">
+        <button class="btn-google cursor-pointer" type="button" (click)="login()">
+          <fa-icon class="icon-google" [icon]="faGoogle"></fa-icon>
+
+          <ng-container *ngIf="(loggingIn$ | async) as loggingIn; then loginSpinner; else loginButton"></ng-container>
+
+          <ng-template #loginButton>
+            <span>Login with Google</span>
+          </ng-template>
+
+          <ng-template #loginSpinner>
+            <span class="login-spinner">
+              Logging in...
+              <fa-icon [icon]="faSpinner" [spin]="true"></fa-icon>
+            </span>
+          </ng-template>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

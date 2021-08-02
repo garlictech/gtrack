@@ -1,0 +1,7 @@
+@import '~@nebular/theme/styles/globals';
+@import '../../../libs/angular/gtrack/src/lib/styles/styles.scss';
+@import 'styles/themes';
+
+@include nb-install() {
+  @include nb-theme-global();
+}

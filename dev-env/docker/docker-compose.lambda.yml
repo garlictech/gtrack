@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  gtrack.deploy-lambda:
+    build:
+      context: ..
+      dockerfile: Dockerfile.lambda
+    env_file:
+      - ./lambda.env
+    restart: always
+    volumes:
+      - ../scripts:/app/scripts
+      - ../artifacts/dist/server:/app/server
+      - ../artifacts/dist/browser/index.html:/app/browser/index.html
+      - ../artifacts/dist/server.js:/app/server.js
+      - ../claudia-configs:/app/claudia-configs

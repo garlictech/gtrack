@@ -1,0 +1,78 @@
+mutation CreateImage($input: CreateImageInput!) {
+  createImage(input: $input) {
+    ...imageFields
+  }
+}
+
+mutation CreateMultipleImages($input: [CreateImageInput!]!) {
+  createMultipleImages(input: $input) {
+    ...imageFields
+  }
+}
+
+mutation UpdateImage($input: UpdateImageInput!) {
+  updateImage(input: $input) {
+    ...imageFields
+  }
+}
+
+query GetImage($id: ID!) {
+  getImage(id: $id) {
+    ...imageFields
+  }
+}
+
+query GetMultipleImages($ids: [ID!]!) {
+  getMultipleImages(ids: $ids) {
+    data {
+      ...imageFields
+    }
+    unprocessedKeys {
+      id
+    }
+  }
+}
+
+mutation DeleteImage($id: ID!) {
+  deleteImage(id: $id) {
+    id
+  }
+}
+
+fragment imageInfoFields on ImageInfo {
+  url
+  width
+  height
+}
+
+fragment sourceObjectFields on PoiSourceObject {
+  objectType
+  objectId
+}
+
+fragment imageFields on Image {
+  id
+  lat
+  lon
+  original {
+    ...imageInfoFields
+  }
+  card {
+    ...imageInfoFields
+  }
+  thumbnail {
+    ...imageInfoFields
+  }
+  sourceObject {
+    ...sourceObjectFields
+  }
+  attributions
+  labels {
+    ...imageLabelFields
+  }
+}
+
+fragment imageLabelFields on ImageLabel {
+  label
+  confidence
+}

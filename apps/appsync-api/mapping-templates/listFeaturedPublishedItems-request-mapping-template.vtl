@@ -1,0 +1,11 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "Scan",
+    "filter" : {
+        "expression" : "featured = :featured AND publicationState = :publicationState",
+        "expressionValues" : {
+            ":featured" : { "BOOL" : true },
+            ":publicationState" : { "S" : "published" }
+        }
+    }
+}

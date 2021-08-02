@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Router selector tests with props #selectRouteParam should match the snapShot 1`] = `"idParam"`;
+
+exports[`Router selector tests without props #selectRouteData should match the snapShot 1`] = `"data"`;
+
+exports[`Router selector tests without props #selectRouteParam should match the snapShot 1`] = `undefined`;
+
+exports[`Router selector tests without props #selectRouteParams should match the snapShot 1`] = `"params"`;
+
+exports[`Router selector tests without props #selectUrl should match the snapShot 1`] = `"url"`;

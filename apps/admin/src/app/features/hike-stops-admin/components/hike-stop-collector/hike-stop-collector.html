@@ -1,0 +1,50 @@
+<!-- <p-dialog header="{{ (modalPoi?.poi?.description | localizeDescription).title }}" [(visible)]="displayPoiModal"
+  [modal]="true" [closable]="true" width="600" [blockScroll]="true">
+</p-dialog> -->
+
+<div class="flow-root mb-20">
+  <div class="f-left">
+    <button
+      nbButton
+      class="ml-4"
+      (onClick)="getExternalPois()"
+      [disabled]="noSegments$ | async"
+    >
+      Get external pois
+    </button>
+    <button
+      nbButton
+      class="ml-4"
+      (onClick)="getGtrackPois()"
+      [disabled]="noSegments$ | async"
+    >
+      Get gtrack pois
+    </button>
+  </div>
+</div>
+
+<nb-accordion *ngIf="isPoiFound$ | async; else noPoiFound">
+  <nb-accordion-item>
+    <nb-accordion-item-header>On route pois</nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <gtrack-hike-stop-table
+        [openPoiModal]="openPoiModal"
+        [hikeStops]="onRoutePois$ | async"
+      >
+      </gtrack-hike-stop-table>
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+
+  <nb-accordion-item>
+    <nb-accordion-item-header>Off route pois</nb-accordion-item-header>
+    <nb-accordion-item-body>
+      <gtrack-hike-stop-table
+        [openPoiModal]="openPoiModal"
+        [hikeStops]="offRoutePois$ | async"
+      >
+      </gtrack-hike-stop-table>
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+</nb-accordion>
+
+<ng-template #noPoiFound>There are no hike stops found.</ng-template>

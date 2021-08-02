@@ -1,0 +1,9 @@
+<ion-item>
+  <ion-datetime
+    display-format="YYYY-MM-DD"
+    [min]="minDate ? (minDate | date:'y') : 1800"
+    [max]="maxDate ? (maxDate | date:'y') : 2100"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+  ></ion-datetime>
+</ion-item>

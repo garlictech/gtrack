@@ -1,0 +1,4 @@
+<div class="radar-container" *ngIf="showSpinner">
+  <div class="radar" [ngClass]="{ full: fullSize === true }"></div>
+</div>
+<ng-content *ngIf="!showSpinner"> </ng-content>

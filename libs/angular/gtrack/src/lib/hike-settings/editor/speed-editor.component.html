@@ -1,0 +1,26 @@
+<div class="w-full p-2 bg-primary text-white speed">
+  <ion-label class="px-2">
+    <fa-icon [icon]="speedIcon"></fa-icon>
+    {{ 'settings.hikeSettings.speed' | translate }}</ion-label
+  >
+</div>
+<div class="flex">
+  <ion-input
+    #input
+    class="w-2/3 text-2xl text-right"
+    [min]="1"
+    type="number"
+    [(ngModel)]="value"
+  ></ion-input>
+  <span class="w-1/3 self-center text-2xl speed-metric"> {{ unit }}/h </span>
+</div>
+
+<div
+  *ngIf="originalValue != value"
+  class="w-full p-2 text-center uppercase bg-secondary text-white cursor-pointer speed"
+  (click)="onOkClick()"
+>
+  <ion-label class="px-2">
+    {{ 'settings.settings.ok' | translate }}
+  </ion-label>
+</div>

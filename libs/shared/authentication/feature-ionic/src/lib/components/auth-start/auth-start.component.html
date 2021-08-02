@@ -1,0 +1,26 @@
+<ion-content padding style="height: 100%">
+  <div class="main">
+    <div class="images">
+      <img class="logo-mountain" src="/assets/img/logo_mountain.svg" />
+      <img class="logo-text" src="/assets/img/logo_gtrack_text.svg" />
+    </div>
+
+    <div class="buttons">
+      <ion-row>
+        <ion-col>
+          <button class="loginBtn loginBtn--join" (click)="signUp()">
+            JOIN NOW
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button class="loginBtn loginBtn--login" (click)="signIn()">
+            EXISTING USER
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

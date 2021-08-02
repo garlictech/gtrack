@@ -1,0 +1,135 @@
+<!-- <div class="elevation-profile-container">
+  <div class="elevation-profile" #elevationProfile>
+    <svg
+      #svg
+      [attr.width.px]="width"
+      [attr.height.px]="height + 80"
+      attr.viewBox="0, 0, {{ width }}, {{ height + 80 }}"
+    >
+      <defs>
+        <clipPath id="scroll-clip">
+          <rect
+            [attr.x]="margins.left - 10"
+            [attr.y]="0"
+            [attr.width]="width - margins.left - margins.right + 11"
+            [attr.height]="height + 80"
+          ></rect>
+        </clipPath>
+      </defs>
+
+      <defs>
+        <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#E26205" stop-opacity="1"></stop>
+          <stop offset="100%" stop-color="#FFFF00" stop-opacity="0"></stop>
+        </linearGradient>
+      </defs>
+
+      <g
+        gtrack-elevation-label
+        [elevationText]="elevationText"
+        attr.transform="translate(25, {{ margins.top - 5 }})"
+      ></g>
+
+      <g
+        gtrack-elevation-y-axis
+        attr.transform="translate({{ margins.left }}, {{ margins.top - 20 }})"
+        [elevationData]="elevationData$ | async"
+      ></g>
+
+      <g
+        gtrack-elevation-zoom-slider
+        attr.transform="translate(30, {{ margins.top + 10 }})"
+        [sliderHeight]="height - margins.top - margins.bottom - 15"
+        [steps]="5"
+        (zoomChange)="onZoomChange($event)"
+      ></g>
+
+      <g clip-path="url(#scroll-clip)">
+        <g id="scrollable" transform="translate(0, 0)">
+          <g
+            attr.transform="translate(0, {{ margins.top - 20 }})"
+            gtrack-elevation-filled-area
+            [elevationData]="elevationData$ | async"
+            areaFill="url(#areaGradient)"
+          ></g>
+
+          <g
+            gtrack-elevation-line-graph
+            attr.transform="translate(0, {{ margins.top - 20 }})"
+            [elevationData]="elevationData$ | async"
+          ></g>
+
+          <g
+            gtrack-elevation-x-axis
+            attr.transform="translate(0, {{ height - margins.bottom }})"
+            [elevationData]="elevationData$ | async"
+          ></g>
+
+          <g
+            gtrack-elevation-x-axis-lines
+            attr.transform="translate(0, {{ height - margins.bottom }})"
+            [elevationData]="elevationData$ | async"
+            [lineHeight]="xAxisLineHeight"
+          ></g>
+
+          <g
+            gtrack-elevation-y-axis-lines
+            attr.transform="translate({{ margins.left }}, {{
+              this.margins.top - 20
+            }})"
+            [elevationData]="elevationData$ | async"
+            [lineWidth]="yAxisLineWidth"
+          ></g>
+
+          <g
+            gtrack-elevation-poi-icons
+            *ngIf="pois"
+            attr.transform="translate(0, {{ this.margins.top - 37 }})"
+            [pois]="pois"
+            [route]="route"
+            [elevationData]="elevationData$ | async"
+          ></g>
+
+          <g
+            gtrack-elevation-poi-icon-lines
+            *ngIf="pois"
+            attr.transform="translate(0, {{ margins.top }})"
+            [pois]="pois"
+            [route]="route"
+            [elevationData]="elevationData$ | async"
+            [lineHeight]="height - margins.bottom - margins.top"
+          ></g>
+        </g>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<ng-container *ngIf="activePoi">
+  <p-dialog
+    [header]="(activePoi.description | localizeDescription).title || 'Unknown'"
+    [(visible)]="activePoi"
+    [width]="400"
+  >
+    <gtrack-description
+      [description]="activePoi.description"
+    ></gtrack-description>
+
+    <div>
+      <gtrack-poi-icons [types]="activePoi.types"></gtrack-poi-icons>
+    </div>
+    <strong>{{ activePoi.lat }}, {{ activePoi.lon }}</strong>
+    <p>
+      Distance from start: {{ activeStop.distanceFromStart | distance | async }}
+    </p>
+    <p>Elevation: {{ activePoi.elevation | distance | async }}</p>
+    <!-- <p-galleria
+      *ngIf="activePoi.backgroundImages"
+      [images]="activePoi.backgroundImages | poiImagesToGallery"
+      panelWidth="340"
+      panelHeight="313"
+      [showCaption]="false"
+    ></p-galleria> -->
+  </p-dialog>
+</ng-container>
+ -->

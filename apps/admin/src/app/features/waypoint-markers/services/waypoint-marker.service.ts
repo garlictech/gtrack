@@ -1,0 +1,184 @@
+import { Injectable } from '@angular/core';
+import {
+  LeafletMapData,
+  convertPointToLeafletLatLng
+} from '@bit/garlictech.angular.gtrack.leaflet-map';
+import { Point } from '@bit/garlictech.universal.gtrack.graphql-api';
+import { Store } from '@ngrx/store';
+import * as RoutePlannerActions from '@admin/features/route-planner/store/actions';
+import { LeafletMouseEvent, FeatureGroup, Marker, DivIcon } from 'leaflet';
+
+export interface Waypoint {
+  latLng: L.LatLng;
+  idx: number;
+}
+
+@Injectable({ providedIn: 'root' })
+export class WaypointMarkerService {
+  private readonly _waypointMarkers: L.FeatureGroup;
+  private _markers: L.Marker[];
+
+  constructor(private readonly _store: Store) {
+    this._waypointMarkers = new FeatureGroup();
+    this._markers = [];
+  }
+
+  reset(): void {
+    for (const marker of this._markers) {
+      if (this._waypointMarkers.hasLayer(marker)) {
+        this._waypointMarkers.removeLayer(marker);
+      }
+    }
+
+    this._markers = [];
+  }
+
+  removeSegments(idx: number, count: number): void {
+    for (let i = idx; i <= idx + count; i++) {
+      const marker = this._markers[i];
+      if (this._waypointMarkers.hasLayer(marker)) {
+        this._waypointMarkers.removeLayer(marker);
+      }
+    }
+    this._markers.splice(idx, count + 1);
+    this._store.dispatch(new RoutePlannerActions.RemoveSegments(idx, count));
+  }
+
+  insertNewStartPoint(mapData: LeafletMapData, latlng: L.LatLng): void {
+    const _waypoint: Waypoint = {
+      latLng: latlng,
+      idx: 0
+    };
+    this._markers.unshift(this.createMarker(_waypoint));
+
+    this.updateMarkerNumbers();
+    this.refreshEndpointMarkerIcons(mapData);
+  }
+
+  insertNewEndPoint(mapData: LeafletMapData, latlng: L.LatLng): void {
+    const _waypoint: Waypoint = {
+      latLng: latlng,
+      idx: this._markers.length
+    };
+    this._markers.push(this.createMarker(_waypoint));
+
+    this.updateMarkerNumbers();
+    this.refreshEndpointMarkerIcons(mapData);
+  }
+
+  updateEndPointCoord(mapData: LeafletMapData, latlng: L.LatLng): void {
+    this._markers[this._markers.length - 1].setLatLng(latlng);
+    this.refreshEndpointMarkerIcons(mapData);
+  }
+
+  setMarkers(markers: L.Marker[]): void {
+    this._markers = markers;
+  }
+
+  getMarkers(): Marker[] {
+    return this._markers;
+  }
+
+  setWaypoints(mapData: LeafletMapData, points: Point[]): void {
+    this.reset();
+
+    this._markers = points.map((point, i) =>
+      this.createMarker({
+        latLng: convertPointToLeafletLatLng(point),
+        idx: i + 1
+      })
+    );
+
+    this.refreshEndpointMarkerIcons(mapData);
+  }
+
+  private refreshEndpointMarkerIcons(mapData: LeafletMapData): void {
+    for (let i = 0; i < this._markers.length; i++) {
+      this._markers[i].setIcon(this.getSingleMarkerIcon((i + 1).toString()));
+      /*       (this._markers[i]).options.idx = i;
+       */
+    }
+
+    mapData.leafletMap.addLayer(this._waypointMarkers);
+  }
+
+  createMarkerLayerGroup(points: Point[]): FeatureGroup {
+    const markers = points.map((point, i) =>
+      this.createMarker({
+        latLng: convertPointToLeafletLatLng(point),
+        idx: i + 1
+      })
+    );
+    const featureGroup = new FeatureGroup();
+
+    for (let i = 0; i < markers.length; i++) {
+      markers[i].setIcon(this.getSingleMarkerIcon((i + 1).toString()));
+      /*       (markers[i]).options.idx = i;
+       */ featureGroup.addLayer(markers[i]);
+    }
+
+    if (markers.length > 0) {
+      //markers[0]
+      //.setIcon
+      //LeafletIconFp.getLeafletIcon('start')
+      //LeafletIconFp.getLeafletIcon('generic:start', EIconStyle.HIGHLIGHTED)
+      //();
+      markers[0].setZIndexOffset(10000);
+
+      //markers[markers.length - 1]
+      //.setIcon
+      //LeafletIconFp.getLeafletIcon('generic:finish', EIconStyle.HIGHLIGHTED)
+      //LeafletIconFp.getLeafletIcon('finish')
+      //  ();
+      markers[markers.length - 1].setZIndexOffset(10000);
+    }
+
+    return featureGroup;
+  }
+
+  createMarker(_waypoint: Waypoint): L.Marker {
+    const _icon = this.getSingleMarkerIcon((_waypoint.idx + 1).toString());
+    const _marker = new Marker(_waypoint.latLng, {
+      opacity: 1,
+      draggable: true,
+      icon: _icon,
+      alt: _waypoint.idx.toString() // orderID
+    });
+    /*     _marker.options.type = EMarkerType.WAYPOINT;
+    _marker.options.idx = _waypoint.idx; */
+
+    _marker.on('click', (e: LeafletMouseEvent) =>
+      e.originalEvent.preventDefault()
+    );
+    _marker.on('dragend', (e: LeafletMouseEvent) => {
+      const latLng = e.target.getLatLng();
+
+      this._store.dispatch(
+        RoutePlannerActions.waypointMoved({
+          newPoint: { lat: latLng.lat, lon: latLng.lng },
+          waypointIndex: e.target.options.idx
+        })
+      );
+    });
+
+    _marker.addTo(this._waypointMarkers);
+
+    return _marker;
+  }
+
+  updateMarkerNumbers(): void {
+    for (let i = 0; i < this._markers.length; i++) {
+      this._markers[i].setIcon(this.getSingleMarkerIcon((i + 1).toString()));
+    }
+  }
+
+  // eslint:disable-next-line:prefer-function-over-method
+  public getSingleMarkerIcon(title: string): L.DivIcon {
+    return new DivIcon({
+      html: `<span>${title}</span>`,
+      iconSize: [21, 34],
+      iconAnchor: [11, 34],
+      className: 'routing-control-marker'
+    });
+  }
+}

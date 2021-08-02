@@ -1,0 +1,7 @@
+ion-icon {
+  color: var(--ion-color-dark);
+
+  @screen lg {
+    @apply p-1;
+  }
+}

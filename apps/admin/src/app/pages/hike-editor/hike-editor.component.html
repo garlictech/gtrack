@@ -1,0 +1,69 @@
+<div>
+  <nb-card>
+    <nb-card-body class="mt-4 mb-4">
+      <div class="flex mb-4">
+        <div class="pr-4">
+          <a target="_blank" class="no-underline uppercase font-extrabold"
+            [href]="'/hike/' + (hike$ | async)?.data.id">Preview hike page</a>
+        </div>
+        <div class="pr-4">
+          <nb-checkbox (checkedChange)="onSetFeaturedState()" 
+            [ngModel]="(hike$ | async)?.data?.featured">Set featured</nb-checkbox>
+<!--             [disabled]="!(hike$ | async)?.data?.id"
+ -->        </div>
+        <div class="pr-4" *ngIf="canPublish$ | async">
+          <button (onClick)="onPublish()" nbButton>Publish hike</button>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div class="pr-4" *ngIf="canMakeDraft$ | async">
+          <button (onClick)="onMakeDraft()" nbButton>Move to draft</button>
+        </div>
+        <div class="pr-4" *ngIf="canArchive$ | async">
+          <button (onClick)="onArchive()" nbButton>Archive hike</button>
+        </div>
+        <div class="pr-4">
+          <button (onClick)="onSaveHike($event)" [disabled]="(canSave$ | async) === false" nbButton>
+            Save hike
+          </button>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-body>
+      <h5 class="mb-4">General info</h5>
+      <gtrack-hike-general-info></gtrack-hike-general-info>
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-body>
+      <h5 class="mb-4">Map</h5>
+      <gtrack-hike-planner-map></gtrack-hike-planner-map>
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-body>
+      <h5 class="mb-4">Route planning</h5>
+      <gtrack-app-hike-route-planner></gtrack-app-hike-route-planner>
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-body>
+      <h5 class="mb-4">Hike planning</h5>
+      <gtrack-hike-planning></gtrack-hike-planning>
+    </nb-card-body>
+  </nb-card>
+
+  <nb-card>
+    <nb-card-body>
+      <h5 class="mb-4">Photos</h5>
+      <gtrack-admin-image-editor></gtrack-admin-image-editor>
+    </nb-card-body>
+  </nb-card>
+</div>

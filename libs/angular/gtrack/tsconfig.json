@@ -1,0 +1,22 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "angularCompilerOptions": {
+    "strictInjectionParameters": false,
+    "strictTemplates": false
+  },
+  "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "strict": false
+  },
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}

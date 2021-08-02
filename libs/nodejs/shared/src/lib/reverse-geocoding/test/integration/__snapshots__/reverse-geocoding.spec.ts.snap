@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reverse geocoding service tests Get addres of a point with the google map service 1`] = `
+Object {
+  "_tag": "Right",
+  "right": "Bernecebaráti, 2639",
+}
+`;

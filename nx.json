@@ -1,0 +1,257 @@
+{
+  "npmScope": "gtrack",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "YzIwNzc0ZTgtNmVlOC00YzhjLTkyOWQtYmM0YjVlNjQ3YWY1fHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": true
+      }
+    }
+  },
+  "projects": {
+    "website": {
+      "tags": [
+        "scope:gtrack",
+        "type:website",
+        "platform:ionic"
+      ]
+    },
+    "website-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "website"
+      ]
+    },
+    "admin": {
+      "tags": [
+        "scope:gtrack",
+        "type:website",
+        "platform:ionic"
+      ]
+    },
+    "admin-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "admin"
+      ]
+    },
+    "app": {
+      "tags": [
+        "scope:gtrack",
+        "type:app",
+        "platform:ionic"
+      ]
+    },
+    "app-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "app"
+      ]
+    },
+    "angular-gtrack": {
+      "tags": [
+        "platform:ionic",
+        "scope:gtrack",
+        "scope:shared"
+      ]
+    },
+    "nestjs-shared": {
+      "tags": [
+        "platform:nestjs",
+        "scope:shared",
+        "type:utils"
+      ]
+    },
+    "nestjs-gtrack": {
+      "tags": [
+        "platform:nestjs",
+        "scope:gtrack",
+        "type:utils"
+      ]
+    },
+    "nodejs-shared": {
+      "tags": [
+        "platform:nodejs",
+        "scope:shared",
+        "type:utils"
+      ]
+    },
+    "universal-gtrack": {
+      "tags": [
+        "scope:gtrack",
+        "scope:shared",
+        "platform:universal",
+        "type:utils"
+      ]
+    },
+    "shared-authentication-ui-ionic": {
+      "tags": [
+        "scope:shared",
+        "type:ui",
+        "platform:ionic"
+      ]
+    },
+    "shared-authentication-feature-ionic": {
+      "tags": [
+        "scope:shared",
+        "type:feature",
+        "platform:ionic"
+      ]
+    },
+    "shared-authentication-data-access": {
+      "tags": [
+        "scope:shared",
+        "type:data-access",
+        "platform:angular"
+      ]
+    },
+    "shared-router-data-access": {
+      "tags": [
+        "scope:shared",
+        "type:data-access",
+        "platform:angular"
+      ]
+    },
+    "shared-generic-ui-data-access": {
+      "tags": [
+        "scope:shared",
+        "type:data-access",
+        "platform:angular"
+      ]
+    },
+    "shared-generic-ui-feature-ionic": {
+      "tags": [
+        "scope:shared",
+        "type:feature",
+        "platform:ionic"
+      ]
+    },
+    "shared-generic-ui-ui-ionic": {
+      "tags": [
+        "scope:shared",
+        "type:ui",
+        "platform:ionic"
+      ]
+    },
+    "shared-localization-data-access": {
+      "tags": [
+        "scope:shared",
+        "type:data-access",
+        "platform:angular"
+      ]
+    },
+    "shared-localization-feature-ionic": {
+      "tags": [
+        "scope:shared",
+        "type:feature",
+        "platform:ionic"
+      ]
+    },
+    "shared-localization-utils": {
+      "tags": [
+        "scope:shared",
+        "type:utils",
+        "platform:universal"
+      ]
+    },
+    "shared-localization-ui-angular": {
+      "tags": [
+        "scope:shared",
+        "type:ui",
+        "platform:angular"
+      ]
+    },
+    "appsync-api": {
+      "tags": [
+        "scope:gtrack",
+        "type:lambda",
+        "platform:nodejs"
+      ]
+    },
+    "elastic-search": {
+      "tags": []
+    },
+    "shared-forms-feature": {
+      "tags": [
+        "scope:shared",
+        "type:feature",
+        "platform:angular"
+      ]
+    },
+    "shared-forms-feature-ionic": {
+      "tags": [
+        "scope:shared",
+        "type:ui",
+        "platform:ionic"
+      ]
+    },
+    "admin-hike-info-feature": {
+      "tags": []
+    },
+    "admin-hike-images-feature": {
+      "tags": []
+    },
+    "admin-hike-list-page": {
+      "tags": []
+    },
+    "admin-hike-list-feature": {
+      "tags": []
+    },
+    "backend-e2e": {
+      "tags": []
+    },
+    "gtrack-api": {
+      "tags": []
+    },
+    "lambda-backend": {
+      "tags": []
+    },
+    "gtrack-api-process-route-segment": {
+      "tags": [
+        "scope:gtrack",
+        "type:utils",
+        "platform:nestjs"
+      ]
+    },
+    "graphql-api-schema": {
+      "tags": []
+    },
+    "graphql-api-resolvers": {
+      "tags": []
+    },
+    "graphql-api-resolvers-lambda": {
+      "tags": []
+    },
+    "infrastructure-build-pipeline": {
+      "tags": []
+    },
+    "infrastructure-gtrack-stack": {
+      "tags": []
+    },
+    "admin-general-info": {
+      "tags": []
+    }
+  }
+}

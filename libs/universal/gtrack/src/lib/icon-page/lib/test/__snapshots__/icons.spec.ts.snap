@@ -1,0 +1,4338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDetailsOfTags the good case 1`] = `
+Object {
+  "_tag": "Some",
+  "value": Array [
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:wood",
+      },
+      "iconTag": "natural:wood",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:wood",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:tree_row",
+      },
+      "iconTag": "natural:tree_row",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:tree_row",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:tree",
+      },
+      "iconTag": "natural:tree",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:tree",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:scrub",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:scrub",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:heath",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:heath",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:moor",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:moor",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:grassland",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:grassland",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:fell",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:fell",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:bare_rock",
+      },
+      "iconTag": "natural:bare_rock",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:bare_rock",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:scree",
+      },
+      "iconTag": "natural:scree",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:scree",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:shingle",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:shingle",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:sand",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:sand",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:mud",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:mud",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:water",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:water",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:wetland",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:wetland",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:glacier",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:glacier",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:bay",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:bay",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:strait",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:strait",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:cape",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:cape",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:beach",
+      },
+      "iconTag": "natural:beach",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:beach",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:coastline",
+      },
+      "iconTag": "natural:coastline",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:coastline",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:reef",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:reef",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:spring",
+      },
+      "iconTag": "natural:spring",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:spring",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:geyser",
+      },
+      "iconTag": "natural:geyser",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:geyser",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:blowhole",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:blowhole",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:peak",
+      },
+      "iconTag": "natural:peak",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:peak",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:volcano",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:volcano",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:valley",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:valley",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:peninsula",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:peninsula",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:isthmus",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:isthmus",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:ridge",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:ridge",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:arete",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:arete",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:cliff",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:cliff",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:saddle",
+      },
+      "iconTag": "natural:saddle",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:saddle",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:dune",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:dune",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:rock",
+      },
+      "iconTag": "natural:rock",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:rock",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:stone",
+      },
+      "iconTag": "natural:stone",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:stone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "natural:sinkhole",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.natural:sinkhole",
+    },
+    Object {
+      "icon": Object {
+        "color": "#108E4C",
+        "url": "natural:cave_entrance",
+      },
+      "iconTag": "natural:cave_entrance",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.natural:cave_entrance",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bar",
+      },
+      "iconTag": "amenity:bar",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bar",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bbq",
+      },
+      "iconTag": "amenity:bbq",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bbq",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:biergarten",
+      },
+      "iconTag": "amenity:biergarten",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:biergarten",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:cafe",
+      },
+      "iconTag": "amenity:cafe",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:cafe",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:drinking_water",
+      },
+      "iconTag": "amenity:drinking_water",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:drinking_water",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:fast_food",
+      },
+      "iconTag": "amenity:fast_food",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:fast_food",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:food_court",
+      },
+      "iconTag": "amenity:food_court",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:food_court",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:ice_cream",
+      },
+      "iconTag": "amenity:ice_cream",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:ice_cream",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:restaurant",
+      },
+      "iconTag": "amenity:restaurant",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:restaurant",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:college",
+      },
+      "iconTag": "amenity:college",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:college",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:driving_school",
+      },
+      "iconTag": "amenity:driving_school",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:driving_school",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:kindergarten",
+      },
+      "iconTag": "amenity:kindergarten",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:kindergarten",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:language_school",
+      },
+      "iconTag": "amenity:language_school",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:language_school",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:library",
+      },
+      "iconTag": "amenity:library",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:library",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:toy_library",
+      },
+      "iconTag": "amenity:toy_library",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:toy_library",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:music_school",
+      },
+      "iconTag": "amenity:music_school",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:music_school",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:school",
+      },
+      "iconTag": "amenity:school",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:school",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:university",
+      },
+      "iconTag": "amenity:university",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:university",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bicycle_parking",
+      },
+      "iconTag": "amenity:bicycle_parking",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bicycle_parking",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bicycle_repair_station",
+      },
+      "iconTag": "amenity:bicycle_repair_station",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bicycle_repair_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bicycle_rental",
+      },
+      "iconTag": "amenity:bicycle_rental",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bicycle_rental",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:boat_rental",
+      },
+      "iconTag": "amenity:boat_rental",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:boat_rental",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:boat_sharing",
+      },
+      "iconTag": "amenity:boat_sharing",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:boat_sharing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bus_station",
+      },
+      "iconTag": "amenity:bus_station",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bus_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:car_rental",
+      },
+      "iconTag": "amenity:car_rental",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:car_rental",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:car_sharing",
+      },
+      "iconTag": "amenity:car_sharing",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:car_sharing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:car_wash",
+      },
+      "iconTag": "amenity:car_wash",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:car_wash",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:vehicle_inspection",
+      },
+      "iconTag": "amenity:vehicle_inspection",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:vehicle_inspection",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:charging_station",
+      },
+      "iconTag": "amenity:charging_station",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:charging_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:ferry_terminal",
+      },
+      "iconTag": "amenity:ferry_terminal",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:ferry_terminal",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:fuel",
+      },
+      "iconTag": "amenity:fuel",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:fuel",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:motorcycle_parking",
+      },
+      "iconTag": "amenity:motorcycle_parking",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:motorcycle_parking",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:parking",
+      },
+      "iconTag": "amenity:parking",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:parking",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:parking_entrance",
+      },
+      "iconTag": "amenity:parking_entrance",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:parking_entrance",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:parking_space",
+      },
+      "iconTag": "amenity:parking_space",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:parking_space",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:taxi",
+      },
+      "iconTag": "amenity:taxi",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:taxi",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:atm",
+      },
+      "iconTag": "amenity:atm",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:atm",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bank",
+      },
+      "iconTag": "amenity:bank",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bank",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bureau_de_change",
+      },
+      "iconTag": "amenity:bureau_de_change",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bureau_de_change",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:baby_hatch",
+      },
+      "iconTag": "amenity:baby_hatch",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:baby_hatch",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:clinic",
+      },
+      "iconTag": "amenity:clinic",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:clinic",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:dentist",
+      },
+      "iconTag": "amenity:dentist",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:dentist",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:doctors",
+      },
+      "iconTag": "amenity:doctors",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:doctors",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:hospital",
+      },
+      "iconTag": "amenity:hospital",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:hospital",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:nursing_home",
+      },
+      "iconTag": "amenity:nursing_home",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:nursing_home",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:pharmacy",
+      },
+      "iconTag": "amenity:pharmacy",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:pharmacy",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:social_facility",
+      },
+      "iconTag": "amenity:social_facility",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:social_facility",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:veterinary",
+      },
+      "iconTag": "amenity:veterinary",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:veterinary",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:arts_centre",
+      },
+      "iconTag": "amenity:arts_centre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:arts_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:brothel",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:brothel",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:casino",
+      },
+      "iconTag": "amenity:casino",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:casino",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:cinema",
+      },
+      "iconTag": "amenity:cinema",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:cinema",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:community_centre",
+      },
+      "iconTag": "amenity:community_centre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:community_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:fountain",
+      },
+      "iconTag": "amenity:fountain",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:fountain",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:gambling",
+      },
+      "iconTag": "amenity:gambling",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:gambling",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:nightclub",
+      },
+      "iconTag": "amenity:nightclub",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:nightclub",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:planetarium",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:planetarium",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:public_bookcase",
+      },
+      "iconTag": "amenity:public_bookcase",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:public_bookcase",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:social_centre",
+      },
+      "iconTag": "amenity:social_centre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:social_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:stripclub",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:stripclub",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:studio",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:studio",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:swingerclub",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:swingerclub",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:theatre",
+      },
+      "iconTag": "amenity:theatre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:theatre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:animal_boarding",
+      },
+      "iconTag": "amenity:animal_boarding",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:animal_boarding",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:animal_shelter",
+      },
+      "iconTag": "amenity:animal_shelter",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:animal_shelter",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:baking_oven",
+      },
+      "iconTag": "amenity:baking_oven",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:baking_oven",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:bench",
+      },
+      "iconTag": "amenity:bench",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:bench",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:childcare",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:childcare",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:clock",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:clock",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:conference_centre",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:conference_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:courthouse",
+      },
+      "iconTag": "amenity:courthouse",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:courthouse",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:crematorium",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:crematorium",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:dive_centre",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:dive_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:embassy",
+      },
+      "iconTag": "amenity:embassy",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:embassy",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:fire_station",
+      },
+      "iconTag": "amenity:fire_station",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:fire_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:funeral_hall",
+      },
+      "iconTag": "amenity:funeral_hall",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:funeral_hall",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:give_box",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:give_box",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:grave_yard",
+      },
+      "iconTag": "amenity:grave_yard",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:grave_yard",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:hunting_stand",
+      },
+      "iconTag": "amenity:hunting_stand",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:hunting_stand",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:internet_cafe",
+      },
+      "iconTag": "amenity:internet_cafe",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:internet_cafe",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:kitchen",
+      },
+      "iconTag": "amenity:kitchen",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:kitchen",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:kneipp_water_cure",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:kneipp_water_cure",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:marketplace",
+      },
+      "iconTag": "amenity:marketplace",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:marketplace",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:monastery",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:monastery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:photo_booth",
+      },
+      "iconTag": "amenity:photo_booth",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:photo_booth",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:place_of_worship",
+      },
+      "iconTag": "amenity:place_of_worship",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:place_of_worship",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:police",
+      },
+      "iconTag": "amenity:police",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:police",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:post_box",
+      },
+      "iconTag": "amenity:post_box",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:post_box",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:post_depot",
+      },
+      "iconTag": "amenity:post_depot",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:post_depot",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:post_office",
+      },
+      "iconTag": "amenity:post_office",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:post_office",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:prison",
+      },
+      "iconTag": "amenity:prison",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:prison",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:public_bath",
+      },
+      "iconTag": "amenity:public_bath",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:public_bath",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:ranger_station",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:ranger_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:recycling",
+      },
+      "iconTag": "amenity:recycling",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:recycling",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:refugee_site",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:refugee_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:shelter",
+      },
+      "iconTag": "amenity:shelter",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:shelter",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:shower",
+      },
+      "iconTag": "amenity:shower",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:shower",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:telephone",
+      },
+      "iconTag": "amenity:telephone",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:telephone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:toilets",
+      },
+      "iconTag": "amenity:toilets",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:toilets",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:town_hall",
+      },
+      "iconTag": "amenity:town_hall",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:town_hall",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:vending_machine",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:vending_machine",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:waste_basket",
+      },
+      "iconTag": "amenity:waste_basket",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:waste_basket",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "amenity:waste_disposal",
+      },
+      "iconTag": "amenity:waste_disposal",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.amenity:waste_disposal",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:waste_transfer_station",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:waste_transfer_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:watering_place",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:watering_place",
+    },
+    Object {
+      "icon": Object {
+        "color": "#265DB2",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "amenity:water_point",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.amenity:water_point",
+    },
+    Object {
+      "icon": Object {
+        "color": "#9D7050",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "publicTransport:stop_position",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.publicTransport:stop_position",
+    },
+    Object {
+      "icon": Object {
+        "color": "#9D7050",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "publicTransport:platform",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.publicTransport:platform",
+    },
+    Object {
+      "icon": Object {
+        "color": "#9D7050",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "publicTransport:station",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.publicTransport:station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#9D7050",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "publicTransport:stop_area",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.publicTransport:stop_area",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:ambulance_station",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:ambulance_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:defibrillator",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:defibrillator",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:landing_site",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:landing_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:emergency_ward_entrance",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:emergency_ward_entrance",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:dry_riser_inlet",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:dry_riser_inlet",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:fire_alarm_box",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:fire_alarm_box",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:fire_extinguisher",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:fire_extinguisher",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:fire_hose",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:fire_hose",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:fire_hydrant",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:fire_hydrant",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:water_tank",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:water_tank",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:suction_point",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:suction_point",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:lifeguard",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:lifeguard",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:lifeguard_base",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:lifeguard_base",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:lifeguard_tower",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:lifeguard_tower",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:lifeguard_platform",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:lifeguard_platform",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:life_ring",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:life_ring",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:assembly_point",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:assembly_point",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "emergency:phone",
+      },
+      "iconTag": "emergency:phone",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.emergency:phone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "emergency:siren",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.emergency:siren",
+    },
+    Object {
+      "icon": Object {
+        "color": "#BF3638",
+        "url": "emergency:drinking_water",
+      },
+      "iconTag": "emergency:drinking_water",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.emergency:drinking_water",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:aircraft",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:aircraft",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:aqueduct",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:aqueduct",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:archaeological_site",
+      },
+      "iconTag": "historic:archaeological_site",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:archaeological_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:battlefield",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:battlefield",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:bomb_crater",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:bomb_crater",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:building",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:building",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:cannon",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:cannon",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:castle",
+      },
+      "iconTag": "historic:castle",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:castle",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:castle_wall",
+      },
+      "iconTag": "historic:castle_wall",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:castle_wall",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:charcoal_pile",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:charcoal_pile",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:church",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:church",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:city_gate",
+      },
+      "iconTag": "historic:city_gate",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:city_gate",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:citywalls",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:citywalls",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:farm",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:farm",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:fort",
+      },
+      "iconTag": "historic:fort",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:fort",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:gallows",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:gallows",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:highwater_mark",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:highwater_mark",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:locomotive",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:locomotive",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:manor",
+      },
+      "iconTag": "historic:manor",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:manor",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:memorial",
+      },
+      "iconTag": "historic:memorial",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:memorial",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:milestone",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:milestone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:monastery",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:monastery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:monument",
+      },
+      "iconTag": "historic:monument",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:monument",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:optical_telegraph",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:optical_telegraph",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:pillory",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:pillory",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:railway_car",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:railway_car",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:ruins",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:ruins",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:rune_stone",
+      },
+      "iconTag": "historic:rune_stone",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:rune_stone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:ship",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:ship",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "historic:stone",
+      },
+      "iconTag": "historic:stone",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.historic:stone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:tank",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:tank",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:tomb",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:tomb",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:tower",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:tower",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:vehicle",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:vehicle",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:wayside_cross",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:wayside_cross",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:wayside_shrine",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:wayside_shrine",
+    },
+    Object {
+      "icon": Object {
+        "color": "#8D4EB8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "historic:wreck",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.historic:wreck",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:adult_gaming_centre",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:adult_gaming_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:amusement_arcade",
+      },
+      "iconTag": "leisure:amusement_arcade",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:amusement_arcade",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:beach_resort",
+      },
+      "iconTag": "leisure:beach_resort",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:beach_resort",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:bandstand",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:bandstand",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:bird_hide",
+      },
+      "iconTag": "leisure:bird_hide",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:bird_hide",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:common",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:common",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:dance",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:dance",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:disc_golf_course",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:disc_golf_course",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:dog_park",
+      },
+      "iconTag": "leisure:dog_park",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:dog_park",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:escape_game",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:escape_game",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:firepit",
+      },
+      "iconTag": "leisure:firepit",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:firepit",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:fishing",
+      },
+      "iconTag": "leisure:fishing",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:fishing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:fitness_centre",
+      },
+      "iconTag": "leisure:fitness_centre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:fitness_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:fitness_station",
+      },
+      "iconTag": "leisure:fitness_station",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:fitness_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:garden",
+      },
+      "iconTag": "leisure:garden",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:garden",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:hackerspace",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:hackerspace",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:horse_riding",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:horse_riding",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:ice_rink",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:ice_rink",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:marina",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:marina",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:miniature_golf",
+      },
+      "iconTag": "leisure:miniature_golf",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:miniature_golf",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:nature_reserve",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:nature_reserve",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:park",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:park",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:picnic_table",
+      },
+      "iconTag": "leisure:picnic_table",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:picnic_table",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:pitch",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:pitch",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:playground",
+      },
+      "iconTag": "leisure:playground",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:playground",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:slipway",
+      },
+      "iconTag": "leisure:slipway",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:slipway",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:sports_centre",
+      },
+      "iconTag": "leisure:sports_centre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:sports_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:stadium",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:stadium",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:summer_camp",
+      },
+      "iconTag": "leisure:summer_camp",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:summer_camp",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:swimming_pool",
+      },
+      "iconTag": "leisure:swimming_pool",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:swimming_pool",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "leisure:track",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.leisure:track",
+    },
+    Object {
+      "icon": Object {
+        "color": "#FF8A21",
+        "url": "leisure:water_park",
+      },
+      "iconTag": "leisure:water_park",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.leisure:water_park",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:adit",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:adit",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:beacon",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:beacon",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:breakwater",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:breakwater",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:bridge",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:bridge",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:bunker_silo",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:bunker_silo",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:carpet_hanger",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:carpet_hanger",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:chimney",
+      },
+      "iconTag": "manMade:chimney",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:chimney",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:communications_tower",
+      },
+      "iconTag": "manMade:communications_tower",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:communications_tower",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:crane",
+      },
+      "iconTag": "manMade:crane",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:crane",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:cross",
+      },
+      "iconTag": "manMade:cross",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:cross",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:cutline",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:cutline",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:clearcut",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:clearcut",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:dovecote",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:dovecote",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:dyke",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:dyke",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:embankment",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:embankment",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:flagpole",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:flagpole",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:gasometer",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:gasometer",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:goods_conveyor",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:goods_conveyor",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:groyne",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:groyne",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:kiln",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:kiln",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:lighthouse",
+      },
+      "iconTag": "manMade:lighthouse",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:lighthouse",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:mast",
+      },
+      "iconTag": "manMade:mast",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:mast",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:mineshaft",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:mineshaft",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:monitoring_station",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:monitoring_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:obelisk",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:obelisk",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:observatory",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:observatory",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:offshore_platform",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:offshore_platform",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:petroleum_well",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:petroleum_well",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:pier",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:pier",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:pipeline",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:pipeline",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:pumping_station",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:pumping_station",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:reservoir_covered",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:reservoir_covered",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:silo",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:silo",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:snow_fence",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:snow_fence",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:snow_net",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:snow_net",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:storage_tank",
+      },
+      "iconTag": "manMade:storage_tank",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:storage_tank",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:street_cabinet",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:street_cabinet",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:surveillance",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:surveillance",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:telescope",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:telescope",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:tower",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:tower",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:wastewater_plant",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:wastewater_plant",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:watermill",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:watermill",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:water_tower",
+      },
+      "iconTag": "manMade:water_tower",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:water_tower",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:water_well",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:water_well",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:water_tap",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:water_tap",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:water_works",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:water_works",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:wildlife_crossing",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:wildlife_crossing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "manMade:windmill",
+      },
+      "iconTag": "manMade:windmill",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.manMade:windmill",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:works",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:works",
+    },
+    Object {
+      "icon": Object {
+        "color": "#C259B5",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "manMade:yes",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.manMade:yes",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:airfield",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:airfield",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:bunker",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:bunker",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:barracks",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:barracks",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:checkpoint",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:checkpoint",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:danger_area",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:danger_area",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:naval_base",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:naval_base",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:nuclear_explosion_site",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:nuclear_explosion_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:obstacle_course",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:obstacle_course",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:office",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:office",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:range",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:range",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:training_area",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:training_area",
+    },
+    Object {
+      "icon": Object {
+        "color": "#A8A8A8",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "military:trench",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.military:trench",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:alcohol",
+      },
+      "iconTag": "shop:alcohol",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:alcohol",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:bakery",
+      },
+      "iconTag": "shop:bakery",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:bakery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:beverages",
+      },
+      "iconTag": "shop:beverages",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:beverages",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:brewing_supplies",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:brewing_supplies",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:butcher",
+      },
+      "iconTag": "shop:butcher",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:butcher",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:cheese",
+      },
+      "iconTag": "shop:cheese",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:cheese",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:chocolate",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:chocolate",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:coffee",
+      },
+      "iconTag": "shop:coffee",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:coffee",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:confectionery",
+      },
+      "iconTag": "shop:confectionery",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:confectionery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:convenience",
+      },
+      "iconTag": "shop:convenience",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:convenience",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:deli",
+      },
+      "iconTag": "shop:deli",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:deli",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:dairy",
+      },
+      "iconTag": "shop:dairy",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:dairy",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:farm",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:farm",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:frozen_food",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:frozen_food",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:greengrocer",
+      },
+      "iconTag": "shop:greengrocer",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:greengrocer",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:health_food",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:health_food",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:ice_cream",
+      },
+      "iconTag": "shop:ice_cream",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:ice_cream",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:pasta",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:pasta",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:pastry",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:pastry",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:seafood",
+      },
+      "iconTag": "shop:seafood",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:seafood",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:spices",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:spices",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:tea",
+      },
+      "iconTag": "shop:tea",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:tea",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:water",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:water",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:department_store",
+      },
+      "iconTag": "shop:department_store",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:department_store",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:general",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:general",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:kiosk",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:kiosk",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:mall",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:mall",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:supermarket",
+      },
+      "iconTag": "shop:supermarket",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:supermarket",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:wholesale",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:wholesale",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:baby_goods",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:baby_goods",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:bag",
+      },
+      "iconTag": "shop:bag",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:bag",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:boutique",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:boutique",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:clothes",
+      },
+      "iconTag": "shop:clothes",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:clothes",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:fabric",
+      },
+      "iconTag": "shop:fabric",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:fabric",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:fashion_accessories",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:fashion_accessories",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:jewelry",
+      },
+      "iconTag": "shop:jewelry",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:jewelry",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:leather",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:leather",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:sewing",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:sewing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:shoes",
+      },
+      "iconTag": "shop:shoes",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:shoes",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:tailor",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:tailor",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:watches",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:watches",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:wool",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:wool",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:charity",
+      },
+      "iconTag": "shop:charity",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:charity",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:second_hand",
+      },
+      "iconTag": "shop:second_hand",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:second_hand",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:variety_store",
+      },
+      "iconTag": "shop:variety_store",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:variety_store",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:beauty",
+      },
+      "iconTag": "shop:beauty",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:beauty",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:chemist",
+      },
+      "iconTag": "shop:chemist",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:chemist",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:cosmetics",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:cosmetics",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:erotic",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:erotic",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:hairdresser",
+      },
+      "iconTag": "shop:hairdresser",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:hairdresser",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:hairdresser_supply",
+      },
+      "iconTag": "shop:hairdresser_supply",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:hairdresser_supply",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:hearing_aids",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:hearing_aids",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:herbalist",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:herbalist",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:massage",
+      },
+      "iconTag": "shop:massage",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:massage",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:medical_supply",
+      },
+      "iconTag": "shop:medical_supply",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:medical_supply",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:nutrition_supplements",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:nutrition_supplements",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:optician",
+      },
+      "iconTag": "shop:optician",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:optician",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:perfumery",
+      },
+      "iconTag": "shop:perfumery",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:perfumery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:tattoo",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:tattoo",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:agrarian",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:agrarian",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:appliance",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:appliance",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:bathroom_furnishing",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:bathroom_furnishing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:doityourself",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:doityourself",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:electrical",
+      },
+      "iconTag": "shop:electrical",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:electrical",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:energy",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:energy",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:fireplace",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:fireplace",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:florist",
+      },
+      "iconTag": "shop:florist",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:florist",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:garden_centre",
+      },
+      "iconTag": "shop:garden_centre",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:garden_centre",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:garden_furniture",
+      },
+      "iconTag": "shop:garden_furniture",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:garden_furniture",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:gas",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:gas",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:glaziery",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:glaziery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:hardware",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:hardware",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:houseware",
+      },
+      "iconTag": "shop:houseware",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:houseware",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:locksmith",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:locksmith",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:paint",
+      },
+      "iconTag": "shop:paint",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:paint",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:security",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:security",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:trade",
+      },
+      "iconTag": "shop:trade",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:trade",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:antiques",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:antiques",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:bed",
+      },
+      "iconTag": "shop:bed",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:bed",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:candles",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:candles",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:carpet",
+      },
+      "iconTag": "shop:carpet",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:carpet",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:curtain",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:curtain",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:doors",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:doors",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:flooring",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:flooring",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:furniture",
+      },
+      "iconTag": "shop:furniture",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:furniture",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:household_linen",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:household_linen",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:interior_decoration",
+      },
+      "iconTag": "shop:interior_decoration",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:interior_decoration",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:kitchen",
+      },
+      "iconTag": "shop:kitchen",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:kitchen",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:lighting",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:lighting",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:tiles",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:tiles",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:window_blind",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:window_blind",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:computer",
+      },
+      "iconTag": "shop:computer",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:computer",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:electronics",
+      },
+      "iconTag": "shop:electronics",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:electronics",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:hifi",
+      },
+      "iconTag": "shop:hifi",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:hifi",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:mobile_phone",
+      },
+      "iconTag": "shop:mobile_phone",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:mobile_phone",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:vacuum_cleaner",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:vacuum_cleaner",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:atv",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:atv",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:bicycle",
+      },
+      "iconTag": "shop:bicycle",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:bicycle",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:boat",
+      },
+      "iconTag": "shop:boat",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:boat",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:car",
+      },
+      "iconTag": "shop:car",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:car",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:car_repair",
+      },
+      "iconTag": "shop:car_repair",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:car_repair",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:car_parts",
+      },
+      "iconTag": "shop:car_parts",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:car_parts",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:caravan",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:caravan",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:fuel",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:fuel",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:fishing",
+      },
+      "iconTag": "shop:fishing",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:fishing",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:golf",
+      },
+      "iconTag": "shop:golf",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:golf",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:hunting",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:hunting",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:jetski",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:jetski",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:military_surplus",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:military_surplus",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:motorcycle",
+      },
+      "iconTag": "shop:motorcycle",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:motorcycle",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:outdoor",
+      },
+      "iconTag": "shop:outdoor",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:outdoor",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:scuba_diving",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:scuba_diving",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:ski",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:ski",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:snowmobile",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:snowmobile",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:sports",
+      },
+      "iconTag": "shop:sports",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:sports",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:swimming_pool",
+      },
+      "iconTag": "shop:swimming_pool",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:swimming_pool",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:trailer",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:trailer",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:tyres",
+      },
+      "iconTag": "shop:tyres",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:tyres",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:art",
+      },
+      "iconTag": "shop:art",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:art",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:collector",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:collector",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:craft",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:craft",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:frame",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:frame",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:games",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:games",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:model",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:model",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:music",
+      },
+      "iconTag": "shop:music",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:music",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:musical_instrument",
+      },
+      "iconTag": "shop:musical_instrument",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:musical_instrument",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:photo",
+      },
+      "iconTag": "shop:photo",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:photo",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:camera",
+      },
+      "iconTag": "shop:camera",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:camera",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:trophy",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:trophy",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:video",
+      },
+      "iconTag": "shop:video",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:video",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:video_games",
+      },
+      "iconTag": "shop:video_games",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:video_games",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:anime",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:anime",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:books",
+      },
+      "iconTag": "shop:books",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:books",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:gift",
+      },
+      "iconTag": "shop:gift",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:gift",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:lottery",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:lottery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:newsagent",
+      },
+      "iconTag": "shop:newsagent",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:newsagent",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:stationery",
+      },
+      "iconTag": "shop:stationery",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:stationery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:ticket",
+      },
+      "iconTag": "shop:ticket",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:ticket",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:bookmaker",
+      },
+      "iconTag": "shop:bookmaker",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:bookmaker",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:cannabis",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:cannabis",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:copyshop",
+      },
+      "iconTag": "shop:copyshop",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:copyshop",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:dry_cleaning",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:dry_cleaning",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:e-cigarette",
+      },
+      "iconTag": "shop:e-cigarette",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:e-cigarette",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:funeral_directors",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:funeral_directors",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:laundry",
+      },
+      "iconTag": "shop:laundry",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:laundry",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:money_lender",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:money_lender",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:party",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:party",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:pawnbroker",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:pawnbroker",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:pet",
+      },
+      "iconTag": "shop:pet",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:pet",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:pet_grooming",
+      },
+      "iconTag": "shop:pet_grooming",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:pet_grooming",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:pest_control",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:pest_control",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:pyrotechnics",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:pyrotechnics",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:religion",
+      },
+      "iconTag": "shop:religion",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:religion",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:storage_rental",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:storage_rental",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:tobacco",
+      },
+      "iconTag": "shop:tobacco",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:tobacco",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:toys",
+      },
+      "iconTag": "shop:toys",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:toys",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "shop:travel_agency",
+      },
+      "iconTag": "shop:travel_agency",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.shop:travel_agency",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:vacant",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:vacant",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:weapons",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:weapons",
+    },
+    Object {
+      "icon": Object {
+        "color": "#5DC8BD",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "shop:outpost",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.shop:outpost",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "tourism:alpine_hut",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.tourism:alpine_hut",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:apartment",
+      },
+      "iconTag": "tourism:apartment",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:apartment",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:aquarium",
+      },
+      "iconTag": "tourism:aquarium",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:aquarium",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:artwork",
+      },
+      "iconTag": "tourism:artwork",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:artwork",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "tourism:attraction",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.tourism:attraction",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:camp_pitch",
+      },
+      "iconTag": "tourism:camp_pitch",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:camp_pitch",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:camp_site",
+      },
+      "iconTag": "tourism:camp_site",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:camp_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "tourism:caravan_site",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.tourism:caravan_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:chalet",
+      },
+      "iconTag": "tourism:chalet",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:chalet",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "tourism:gallery",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.tourism:gallery",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:guest_house",
+      },
+      "iconTag": "tourism:guest_house",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:guest_house",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:hostel",
+      },
+      "iconTag": "tourism:hostel",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:hostel",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:hotel",
+      },
+      "iconTag": "tourism:hotel",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:hotel",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:information",
+      },
+      "iconTag": "tourism:information",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:information",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:motel",
+      },
+      "iconTag": "tourism:motel",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:motel",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:museum",
+      },
+      "iconTag": "tourism:museum",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:museum",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:picnic_site",
+      },
+      "iconTag": "tourism:picnic_site",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:picnic_site",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "generic:asterisco",
+      },
+      "iconTag": "tourism:theme_park",
+      "knownIcon": false,
+      "translatedType": "TRANSLATED-iconTags.tourism:theme_park",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:viewpoint",
+      },
+      "iconTag": "tourism:viewpoint",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:viewpoint",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:wilderness_hut",
+      },
+      "iconTag": "tourism:wilderness_hut",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:wilderness_hut",
+    },
+    Object {
+      "icon": Object {
+        "color": "#66C547",
+        "url": "tourism:zoo",
+      },
+      "iconTag": "tourism:zoo",
+      "knownIcon": true,
+      "translatedType": "TRANSLATED-iconTags.tourism:zoo",
+    },
+  ],
+}
+`;

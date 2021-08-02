@@ -1,0 +1,10 @@
+:host {
+  ion-header {
+    max-height: 8rem;
+
+    ion-toolbar {
+      --background-color: transparent;
+      --ion-color-base: transparent !important;
+    }
+  }
+}

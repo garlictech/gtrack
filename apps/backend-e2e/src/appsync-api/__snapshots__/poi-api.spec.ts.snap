@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`POI graphql integration tests it must be able to CRUD pois: ADD 1`] = `
+Object {
+  "_tag": "Right",
+  "right": Object {
+    "__typename": "Poi",
+    "address": null,
+    "description": Array [
+      Object {
+        "__typename": "TextualDescription",
+        "fullDescription": null,
+        "languageKey": "en_US",
+        "summary": null,
+        "title": "Waste basket",
+        "type": "markdown",
+      },
+    ],
+    "elevation": 519,
+    "id": "47.505118-18.94385",
+    "lat": 47.505118,
+    "lon": 18.94385,
+    "openingHours": null,
+    "phoneNumber": null,
+    "sourceObject": Array [
+      Object {
+        "__typename": "PoiSourceObject",
+        "languageKey": "en_US",
+        "objectId": "4340332291",
+        "objectType": "osmAmenity",
+        "url": null,
+      },
+    ],
+    "tags": null,
+    "types": Array [
+      "waste_basket",
+    ],
+  },
+}
+`;
+
+exports[`POI graphql integration tests it must be able to CRUD pois: DELETE 1`] = `
+Object {
+  "_tag": "Right",
+  "right": true,
+}
+`;
+
+exports[`POI graphql integration tests it must be able to CRUD pois: GETBYID 1`] = `
+Object {
+  "_tag": "Right",
+  "right": Object {
+    "__typename": "Poi",
+    "address": null,
+    "description": Array [
+      Object {
+        "__typename": "TextualDescription",
+        "fullDescription": null,
+        "languageKey": "en_US",
+        "summary": null,
+        "title": "Waste basket",
+        "type": "markdown",
+      },
+    ],
+    "elevation": 519,
+    "id": "47.505118-18.94385",
+    "lat": 47.505118,
+    "lon": 18.94385,
+    "openingHours": null,
+    "phoneNumber": null,
+    "sourceObject": Array [
+      Object {
+        "__typename": "PoiSourceObject",
+        "languageKey": "en_US",
+        "objectId": "4340332291",
+        "objectType": "osmAmenity",
+        "url": null,
+      },
+    ],
+    "tags": null,
+    "types": Array [
+      "waste_basket",
+    ],
+  },
+}
+`;
+
+exports[`POI graphql integration tests it must be able to CRUD pois: GETMULTIPLEITEMSBYID 1`] = `
+Object {
+  "_tag": "Right",
+  "right": Array [
+    Object {
+      "__typename": "Poi",
+      "address": null,
+      "description": Array [
+        Object {
+          "__typename": "TextualDescription",
+          "fullDescription": null,
+          "languageKey": "en_US",
+          "summary": null,
+          "title": "Waste basket",
+          "type": "markdown",
+        },
+      ],
+      "elevation": 519,
+      "id": "47.505118-18.94385",
+      "lat": 47.505118,
+      "lon": 18.94385,
+      "openingHours": null,
+      "phoneNumber": null,
+      "sourceObject": Array [
+        Object {
+          "__typename": "PoiSourceObject",
+          "languageKey": "en_US",
+          "objectId": "4340332291",
+          "objectType": "osmAmenity",
+          "url": null,
+        },
+      ],
+      "tags": null,
+      "types": Array [
+        "waste_basket",
+      ],
+    },
+  ],
+}
+`;
+
+exports[`POI graphql integration tests it must be able to CRUD pois: UPDATE 1`] = `
+Object {
+  "_tag": "Right",
+  "right": Object {
+    "__typename": "Poi",
+    "address": "foobar addres 2",
+    "description": Array [
+      Object {
+        "__typename": "TextualDescription",
+        "fullDescription": null,
+        "languageKey": "en_US",
+        "summary": null,
+        "title": "Waste basket",
+        "type": "markdown",
+      },
+    ],
+    "elevation": 519,
+    "id": "47.505118-18.94385",
+    "lat": 47.505118,
+    "lon": 18.94385,
+    "openingHours": null,
+    "phoneNumber": null,
+    "sourceObject": Array [
+      Object {
+        "__typename": "PoiSourceObject",
+        "languageKey": "en_US",
+        "objectId": "4340332291",
+        "objectType": "osmAmenity",
+        "url": null,
+      },
+    ],
+    "tags": null,
+    "types": Array [
+      "waste_basket",
+    ],
+  },
+}
+`;
+
+exports[`POI graphql integration tests it must be able to CRUD pois: UPDATEMULTIPLEITEMS 1`] = `
+Object {
+  "_tag": "Right",
+  "right": Array [
+    Object {
+      "__typename": "Poi",
+      "address": "foobar addres 3",
+      "description": Array [
+        Object {
+          "__typename": "TextualDescription",
+          "fullDescription": null,
+          "languageKey": "en_US",
+          "summary": null,
+          "title": "Waste basket",
+          "type": "markdown",
+        },
+      ],
+      "elevation": 519,
+      "id": "47.505118-18.94385",
+      "lat": 47.505118,
+      "lon": 18.94385,
+      "openingHours": null,
+      "phoneNumber": null,
+      "sourceObject": Array [
+        Object {
+          "__typename": "PoiSourceObject",
+          "languageKey": "en_US",
+          "objectId": "4340332291",
+          "objectType": "osmAmenity",
+          "url": null,
+        },
+      ],
+      "tags": null,
+      "types": Array [
+        "waste_basket",
+      ],
+    },
+  ],
+}
+`;

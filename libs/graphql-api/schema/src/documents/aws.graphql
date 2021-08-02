@@ -1,0 +1,1 @@
+directive @aws_api_key on OBJECT | FIELD_DEFINITION

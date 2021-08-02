@@ -1,0 +1,9 @@
+.site {
+  padding-top: calc(var(--ion-safe-area-top) + 3rem);
+  @apply w-full;
+}
+
+.limited-width-page {
+  max-width: var(--gtrack-max-container-width);
+  @apply m-auto;
+}

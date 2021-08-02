@@ -1,0 +1,568 @@
+## ------ Generic types -----------------------------------------------------
+
+enum PublicationState {
+  draft
+  published
+  archived
+}
+
+enum LengthUnit {
+  imperial
+  metric
+}
+
+# ------ GEO SEARCH -----------------------------------------------------
+interface LocalizedObject {
+  lat: Float!
+  lon: Float!
+}
+
+# ------ PUBLISHABLE -----------------------------------------------------
+interface PublishableObject {
+  publicationState: PublicationState!
+}
+
+# ------ TEXTUAL DESCRIPTION -----------------------------------------------------
+enum TextualDescriptionType {
+  markdown
+  html
+}
+
+type TextualDescription @aws_iam @aws_api_key @aws_cognito_user_pools {
+  languageKey: String!
+  title: String
+  summary: String
+  fullDescription: String
+  type: TextualDescriptionType!
+}
+
+input TextualDescriptionInput {
+  languageKey: String!
+  title: String
+  summary: String
+  fullDescription: String
+  type: TextualDescriptionType!
+}
+
+# ------ MULTIPLE OBJECTS -----------------------------------------------------
+type IdMap @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+}
+
+# ------ IMAGES -----------------------------------------------------
+type ImageInfo @aws_iam @aws_api_key @aws_cognito_user_pools {
+  url: String!
+  width: Int
+  height: Int
+}
+
+input ImageInfoInput {
+  url: String!
+  width: Int
+  height: Int
+}
+
+type ImageLabel @aws_iam @aws_api_key @aws_cognito_user_pools {
+  label: String!
+  confidence: Float!
+}
+
+input ImageLabelInput {
+  label: String!
+  confidence: Float!
+}
+
+type Image implements LocalizedObject
+  @aws_iam
+  @aws_api_key
+  @aws_cognito_user_pools {
+  id: ID!
+  lat: Float!
+  lon: Float!
+  original: ImageInfo!
+  card: ImageInfo!
+  thumbnail: ImageInfo!
+  sourceObject: PoiSourceObject!
+  attributions: String
+  labels: [ImageLabel]
+}
+
+input CreateImageInput {
+  lat: Float!
+  lon: Float!
+  original: ImageInfoInput!
+  card: ImageInfoInput!
+  thumbnail: ImageInfoInput!
+  sourceObject: PoiSourceObjectInput!
+  attributions: String
+}
+
+input UpdateImageInput {
+  id: ID!
+  attributions: String
+  labels: [ImageLabelInput]
+}
+
+type MultipleImagesResponse @aws_iam @aws_api_key @aws_cognito_user_pools {
+  data: [Image]
+  unprocessedKeys: [IdMap]
+}
+
+# ------ GENERIC HIKING OBJECTS -----------------------------------
+interface GenericHikingObject {
+  id: ID!
+  description: [TextualDescription!]!
+  tags: [String!]
+}
+
+# ------ POIS -----------------------------------------------------
+enum PoiSource {
+  google
+  wikipedia
+  osmAmenity
+  osmNatural
+  osmRoute
+  osmPublicTransport
+  osmEmergency
+  osmHistoric
+  osmLeisure
+  osmManMade
+  osmMilitary
+  osmShop
+  osmTourism
+  mapillary
+  flickr
+}
+
+type PoiSourceObject @aws_iam @aws_api_key @aws_cognito_user_pools {
+  objectType: PoiSource!
+  languageKey: String
+  objectId: String!
+  url: String
+}
+
+type MultiplePoisResponse @aws_iam @aws_api_key @aws_cognito_user_pools {
+  data: [Poi]
+  unprocessedKeys: [IdMap]
+}
+
+type Poi @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  elevation: Float!
+  lat: Float!
+  lon: Float!
+  types: [String!]
+  description: [TextualDescription!]!
+  tags: [String!]
+  sourceObject: [PoiSourceObject!]!
+  address: String
+  phoneNumber: String
+  openingHours: String
+}
+
+input PoiSourceObjectInput {
+  objectType: PoiSource!
+  languageKey: String
+  objectId: String!
+  url: String
+}
+
+input CreatePoiInput {
+  elevation: Float!
+  lat: Float!
+  lon: Float!
+  types: [String!]
+  description: [TextualDescriptionInput!]!
+  tags: [String!]
+  sourceObject: [PoiSourceObjectInput!]!
+  address: String
+  phoneNumber: String
+  openingHours: String
+}
+
+input UpdatePoiInput {
+  id: ID!
+  types: [String!]
+  description: [TextualDescriptionInput!]
+  tags: [String!]
+  sourceObject: [PoiSourceObjectInput!]
+  address: String
+  phoneInt: String
+  openingHours: String
+}
+
+type PoiConnection @aws_iam @aws_api_key @aws_cognito_user_pools {
+  items: [Poi!]!
+  nextToken: String
+}
+
+# ------ HIKE GROUPS -----------------------------------------------------
+input CreateHikeGroupInput {
+  description: [TextualDescriptionInput!]!
+  hikeIds: [String!]
+  publicationState: PublicationState!
+}
+
+input UpdateHikeGroupInput {
+  id: ID!
+  description: [TextualDescriptionInput!]
+  hikeIds: [String!]
+  publicationState: PublicationState
+}
+
+type HikeGroup @aws_iam @aws_api_key @aws_cognito_user_pools {
+  id: ID!
+  description: [TextualDescription!]!
+  hikeIds: [String!]
+  publicationState: PublicationState!
+}
+
+type HikeGroupConnection @aws_iam @aws_api_key @aws_cognito_user_pools {
+  items: [HikeGroup!]!
+  nextToken: String
+}
+
+# ------ ROUTES -----------------------------------------------------
+type Point @aws_iam @aws_api_key @aws_cognito_user_pools {
+  lat: Float!
+  lon: Float!
+  elevation: Float
+}
+
+type BoundingBox @aws_iam @aws_api_key @aws_cognito_user_pools {
+  NorthEast: Point!
+  SouthWest: Point!
+}
+
+input PointInput {
+  lat: Float!
+  lon: Float!
+}
+
+input BoundingBoxInput {
+  NorthEast: PointInput!
+  SouthWest: PointInput!
+}
+
+# ------ GEO SEARCH -----------------------------------------------------
+enum PlaceType {
+  poi
+  hike
+  message
+  image
+}
+
+type Place @aws_iam @aws_cognito_user_pools @aws_api_key {
+  id: ID!
+  type: PlaceType!
+  objectId: String!
+  lat: Float!
+  lon: Float!
+  title: String
+  banned: Boolean
+  processed: Boolean
+}
+
+type DeletePlaceResponse @aws_iam {
+  deleted: Int
+}
+
+input CreatePlaceInput {
+  type: PlaceType!
+  objectId: String!
+  lat: Float!
+  lon: Float!
+  title: String
+  banned: Boolean
+  processed: Boolean
+}
+
+input DeletePlaceInput {
+  id: ID!
+}
+
+# ------ HIKES -----------------------------------------------------
+type HikeStopData @aws_iam @aws_api_key @aws_cognito_user_pools {
+  poiId: ID!
+  description: [TextualDescription!]
+}
+
+input HikeStopDataInput {
+  poiId: ID!
+  description: [TextualDescriptionInput!]
+}
+
+type Checkpoint @aws_iam @aws_api_key @aws_cognito_user_pools {
+  poiId: String
+  point: Point
+}
+
+input CheckpointInput {
+  poiId: String
+  point: PointInput
+}
+
+type RouteData @aws_iam @aws_api_key @aws_cognito_user_pools {
+  distance: Int!
+  uphill: Int!
+  downhill: Int!
+  track: [[Float!]!]!
+  bigBuffer: [[[Float!]!]!]!
+  smallBuffer: [[[Float!]!]!]!
+  averageTime: Int!
+  score: Int!
+  difficulty: Int!
+  bounds: BoundingBox!
+  isRoundTrip: Boolean!
+  poiSearchBox: BoundingBox!
+}
+
+type HikeData implements GenericHikingObject
+  @aws_iam
+  @aws_api_key
+  @aws_cognito_user_pools {
+  id: ID!
+  description: [TextualDescription!]!
+  location: String!
+  publicationState: PublicationState!
+  featured: Boolean
+  rate: String
+  offlineMap: String
+  featuredStops: [HikeStopData]
+  checkpoints: [Checkpoint]
+  tags: [String!]
+  route: RouteData!
+  segments: [Int!]!
+}
+
+type HikeConnection @aws_iam @aws_api_key @aws_cognito_user_pools {
+  items: [HikeData!]!
+  nextToken: String
+  scannedCount: Int!
+}
+
+input CreateRouteDataInput {
+  distance: Int!
+  uphill: Int!
+  downhill: Int!
+  track: [[Float!]!]!
+  bigBuffer: [[[Float!]!]!]!
+  smallBuffer: [[[Float!]!]!]!
+  averageTime: Int!
+  score: Int!
+  difficulty: Int!
+  bounds: BoundingBoxInput!
+  isRoundTrip: Boolean!
+  poiSearchBox: BoundingBoxInput!
+}
+
+input CreateHikeInput {
+  description: [TextualDescriptionInput!]!
+  location: String!
+  publicationState: PublicationState!
+  featured: Boolean
+  rate: String
+  offlineMap: String
+  featuredStops: [HikeStopDataInput]
+  checkpoints: [CheckpointInput]
+  tags: [String!]
+  route: CreateRouteDataInput!
+  segments: [Int!]!
+}
+
+input UpdateHikeInput {
+  id: ID!
+  description: [TextualDescriptionInput!]
+  publicationState: PublicationState
+  featured: Boolean
+  rate: String
+  featuredStops: [HikeStopDataInput]
+  checkpoints: [CheckpointInput]
+  tags: [String!]
+}
+
+type MultipleHikesResponse @aws_iam @aws_api_key @aws_cognito_user_pools {
+  data: [HikeData]
+  unprocessedKeys: [IdMap]
+}
+
+# ------ PROFILES -----------------------------------------------------
+input UpdateProfileInput {
+  username: String
+  birthDate: String
+  firstName: String
+  lastName: String
+  languages: [String]
+  picture: String
+  phone: String
+}
+
+type Profile @aws_iam @aws_cognito_user_pools {
+  username: String!
+  birthDate: String
+  firstName: String
+  lastName: String
+  languages: [String!]
+  picture: String
+  phone: String
+}
+
+input UpdateSettingsInput {
+  averageSpeed: Int
+  lengthUnit: LengthUnit
+}
+
+type Settings @aws_iam @aws_cognito_user_pools {
+  averageSpeed: Int
+  lengthUnit: LengthUnit
+}
+
+type Customer @aws_iam @aws_cognito_user_pools {
+  profile: Profile
+  settings: Settings
+  bookmarkedHikes: [ID]
+}
+
+input ToggleHikeBookmarkInput {
+  hikeId: ID!
+}
+
+type Mutation {
+  # Poi
+  createPoi(input: CreatePoiInput!): Poi @aws_iam @aws_cognito_user_pools
+  createMultiplePois(input: [CreatePoiInput!]!): [Poi]
+    @aws_iam
+    @aws_cognito_user_pools
+  updatePoi(input: UpdatePoiInput!): Poi @aws_iam @aws_cognito_user_pools
+  deletePoi(id: ID!): Poi @aws_iam @aws_cognito_user_pools
+
+  # Image
+  createImage(input: CreateImageInput!): Image @aws_iam @aws_cognito_user_pools
+  createMultipleImages(input: [CreateImageInput!]!): [Image]
+    @aws_iam
+    @aws_cognito_user_pools
+  updateImage(input: UpdateImageInput!): Image @aws_iam @aws_cognito_user_pools
+  deleteImage(id: ID!): Image @aws_iam @aws_cognito_user_pools
+
+  # HikeGroup
+  createHikeGroup(input: CreateHikeGroupInput!): HikeGroup
+    @aws_iam
+    @aws_cognito_user_pools
+  updateHikeGroup(input: UpdateHikeGroupInput!): HikeGroup
+    @aws_iam
+    @aws_cognito_user_pools
+  deleteHikeGroup(id: ID!): HikeGroup @aws_iam @aws_cognito_user_pools
+
+  # Customer
+  updateCustomerSettings(input: UpdateSettingsInput!): Settings
+    @aws_cognito_user_pools
+
+  updateCustomerProfile(input: UpdateProfileInput!): Profile
+    @aws_cognito_user_pools
+
+  toggleBookmarkedHike(input: ToggleHikeBookmarkInput!): Boolean
+    @aws_cognito_user_pools
+
+  # Geosearch
+  createPlace(input: CreatePlaceInput!): Place @aws_iam
+  deletePlace(objectId: ID!): DeletePlaceResponse @aws_iam
+  deleteAllPlaces: DeletePlaceResponse @aws_iam
+  setPlaceAcceptance(id: ID!, isAccepted: Boolean!): Boolean!
+    @aws_iam
+    @aws_cognito_user_pools
+
+  # Hike
+  createHike(input: CreateHikeInput!): HikeData @aws_iam @aws_cognito_user_pools
+  createMultipleHikes(input: [CreateHikeInput!]!): [HikeData]
+    @aws_iam
+    @aws_cognito_user_pools
+  updateHike(input: UpdateHikeInput!): HikeData @aws_iam @aws_cognito_user_pools
+  deleteHike(id: ID!): HikeData @aws_iam @aws_cognito_user_pools
+
+  # Data processing
+  processRouteSegment(input: [[Float!]!]!): Boolean! @aws_iam
+}
+
+type Query {
+  # Poi
+  getPoi(id: ID!): Poi @aws_iam @aws_api_key @aws_cognito_user_pools
+  getMultiplePois(ids: [ID!]!): MultiplePoisResponse
+    @aws_iam
+    @aws_api_key
+    @aws_cognito_user_pools
+
+  # Image
+  getImage(id: ID!): Image @aws_api_key @aws_cognito_user_pools
+
+  getMultipleImages(ids: [ID!]!): MultipleImagesResponse
+    @aws_iam
+    @aws_api_key
+    @aws_cognito_user_pools
+
+  # HikeGroup
+  getHikeGroup(id: ID!): HikeGroup @aws_iam @aws_api_key @aws_cognito_user_pools
+  listHikeGroups: HikeGroupConnection
+    @aws_iam
+    @aws_api_key
+    @aws_cognito_user_pools
+
+  # Customer
+  getCustomer: Customer @aws_cognito_user_pools
+
+  # Search - the radius in meters!
+  searchPlaceInCircle(
+    lat: Float!
+    lon: Float!
+    radius: Float!
+    type: PlaceType!
+    from: Int
+    pageSize: Int
+  ): [Place]! @aws_iam @aws_api_key @aws_cognito_user_pools
+
+  # Search - the radius in meters!
+  searchSafeImageInCircle(
+    lat: Float!
+    lon: Float!
+    radius: Float!
+    from: Int
+    pageSize: Int
+  ): [Place]! @aws_iam @aws_api_key @aws_cognito_user_pools
+
+  searchUnsafeImageInCircle(
+    lat: Float!
+    lon: Float!
+    radius: Float!
+    from: Int
+    pageSize: Int
+  ): [Place]! @aws_iam @aws_cognito_user_pools
+
+  searchPlaceInBox(box: BoundingBoxInput!, type: PlaceType!): [Place]!
+    @aws_iam
+    @aws_api_key
+    @aws_cognito_user_pools
+
+  searchPlaceByTitle(
+    title: String!
+    type: PlaceType!
+    from: Int
+    pageSize: Int
+  ): [Place]! @aws_iam @aws_api_key @aws_cognito_user_pools
+
+  searchPlaceByObjectId(objectId: ID!): [Place]!
+    @aws_iam
+    @aws_api_key
+    @aws_cognito_user_pools
+
+  # Hike
+  getHike(id: ID!): HikeData @aws_iam @aws_api_key @aws_cognito_user_pools
+  listHikes: HikeConnection @aws_iam @aws_cognito_user_pools
+  getMultipleHikes(ids: [ID!]!): MultipleHikesResponse
+    @aws_iam
+    @aws_api_key
+    @aws_cognito_user_pools
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

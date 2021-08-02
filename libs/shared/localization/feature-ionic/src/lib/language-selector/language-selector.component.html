@@ -1,0 +1,20 @@
+<ion-label style="display: none">
+  {{ 'menu.language' | translate }}
+</ion-label>
+
+<ion-select
+  placeholder="{{ 'menu.language' | translate }}"
+  mode="ios"
+  [selectedText]="null"
+  value="{{ currentLanguage$ | async }}"
+  [okText]="'common.ok' | translate"
+  [cancelText]="'common.dismiss' | translate"
+  (ionChange)="setLanguage($event)"
+  class="w-full popover"
+  multiple="false"
+  animated="true"
+>
+  <ion-select-option *ngFor="let lang of allLanguages" [value]="lang.value.id"
+    >{{ lang.label }}
+  </ion-select-option>
+</ion-select>

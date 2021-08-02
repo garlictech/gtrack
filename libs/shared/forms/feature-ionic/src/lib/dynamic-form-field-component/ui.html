@@ -1,0 +1,124 @@
+<div *ngIf="!field.hidden" [formGroup]="form" [ngClass]="containerClasses">
+  <div class="text-xs text-center" *ngIf="field.title">
+    {{ field.title | translate }}
+  </div>
+  <div class="text-center text-tiny" *ngIf="field.subTitle">
+    {{ field.subTitle | translate }}
+  </div>
+  <div class="flex flex-col w-full" for="float-input" *ngIf="!field.disableLabel && field.label" [attr.for]="field.key"
+    [ngClass]="field.labelCls">
+    <div>
+      <span [innerHtml]="field.label | translate: labelParams"></span>
+      <span class="required" *ngIf="field?.required">*</span>
+      <small *ngIf="field.helpText">{{ field.helpText | translate }}</small>
+    </div>
+    <div>
+      <div class="feedback info" *ngIf="field.infoText">
+        {{ field.infoText | translate }}
+      </div>
+      <div class="w-full text-xs text-red-500 feedback invalid" *ngIf="showError">
+        {{ actualError }}
+      </div>
+      <div class="text-xs text-red-500 feedback invalid" *ngIf="showRemoteError && (remoteError$ | async)">
+        {{ remoteError$ | async | translate }}
+      </div>
+    </div>
+  </div>
+
+  <ng-container id="float-input" [ngSwitch]="field.controlType">
+
+    <ion-input *ngSwitchCase="'textbox'" [name]="field.key" [formControl]="form.controls[field.key]" [id]="field.key"
+      [type]="field.type" [attr.disabled]="!!field.disabled ? true : null" (ngModelChange)="onChange($event)"
+      placeholder="{{ sanitizedPlaceholder | translate }}"></ion-input>
+    <textarea class="field textarea" pInputTextarea="pInputTextarea" *ngSwitchCase="'textarea'"
+      [formControl]="form.controls[field.key]" [id]="field.key" [rows]="field.rows"
+      [placeholder]="sanitizedPlaceholder | translate"></textarea>
+
+    <input class="input" *ngSwitchCase="'checkbox'" type="checkbox" [formControl]="form.controls[field.key]"
+      [id]="field.key" [attr.disabled]="!!field.disabled ? true : null" [ngClass]="['input-checkbox']" />
+    <textarea class="field textarea" pInputTextarea="pInputTextarea" *ngSwitchCase="'emoji'"
+      [formControl]="form.controls[field.key]" [id]="field.key" [rows]="field.rows"
+      [placeholder]="sanitizedPlaceholder | translate"></textarea>
+
+    <gtrack-form-currency-input *ngSwitchCase="'currency'" [formControl]="form.controls[field.key]" [id]="field.key"
+      [currency]="field.currency" [tag]="field.key" [placeholder]="sanitizedPlaceholder | translate">
+    </gtrack-form-currency-input>
+
+    <div class="field-text" *ngSwitchCase="'text'">
+      {{ field.textKey | translate }}
+    </div>
+
+    <div class="field-html" *ngSwitchCase="'html'" [innerHtml]="field.content"></div>
+
+    <div *ngSwitchCase="'template'">
+      <ng-container *ngTemplateOutlet="field.templateRef"></ng-container>
+    </div>
+
+    <ng-container *ngSwitchCase="'select'">
+      <ng-container [ngSwitch]="field.type">
+        <gtrack-form-radio-select class="field" *ngSwitchCase="'radio'" [options]="field.selectOptions"
+          [formControl]="form.controls[field.key]" ngDefaultControl="ngDefaultControl" [id]="field.key">
+        </gtrack-form-radio-select>
+        <gtrack-form-dropdown-select slot="end" class="text-gray-500 field" *ngSwitchCase="'dropdown'"
+          [options]="field.selectOptions" [formControl]="form.controls[field.key]" [id]="field.key"
+          [change]="getOnChange()"></gtrack-form-dropdown-select>
+      </ng-container>
+    </ng-container>
+
+    <span slot="end" style="max-width: 60%" *ngSwitchCase="'multi-select'">
+      <gtrack-form-multi-select slot="end" class="w-full text-right text-gray-500 field" [options]="field.selectOptions"
+        [defaultLabel]="field.defaultLabel | translate" [formControl]="form.controls[field.key]" [id]="field.key"
+        [change]="getOnChange()"></gtrack-form-multi-select>
+    </span>
+
+    <gtrack-form-date-picker slot="end" class="text-gray-500 field" *ngSwitchCase="'date'"
+      [formControl]="form.controls[field.key]" [id]="field.key" [showTime]="field.showTime" [minDate]="field.minDate"
+      [maxDate]="field.maxDate" [defaultDate]="field.defaultDate" [placeholder]="sanitizedPlaceholder | translate"
+      [change]="getOnChange()"></gtrack-form-date-picker>
+
+    <gtrack-form-time-picker slot="end" class="text-gray-500 field" *ngSwitchCase="'time'"
+      [formControl]="form.controls[field.key]" [id]="field.key" [defaultDate]="field.defaultDate"
+      [placeholder]="sanitizedPlaceholder | translate" [change]="getOnChange()"></gtrack-form-time-picker>
+
+    <ng-container *ngSwitchCase="'group'">
+      <gtrack-form-group [fields]="field" [controlGroup]="form.controls[field.key]"></gtrack-form-group>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'section'">
+      <gtrack-form-section [fields]="field" [formControl]="form.controls[field.key]"></gtrack-form-section>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'switch'">
+      <gtrack-form-switch slot="end" class="field" [id]="field.key" [formControl]="form.controls[field.key]"
+        [change]="getOnChange()"></gtrack-form-switch>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'slider'">
+      <gtrack-form-slider class="w-full" [id]="field.key" [formControl]="form.controls[field.key]"
+        [change]="getOnChange()" [min]="field.min" [max]="field.max"></gtrack-form-slider>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'rangeSlider'">
+      <gtrack-form-range-slider class="w-full" [id]="field.key" [formControl]="form.controls[field.key]"
+        [change]="getOnChange()" [min]="field.min" [max]="field.max"></gtrack-form-range-slider>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'file'">
+      <gtrack-form-file class="field" [id]="field.key" [uploadOptions]="field.uploadOptions" [isBasic]="field.isBasic"
+        [formControl]="form.controls[field.key]" [placeholder]="sanitizedPlaceholder | translate"></gtrack-form-file>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'markdown'">
+      <gtrack-form-markdown [rows]="field.rows" [formControl]="form.controls[field.key]"></gtrack-form-markdown>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'richtext'">
+      <gtrack-form-rich-text-editor [rows]="field.rows" [formControl]="form.controls[field.key]">
+      </gtrack-form-rich-text-editor>
+    </ng-container>
+
+    <gtrack-form-currency-select *ngSwitchCase="'currency-select'" [options]="field.selectOptions"
+      [formControl]="form.controls[field.key]" [id]="field.key" [change]="getgetOnChange()"
+      [placeholder]="sanitizedPlaceholder | translate"></gtrack-form-currency-select>
+  </ng-container>
+</div>

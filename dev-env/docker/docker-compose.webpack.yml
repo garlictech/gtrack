@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  gtrack.webpack-server:
+    build:
+      context: ..
+      dockerfile: Dockerfile.dev
+      args:
+        NPM_TOKEN: $NPM_TOKEN_Garlictech
+    volumes:
+      - '../src:/app/src'
+      - '../artifacts:/app/artifacts'
+      - './hooks:/app/hooks'
+      - '../angular.json:/app/angular.json'
+      - '../universal:/app/universal'
+    environment:
+      - NODE_ENV
+      - CI
+      - PROJECT_CONFIG
+      - COMPONENT
+    entrypoint: ['sh', '-c', '${DOCKER_CMD}']
+    ports:
+      - '8081:8081'
+      - '8092:8092'
+      - '7081:4000'
+      - '8888:8888'

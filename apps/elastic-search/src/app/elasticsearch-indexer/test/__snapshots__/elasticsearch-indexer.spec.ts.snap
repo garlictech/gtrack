@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It must extract the deletable objects 1`] = `
+Array [
+  Object {
+    "eventName": "REMOVE",
+    "object": Object {
+      "createdAt": "2020-10-26T00:44:58.574Z",
+      "description": Array [
+        Object {
+          "languageKey": "en_US",
+          "type": "markdown",
+        },
+      ],
+      "elevation": 376.0150451660156,
+      "id": "47.8334721-19.9675629",
+      "lat": 47.8334721,
+      "lon": 19.9675629,
+      "sourceObject": Array [
+        Object {
+          "languageKey": "en_US",
+          "objectId": "2466025056",
+          "objectType": "osmTourism",
+        },
+      ],
+      "types": Array [
+        "tourism:information",
+      ],
+    },
+    "tableName": "gtrack-staging-pois",
+  },
+]
+`;

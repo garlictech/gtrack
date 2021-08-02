@@ -1,0 +1,40 @@
+<!-- <ng-container *ngIf="(segments$ | async) as segments">
+  <p-table [value]="segments" *ngIf="segments.length > 0">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Segment no.</th>
+        <th>Distance</th>
+        <th>Time</th>
+        <th>Uphill</th>
+        <th>Downhill</th>
+        <th>Score</th>
+        <th>Difficulty</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-segment let let-rowIndex="rowIndex">
+      <tr>
+        <td>{{ rowIndex + 1 }}</td>
+        <td>{{ (segments$|async)[rowIndex].distance | number }}</td>
+        <td>{{ (segments$|async)[rowIndex].currentTime | number }}</td>
+        <td>{{ (segments$|async)[rowIndex].uphill | number }}</td>
+        <td>{{ (segments$|async)[rowIndex].downhill | number }}</td>
+        <td>{{ (segments$|async)[rowIndex].score }}</td>
+        <td>{{ (segments$|async)[rowIndex].difficulty }}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <tr>
+        <td>Total</td>
+        <td>{{ (route$|async)?.distance }}</td>
+        <td>{{ (route$|async)?.currentTime }}</td>
+        <td>{{ (route$|async)?.uphill }}</td>
+        <td>{{ (route$|async)?.downhill }}</td>
+        <td>{{ (route$|async)?.score }}</td>
+        <td>{{ (route$|async)?.difficulty }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div *ngIf="!segments?.length">Empty route.</div>
+</ng-container>
+ -->

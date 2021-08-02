@@ -1,0 +1,7 @@
+@import '../current-activity.scss';
+
+:host {
+  bottom: 5vh;
+  @extend .info-control-host;
+  @apply w-screen left-0 text-center;
+}

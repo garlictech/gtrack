@@ -1,0 +1,53 @@
+@import './variables.scss';
+
+.gtrack-dark-background {
+  background: var(--ion-color-dark-rgb-opaque);
+}
+
+.gtrack-main-title {
+  text-shadow: 2px 4px 8px var(--ion-color-secondary-text-shadow);
+  text-align: center;
+  @apply mt-4 px-2 inline-block text-secondary uppercase font-black;
+}
+
+.gtrack-leaflet-map {
+  @screen md {
+    // padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+}
+
+.gtrack-top-padding {
+  padding-top: 4rem;
+}
+
+.gtrack-bottom-padding {
+  padding-bottom: var(--ion-safe-area-bottom);
+}
+
+.gtrack-scrolling-wrapper-flexbox {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.gtrack-generic-popover {
+  ion-backdrop {
+    --backdrop-opacity: 0.7;
+  }
+}
+
+ion-fab.gtrack-toolbar-fab {
+  ion-icon {
+    font-size: 3rem;
+    color: white;
+  }
+
+  ion-fab-button {
+    width: 3rem;
+    height: 3rem;
+    --background: rgba(0, 0, 0, 0);
+  }
+}

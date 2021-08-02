@@ -1,0 +1,179 @@
+<ng-container *ngIf="(isSearching$ | async) === false; else searching">
+  <div
+    class="relative h-full"
+    [ngClass]="{ 'hike-search-results-container': isMobile === true }"
+  >
+    <div
+      [ngClass]="{ 'component-buttons-app': isMobile === true }"
+      class="fixed top-0 flex flex-row justify-center w-full overflow-scroll bg-transparent component-buttons"
+    >
+      <ion-fab-button
+        color="danger"
+        mode="ios"
+        (click)="showFilters()"
+        [size]="buttonSize"
+        *ngIf="!filtersShown"
+      >
+        <ion-icon name="options-outline"></ion-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        color="danger"
+        mode="ios"
+        [size]="buttonSize"
+        (click)="showList()"
+        *ngIf="filtersShown || mapShown"
+      >
+        <ion-icon name="list-outline"></ion-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        color="danger"
+        mode="ios"
+        [size]="buttonSize"
+        (click)="showMap()"
+        *ngIf="filtersShown || !mapShown"
+      >
+        <ion-icon name="map-outline"></ion-icon
+      ></ion-fab-button>
+    </div>
+
+    <div class="flex flex-col w-full h-full">
+      <div
+        class="flex flex-row flex-shrink inline-block w-full h-full overflow-scroll mobile-view"
+        *ngIf="!isMinXlScreen"
+      >
+        <div class="w-full h-screen" [hidden]="mapShown">
+          <div class="flex flex-col w-full h-full">
+            <div class="h-0 gtrack-screen-padding"></div>
+            <div
+              class="hike-list-placement"
+              [ngClass]="{ 'padding-bottom': isMobile === true }"
+            >
+              <gtrack-hike-card-list
+                [hikes$]="hikes$"
+                (mouseenterCard)="onHikeHover($event)"
+                (mouseleaveCard)="onHikeLeave()"
+                [vertical]="true"
+              ></gtrack-hike-card-list>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full h-screen" *ngIf="mapShown">
+          <div class="flex flex-col w-full h-full">
+            <div class="h-0 gtrack-screen-padding"></div>
+            <gtrack-common-hikes-map
+              [highlighted]="activeHike"
+              [hikes$]="hikes$"
+              (hikeClick)="onHikeClick($event)"
+              [searchCircle$]="searchCircle$"
+              [isSearching]="isSearching$ | async"
+              class="w-full h-full"
+            >
+            </gtrack-common-hikes-map>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="isMinXlScreen">
+        <div *ngIf="mapShown" class="overflow-scroll">
+          <div
+            class="flex flex-row items-start justify-start flex-grow flex-shrink"
+          >
+            <div class="inline-block h-screen overflow-scroll">
+              <div class="flex flex-col items-start justify-start">
+                <div class="h-full overflow-scroll">
+                  <div class="h-0 gtrack-screen-padding"></div>
+                  <div class="hike-list-placement">
+                    <gtrack-hike-card-list
+                      [hikes$]="hikes$"
+                      (mouseenterCard)="onHikeHover($event)"
+                      (mouseleaveCard)="onHikeLeave()"
+                      [column]="mapShown"
+                      [vertical]="true"
+                    ></gtrack-hike-card-list>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex-grow flex-shrink h-screen overflow-scroll"
+              *ngIf="mapShown"
+            >
+              <div class="flex flex-col w-full h-full">
+                <div class="h-0 gtrack-screen-padding"></div>
+                <gtrack-common-hikes-map
+                  [highlighted]="activeHike"
+                  [hikes$]="hikes$"
+                  (hikeClick)="onHikeClick($event)"
+                  [searchCircle$]="searchCircle$"
+                  [isSearching]="isSearching$ | async"
+                  class="w-full h-full"
+                >
+                </gtrack-common-hikes-map>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          *ngIf="!mapShown"
+          class="flex flex-col items-center justify-start overflow-scroll"
+        >
+          <div
+            class="flex flex-col items-center justify-center min-h-screen hike-card-placing-xl"
+          >
+            <div class="h-0 gtrack-screen-padding"></div>
+            <gtrack-hike-card-list
+              [hikes$]="hikes$"
+              (mouseenterCard)="onHikeHover($event)"
+              (mouseleaveCard)="onHikeLeave()"
+              [column]="false"
+              [vertical]="true"
+            ></gtrack-hike-card-list>
+          </div>
+        </div>
+
+        <!-- <div class="flex flex-row items-center justify-center flex-grow flex-shrink">
+              <div class="inline-block min-h-screen">
+                <div
+                  class="flex flex-col items-center justify-center flex-grow flex-shrink min-h-screen overflow-scroll"
+                >
+                  <div class="flex-grow flex-shrink overflow-scroll ">
+                    <div class="h-0 overflow-scroll gtrack-screen-padding"></div>
+
+                    <gtrack-hike-card-list
+                      [hikes$]="hikes$"
+                      (mouseenterCard)="onHikeHover($event)"
+                      (mouseleaveCard)="onHikeLeave()"
+                      [column]="mapShown"
+                      [vertical]="true"
+                      class="overflow-scroll"
+                    ></gtrack-hike-card-list>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex-grow flex-shrink h-screen" *ngIf="mapShown">
+                <div class="flex flex-col w-full h-full">
+                  <div class="h-0 gtrack-screen-padding "></div>
+                  <gtrack-common-hikes-map
+                    [highlighted]="activeHike"
+                    [hikes$]="hikes$"
+                    (hikeClick)="onHikeClick($event)"
+                    [searchCircle$]="searchCircle$"
+                    [isSearching]="isSearching$ | async"
+                    class="w-full h-full"
+                  >
+                  </gtrack-common-hikes-map>
+                </div>
+              </div>
+            </div> -->
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #searching>
+  <gtrack-data-coming></gtrack-data-coming>
+</ng-template>

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+export PROJECT_CONFIG=${TRAVIS_BRANCH}
+
+# ADD YOUR PARTS HERE
+# yarn lerna run deploy --scope website --scope admin --scope lambda --stream
+#yarn lerna run build:prod --scope website --scope admin --stream --concurrency 1
+#yarn lerna run deploy --scope website --scope admin --stream
+
+yarn lerna run build:prod --scope website --stream --concurrency 1
+yarn lerna run deploy --scope website --stream
+# npm install -g appcenter-cli
+# yarn workspace app run deploy:android
+# git stash
+# git checkout $TRAVIS_BRANCH
+# yarn lerna version --yes
+# git push

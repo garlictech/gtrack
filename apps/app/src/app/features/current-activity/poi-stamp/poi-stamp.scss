@@ -1,0 +1,32 @@
+@import 'magic.css/dist/magic.min.css';
+
+:host {
+  position: absolute;
+  top: 20vh;
+  @apply w-screen;
+  z-index: 10000;
+}
+
+img {
+  height: 30vh;
+}
+
+.component-shadow {
+  text-shadow: 4px 4px 8px rgba(73, 73, 73, 1);
+}
+
+.component-title,
+.img-container {
+  background: rgba(0, 0, 0, 0.6);
+  @apply component-shadow;
+}
+
+.magictime {
+  animation-duration: 2s;
+}
+
+.img-container {
+  height: 40vh;
+  width: 40vh;
+  @apply border border-0 rounded-full shadow-2xl;
+}

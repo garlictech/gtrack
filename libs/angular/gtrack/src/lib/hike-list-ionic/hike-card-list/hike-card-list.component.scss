@@ -1,0 +1,25 @@
+.multiple-columns {
+  @apply grid-cols-1;
+
+  @screen md {
+    @apply grid-cols-2;
+  }
+
+  @screen lg {
+    @apply grid-cols-3;
+  }
+
+  @screen xxl {
+    @apply grid-cols-4;
+  }
+
+  @apply grid-flow-row;
+}
+
+.single-column {
+  @apply w-full grid-cols-1;
+}
+
+.horizontal {
+  grid-template-columns: auto auto auto;
+}

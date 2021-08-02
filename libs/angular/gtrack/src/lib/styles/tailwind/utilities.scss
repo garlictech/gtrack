@@ -1,0 +1,8 @@
+.applyExample {
+  @apply font-bold py-2 px-4;
+}
+
+.applyExample:hover {
+  @apply bg-blue-700;
+  transform: translateY(-3px);
+}

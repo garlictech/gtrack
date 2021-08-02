@@ -1,0 +1,44 @@
+Resources:
+  AppSyncESServiceRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: 'ElasticSearch-${self:service}-${self:provider.region}-${self:provider.stage}'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: 'Allow'
+            Principal:
+              Service:
+                - 'appsync.amazonaws.com'
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: 'AppSyncESServiceRolePolicy'
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: 'Allow'
+                Action:
+                  - '*'
+                Resource: '*'
+              # - Effect: "Allow"
+              #   Action:
+              #     - "cloudwatch:*"
+              #   Resource: "*"
+              # - Effect: "Allow"
+              #   Action:
+              #     - "logs:*"
+              #   Resource: "*"
+              # - Effect: "Allow"
+              #   Action:
+              #     - "es:*"
+              #   Resource:
+              #     - "Fn::Join":
+              #         - ""
+              #         - - "arn:aws:es:"
+              #           - Ref: "AWS::Region"
+              #           - ":"
+              #           - Ref: "AWS::AccountId"
+              #           - ":domain/"
+              #           - "${self:custom.esDomainName}"
+              #           - "/*"

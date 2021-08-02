@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -e
+
+export PROJECT_CONFIG=${TRAVIS_BRANCH}
+# yarn run cypress:run:ci
+
+if [[ "$TRAVIS_EVENT_TYPE" == "pull_request" ]]; then
+  yarn lint
+  yarn unittest
+elif [[ "$TRAVIS_BRANCH" == "master" ]]; then 
+  yarn unittest 
+  # yarn workspace app run build:android
+  # npm run e2e:universal
+else
+  yarn test
+fi
+
+yarn lerna run build:prod --scope website --scope admin --stream --concurrency 1
+yarn workspace app build:code

@@ -1,0 +1,137 @@
+<div class="row">
+  <ng-container #itemsContainer></ng-container>
+  <ion-spinner
+    class="block text-center"
+    name="bubbles"
+    *ngIf="!timelineRendered"
+  ></ion-spinner>
+</div>
+
+<ion-virtual-scroll [items]="timeline$ | async" approxItemHeight="320px">
+  <div *virtualItem="let item">
+    <div class="column">
+      <div
+        class="w-full p-4 my-4 border-4 border-solid rounded-lg cursor-pointer gtrack-dark-background"
+        [style.border-color]="item.backgroundColor"
+        *ngIf="item"
+        [routerLink]="item.link"
+      >
+        <div class="mb-4 text-lg font-bold text-center uppercase">
+          <div class="flex flex-row justify-center">
+            <gtrack-poi-icon-row-labelled
+              [iconDetails]="item?.stopDetails?.typeDetails"
+              class="p-2"
+            ></gtrack-poi-icon-row-labelled>
+          </div>
+          <div class="mb-1">
+            {{ (item.stop?.poi?.description | localizeDescription)?.title }}
+          </div>
+        </div>
+
+        <div class="mb-4 text-sm">
+          <gtrack-description
+            field="summary"
+            [description]="getDescription(item)"
+            [charlimit]="charlimit"
+          >
+          </gtrack-description>
+        </div>
+
+        <!-- <div class="flex justify-center w-full"> -->
+        <div class="flex justify-center">
+          <gtrack-data-badge
+            [mustBeValidated]="true"
+            [data]="item.stop.distanceFromStart"
+            dataLabel="common.hike.data.walked"
+            iconName="walk"
+          >
+            {{ item.stop.distanceFromStart | distance | async }}
+          </gtrack-data-badge>
+
+          <gtrack-data-badge
+            [mustBeValidated]="true"
+            [data]="item.totalUphill"
+            dataLabel="common.hike.data.uphill"
+            iconName="trending-up"
+          >
+            {{ item.totalUphill | distance | async }}
+          </gtrack-data-badge>
+
+          <gtrack-data-badge
+            dataLabel="common.hike.data.arrival"
+            iconName="time"
+            >{{ item.arrive | date: 'HH:mm' }}
+          </gtrack-data-badge>
+
+          <gtrack-data-badge
+            [mustBeValidated]="true"
+            [data]="item.totalScore"
+            dataLabel="common.hike.data.score"
+            iconName="trophy"
+          >
+            {{ item.totalScore }}
+          </gtrack-data-badge>
+        </div>
+      </div>
+    </div>
+
+    <gtrack-timeline-vertical-line
+      [color]="getDifficultyColor(item.difficulty)"
+    ></gtrack-timeline-vertical-line>
+
+    <!-- <div class="inline-flex justify-center"> -->
+    <div class="column">
+      <div
+        class="p-4 my-4 font-bold text-center uppercase border-2 border-gray-600 border-dotted rounded-lg"
+      >
+        <div class="flex justify-center mb-4">
+          <gtrack-data-badge
+            [mustBeValidated]="true"
+            [data]="item.nextStopDistance"
+            dataLabel="common.hike.data.distance"
+            iconName="walk"
+          >
+            {{ item.nextStopDistance | distance | async }}
+          </gtrack-data-badge>
+
+          <gtrack-data-badge
+            [mustBeValidated]="true"
+            [data]="item.time"
+            dataLabel="common.hike.data.walkTime"
+            iconName="time"
+          >
+            {{ item.time | duration }}
+          </gtrack-data-badge>
+
+          <gtrack-data-badge
+            [mustBeValidated]="true"
+            [data]="item.uphill"
+            dataLabel="common.hike.data.uphill"
+            iconName="trending-up"
+          >
+            {{ item.uphill | distance | async }}
+          </gtrack-data-badge>
+
+          <gtrack-data-badge
+            *ngIf="item.difficulty"
+            dataLabel="common.hike.data.difficulty"
+            iconName="fitness"
+          >
+            <gtrack-difficulty
+              [difficulty]="item.difficulty"
+            ></gtrack-difficulty>
+          </gtrack-data-badge>
+        </div>
+
+        <gtrack-hike-stop-types
+          [stopSetDetails]="item.nearbyStopsOfNextSegment"
+        >
+        </gtrack-hike-stop-types>
+      </div>
+    </div>
+
+    <gtrack-timeline-vertical-line
+      [color]="getDifficultyColor(item.difficulty)"
+    ></gtrack-timeline-vertical-line>
+  </div>
+</ion-virtual-scroll>

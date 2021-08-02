@@ -1,0 +1,46 @@
+mutation ToggleBookmarkedHike($input: ToggleHikeBookmarkInput!) {
+  toggleBookmarkedHike(input: $input)
+}
+
+mutation UpdateCustomerProfile($input: UpdateProfileInput!) {
+  updateCustomerProfile(input: $input) {
+    ...profileFields
+  }
+}
+
+mutation UpdateCustomerSettings($input: UpdateSettingsInput!) {
+  updateCustomerSettings(input: $input) {
+    ...settingsFields
+  }
+}
+
+query GetCustomer {
+  getCustomer {
+    ...customerFields
+  }
+}
+
+fragment customerFields on Customer {
+  profile {
+    ...profileFields
+  }
+  settings {
+    ...settingsFields
+  }
+  bookmarkedHikes
+}
+
+fragment profileFields on Profile {
+  username
+  birthDate
+  firstName
+  lastName
+  languages
+  picture
+  phone
+}
+
+fragment settingsFields on Settings {
+  averageSpeed
+  lengthUnit
+}

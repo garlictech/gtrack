@@ -1,0 +1,39 @@
+<nb-card>
+  <nb-card-body>
+    <div class="mb-8">
+      <button class="f-right mr-2" [routerLink]="newHikeRoute()" nbButton>
+        New hike
+      </button>
+
+      <gtrack-gpx-input
+        title="Import GPX"
+        class="f-right mr-10"
+      ></gtrack-gpx-input>
+
+      <div class="mt-2">
+        <!-- <p-selectButton
+          [options]="listStates"
+          [(ngModel)]="selectedListState"
+        ></p-selectButton> -->
+        <nb-select [(ngModel)]="selectedListState">
+          <nb-option *ngFor="let state of listStates" [value]="state.value">{{
+            state.label
+          }}</nb-option>
+        </nb-select>
+      </div>
+
+      <div class="flow-root"></div>
+    </div>
+
+    <ng-template #hikeListSpinner>
+      <span>loading...</span>
+    </ng-template>
+
+    <ng-container *ngIf="hikeList$ | async as hikeList; else hikeListSpinner">
+      <ng2-smart-table
+        [settings]="settings"
+        [source]="hikeList"
+      ></ng2-smart-table>
+    </ng-container>
+  </nb-card-body>
+</nb-card>

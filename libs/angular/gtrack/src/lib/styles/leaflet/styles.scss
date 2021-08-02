@@ -1,0 +1,132 @@
+@import '@runette/leaflet-fullscreen/dist/leaflet.fullscreen.css';
+@import 'leaflet.locatecontrol/dist/L.Control.Locate.css';
+@import 'leaflet-gesture-handling/dist/leaflet-gesture-handling.css';
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.leaflet-bottom,
+.leaflet-left,
+.leaflet-top,
+.leaflet-right {
+  z-index: 500 !important;
+}
+
+a.leaflet-control-location {
+  background-image: url('/assets/crosshair.png');
+  background-size: 22px;
+}
+
+.leaflet-marker-icon.orientation-marker {
+  background: transparent;
+  border: 0;
+
+  .orientation-marker-direction {
+    will-change: 'transform';
+    position: absolute;
+    display: none;
+    // The marker & the BG image is 40x40 px!!!
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url('/assets/orientation-marker.svg');
+    z-index: 100;
+  }
+
+  .orientation-marker-bg {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    // The marker & the BG image is 40x40 px!!!
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+  }
+
+  .orientation-marker-pulse {
+    height: 100%;
+
+    &:before,
+    &:after {
+      content: '';
+      z-index: 300;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 12px;
+      left: 12px;
+      background-color: #588df0;
+      border-radius: 50%;
+      // opacity: 0;
+    }
+
+    &:before {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+
+      animation: pulse 2s infinite linear;
+      -webkit-animation: pulse 2s infinite linear;
+
+      /*
+      -webkit-animation-name: pulse;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-delay: 0.1s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+*/
+    }
+
+    &:after {
+      animation: pulse 2s 2s infinite linear;
+      -webkit-animation: pulse 2s 2s infinite linear;
+
+      /*
+      -webkit-animation-name: pulse;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-delay: 2s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      */
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.9);
+        opacity: 0.85;
+      }
+    }
+
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(0.9);
+        opacity: 0.85;
+      }
+
+      50% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        -webkit-transform: scale(0.9);
+        opacity: 0.85;
+      }
+    }
+  }
+}

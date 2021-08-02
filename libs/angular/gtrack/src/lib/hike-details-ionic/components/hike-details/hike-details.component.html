@@ -1,0 +1,80 @@
+<ion-fab class="gtrack-toolbar-fab">
+  <ion-fab-button mode="ios" fill="outline" size="small" translucent="true" (click)="onDownloadGpx($event)">
+    <ion-icon name="download-outline"></ion-icon>
+    <ng-content select=".activity-control"></ng-content>
+  </ion-fab-button>
+</ion-fab>
+
+<div class="w-full">
+  <ng-container *ngIf="calculatedHike$ | async as hike; else loading">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <gtrack-description class="text-4xl gtrack-main-title" field="title" [description]="hike?.data?.description">
+      </gtrack-description>
+
+      <gtrack-hike-data-badges [hike]="hike"> </gtrack-hike-data-badges>
+
+      <gtrack-description class="block font-bold text-justify text-md col-span-1 lg:col-span-2" field="summary"
+        [description]="hike?.data?.description" [defaultTextLabel]="'pages.common.hike.noSummary'"></gtrack-description>
+
+      <div class="block col-span-1 lg:col-span-2">
+        <ng-container *ngIf="imageUrls$ | async as imageUrls; else searchingImages">
+          <gtrack-gallery *ngIf="imageUrls?.length; else noPhotosFound" class="border-secondary"
+            [imageUrls]="imageUrls">
+          </gtrack-gallery>
+        </ng-container>
+      </div>
+
+      <gtrack-hike-details-titled-section [titleLabel]="'pages.common.hike.thingsOnRoute'"
+        [isContentReady]="(onOffrouteStopsDetails$ | async)?.onRoute !== null || undefined ? true : false ">
+        <gtrack-hike-stop-types [stopSetDetails]="(onOffrouteStopsDetails$ | async)?.onRoute"></gtrack-hike-stop-types>
+      </gtrack-hike-details-titled-section>
+
+      <gtrack-hike-details-titled-section [titleLabel]="'pages.common.hike.placesOnRoute'"
+        [isContentReady]="(onOffrouteStopsDetails$ | async)?.onRoute !== null || undefined ? true : false ">
+        <gtrack-hike-stop-titles [stopSetDetails]="(onOffrouteStopsDetails$ | async)?.onRoute">
+        </gtrack-hike-stop-titles>
+      </gtrack-hike-details-titled-section>
+
+      <gtrack-description class="block font-bold text-justify text-md" field="fullDescription"
+        [description]="hike?.data?.description" [defaultTextLabel]="'pages.common.hike.noDescription'">
+      </gtrack-description>
+
+      <div class="gtrack-leaflet-map">
+        <gtrack-trail-box class="block" [resolvedHike$]="hike$" [calculatedHike$]="calculatedHike$"></gtrack-trail-box>
+      </div>
+
+      <gtrack-hike-details-titled-section [titleLabel]="'pages.common.hike.thingsNearby'"
+        [isContentReady]="(onOffrouteStopsDetails$ | async)?.offRoute !== null || undefined ? true : false ">
+        <gtrack-hike-stop-types [stopSetDetails]="(onOffrouteStopsDetails$ | async)?.offRoute"></gtrack-hike-stop-types>
+      </gtrack-hike-details-titled-section>
+
+      <gtrack-hike-details-titled-section [titleLabel]="'pages.common.hike.placesNearby'"
+        [isContentReady]="((onOffrouteStopsDetails$ | async)?.offRoute) !== null || undefined ? true : false ">
+        <gtrack-hike-stop-titles [stopSetDetails]="(onOffrouteStopsDetails$ | async)?.offRoute">
+        </gtrack-hike-stop-titles>
+      </gtrack-hike-details-titled-section>
+
+      <gtrack-hike-details-titled-section [titleLabel]="'pages.common.hike.outlineTitle'"
+        [isContentReady]="(timeline$ | async) !== null || undefined ? true : false" class="lg:col-span-2 timeline-container">
+        <gtrack-timeline [timeline$]="timeline$"></gtrack-timeline>
+      </gtrack-hike-details-titled-section>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #loading>
+  <gtrack-data-coming></gtrack-data-coming>
+</ng-template>
+
+<ng-template #searchingImages>
+  <div class="searching-row">
+    <span>{{ 'pages.common.hike.searchingImages' | translate }}</span>
+    <ion-spinner name="bubbles"></ion-spinner>
+  </div>
+</ng-template>
+
+<ng-template #noPhotosFound>
+  <div class="searching-row">
+    <span>{{ 'pages.common.hike.noPhotosFound' | translate }}</span>
+  </div>
+</ng-template>

@@ -1,0 +1,116 @@
+{
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictTemplates": true
+  },
+  "compilerOptions": {
+    "rootDir": ".",
+    "strict": true,
+    "sourceMap": true,
+    "declaration": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["types", "node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "types": ["googlemaps", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "types/*"],
+      "@gtrack/angular/gtrack": ["libs/angular/gtrack/src/index.ts"],
+      "@gtrack/nestjs/shared": ["libs/nestjs/shared/src/index.ts"],
+      "@gtrack/nestjs/gtrack": ["libs/nestjs/gtrack/src/index.ts"],
+      "@gtrack/nodejs/shared": ["libs/nodejs/shared/src/index.ts"],
+      "@gtrack/universal/shared": ["libs/universal/shared/src/index.ts"],
+      "@gtrack/universal/gtrack": ["libs/universal/gtrack/src/index.ts"],
+      "@admin/*": ["apps/admin/src/app/*"],
+      "@website/*": ["apps/website/src/app/*"],
+      "@app/*": ["apps/app/src/app/*"],
+      "@bit/garlictech.angular.gtrack.*": ["libs/angular/gtrack/src/lib/*"],
+      "@bit/garlictech.nestjs.gtrack.*": ["libs/nestjs/gtrack/src/lib/*"],
+      "@bit/garlictech.nestjs.shared.*": ["libs/nestjs/shared/src/lib/*"],
+      "@bit/garlictech.nodejs.gtrack.*": ["libs/nodejs/gtrack/src/lib/*"],
+      "@bit/garlictech.nodejs.shared.*": ["libs/nodejs/shared/src/lib/*"],
+      "@bit/garlictech.universal.gtrack.*": ["libs/universal/gtrack/src/lib/*"],
+      "@bit/garlictech.universal.shared.*": ["libs/universal/shared/src/lib/*"],
+      "@gtrack/shared/authentication/ui-ionic": [
+        "libs/shared/authentication/ui-ionic/src/index.ts"
+      ],
+      "@gtrack/shared/authentication/feature-ionic": [
+        "libs/shared/authentication/feature-ionic/src/index.ts"
+      ],
+      "@gtrack/shared/authentication/data-access": [
+        "libs/shared/authentication/data-access/src/index.ts"
+      ],
+      "@gtrack/shared/router/data-access": [
+        "libs/shared/router/data-access/src/index.ts"
+      ],
+      "@gtrack/shared/generic-ui/data-access": [
+        "libs/shared/generic-ui/data-access/src/index.ts"
+      ],
+      "@gtrack/shared/generic-ui/feature-ionic": [
+        "libs/shared/generic-ui/feature-ionic/src/index.ts"
+      ],
+      "@gtrack/shared/generic-ui/ui-ionic": [
+        "libs/shared/generic-ui/ui-ionic/src/index.ts"
+      ],
+      "@gtrack/shared/localization/data-access": [
+        "libs/shared/localization/data-access/src/index.ts"
+      ],
+      "@gtrack/shared/localization/feature-ionic": [
+        "libs/shared/localization/feature-ionic/src/index.ts"
+      ],
+      "@gtrack/shared/localization/utils": [
+        "libs/shared/localization/utils/src/index.ts"
+      ],
+      "@gtrack/shared/localization/ui-angular": [
+        "libs/shared/localization/ui-angular/src/index.ts"
+      ],
+      "@gtrack/shared/forms/feature": [
+        "libs/shared/forms/feature/src/index.ts"
+      ],
+      "@gtrack/shared/forms/feature-ionic": [
+        "libs/shared/forms/feature-ionic/src/index.ts"
+      ],
+      "@gtrack/admin/hike-info/feature": [
+        "libs/admin/hike-info/feature/src/index.ts"
+      ],
+      "@gtrack/admin/hike-images/feature": [
+        "libs/admin/hike-images/feature/src/index.ts"
+      ],
+      "@gtrack/admin/hike-list/page": [
+        "libs/admin/hike-list/page/src/index.ts"
+      ],
+      "@gtrack/admin/hike-list/feature": [
+        "libs/admin/hike-list/feature/src/index.ts"
+      ],
+      "@gtrack/gtrack-api/process-route-segment": [
+        "libs/gtrack-api/process-route-segment/src/index.ts"
+      ],
+      "@gtrack/graphql-api/schema": ["libs/graphql-api/schema/src/index.ts"],
+      "@gtrack/graphql-api/resolvers": [
+        "libs/graphql-api/resolvers/src/index.ts"
+      ],
+      "@gtrack/graphql-api/resolvers-lambda": [
+        "libs/graphql-api/resolvers-lambda/src/index.ts"
+      ],
+      "@gtrack/infrastructure/common-stacks": [
+        "libs/infrastructure/common-stacks/src/index.ts"
+      ],
+      "@gtrack/admin/general-info": ["libs/admin/general-info/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp", "dist", "artifacts"]
+}

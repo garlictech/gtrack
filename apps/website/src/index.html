@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      if (global === undefined) {
+        var global = window;
+      }
+    </script>
+    <title>gTrack</title>
+    <base href="/" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1.0"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#1976d2" />
+    <link
+      rel="shortcut icon"
+      href="assets/icons/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/icons/appicons/apple-icon-192x192.png"
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round:100,200,300,400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.10/cssgram.min.css"
+    />
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <style>
+      .page-loader span,
+      .page-loader:before,
+      .page-loader:after {
+        background: #b8fb3c;
+        animation: load1 1s infinite ease-in-out;
+        width: 1em;
+        height: 4em;
+      }
+
+      .page-loader {
+        margin: 88px auto;
+        position: relative;
+        font-size: 11px;
+        color: #b8fb3c;
+      }
+
+      .page-loader span {
+        animation-delay: -0.16s;
+        color: #b8fb3c;
+        text-indent: -9999em;
+        left: 0;
+      }
+
+      .page-loader span,
+      .page-loader:before,
+      .page-loader:after {
+        position: absolute;
+        top: 0;
+        content: '';
+      }
+
+      .page-loader:before {
+        left: -1.5em;
+        animation-delay: -0.32s;
+      }
+
+      .page-loader:after {
+        left: 1.5em;
+      }
+
+      @-webkit-keyframes load1 {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0;
+          height: 4em;
+        }
+
+        40% {
+          box-shadow: 0 -2em;
+          height: 5em;
+        }
+      }
+
+      @keyframes load1 {
+        0%,
+        80%,
+        100% {
+          box-shadow: 0 0;
+          height: 4em;
+        }
+
+        40% {
+          box-shadow: 0 -2em;
+          height: 5em;
+        }
+      }
+
+      .load-screen {
+        width: 70%;
+        margin: auto;
+        height: 100vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <gtrack-app-root>
+      <div class="load-screen">
+        <div class="page-loader"><span>Loading gtrack...</span></div>
+      </div>
+    </gtrack-app-root>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<div class="mb-5 flex flex-col">
+  <!-- <p-dropdown
+    [options]="selectableLanguages$ | async"
+    [(ngModel)]="selectedLanguage"
+    placeholder="Add language"
+    optionLabel="label"
+  ></p-dropdown> -->
+  <div class="mb-4">
+    <nb-select [(ngModel)]="selectedLanguage">
+      <nb-option
+        *ngFor="let lang of selectableLanguages$ | async"
+        [value]="lang.value"
+        >{{ lang.label }}</nb-option
+      >
+    </nb-select>
+  </div>
+
+  <div>
+    <button
+      nbButton
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded 'mx-2']"
+      (click)="addTranslation()"
+      [ngClass]="{'cursor-not-allowed': !selectedLanguage}"
+    >
+      Add translation
+    </button>
+  </div>
+</div>
+
+<!-- <p-accordion>
+  <p-accordionTab
+    *ngFor="let descriptor of (languageFormDescriptors$ | async); trackBy: trackByFn"
+    [header]="getLangName(descriptor?.languageKey)"
+  >
+    <gtrack-form [formDescriptor]="descriptor"></gtrack-form>
+    <button
+      nbButton
+      (onClick)="deleteTranslation(descriptor?.languageKey)"
+      *ngIf="descriptor?.languageKey !== 'en_US'"
+    >
+      Delete language
+    </button>
+  </p-accordionTab>
+</p-accordion> -->
+
+<nb-accordion>
+  <nb-accordion-item
+    *ngFor="let descriptor of (languageFormDescriptors$ | async); trackBy: trackByFn"
+  >
+    <nb-accordion-item-header
+      >Language key
+      {{getLangName(descriptor?.languageKey)}}</nb-accordion-item-header
+    >
+    <nb-accordion-item-body>
+<!--       <gtrack-form [formDescriptor]="descriptor"></gtrack-form>
+ -->
+      <button
+        nbButton
+        (onClick)="deleteTranslation(descriptor?.languageKey)"
+        *ngIf="descriptor?.languageKey !== 'en_US'"
+      >
+        Delete language
+      </button>
+    </nb-accordion-item-body>
+  </nb-accordion-item>
+</nb-accordion>

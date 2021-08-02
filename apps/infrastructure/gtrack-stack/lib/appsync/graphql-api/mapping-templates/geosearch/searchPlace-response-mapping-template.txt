@@ -1,0 +1,15 @@
+[
+	#foreach($entry in $context.result.hits.hits)
+		## $velocityCount starts at 1 and increments with the #foreach loop **
+		#if( $velocityCount > 1 ) , #end
+		$util.toJson({
+      "type" : "$entry.get('_source')['type']",
+			"lat" : $entry.get('_source')['location']['lat'],
+			"lon": $entry.get('_source')['location']['lon'],
+			"objectId": "$entry.get('_source')['objectId']",
+			"id": "$entry.get('_id')",
+			"banned": "$entry.get('_source')['banned']",
+			"processed": "$entry.get('_source')['processed']"
+		})
+	#end
+]

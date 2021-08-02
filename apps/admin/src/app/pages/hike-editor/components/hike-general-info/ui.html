@@ -1,0 +1,57 @@
+<gtrack-localized-description
+  [description$]="description$"
+  [submitFv]="onSubmitDescription"
+  [deleteFv]="onDeleteDescription"
+  type="hike"
+></gtrack-localized-description>
+
+<div class="flex flex-col">
+  <div class="m-2">
+    <strong>RoundTrip:</strong>
+    <span> {{ (isRoundTrip$ | async) === true ? 'Yes' : 'No' }} </span>
+  </div>
+
+  <div class="m-2">
+    <strong>State:</strong> {{ (hike$ | async)?.publicationState }}
+  </div>
+
+  <div class="m-2">
+    <strong>Location:</strong>
+    <span> {{ (hike$ | async)?.location }} </span>
+
+    <div
+      class="feedback invalid"
+      *ngIf="(remoteError$ | async)?.location as locationError"
+    >
+      {{ locationError[0] | translate }}
+    </div>
+  </div>
+
+  <div class="flex m-2">
+    <strong>Elevation:</strong>
+    <img
+      class="svg svg-elevation"
+      *ngIf="(hike$ | async)?.route?.elevationIcon?.length"
+      [src]="(hike$ | async)?.route?.elevationIcon | trustedUrl"
+    />
+  </div>
+
+  <div class="flex m-2">
+    <strong>Route:</strong>
+    <img
+      class="svg svg-route"
+      *ngIf="(hike$ | async)?.route?.routeIcon?.length"
+      [src]="(hike$ | async)?.route?.routeIcon | trustedUrl"
+    />
+  </div>
+
+  <!-- <div>
+    <gtrack-hike-card [hike]="hike$ | async"></gtrack-hike-card>
+  </div> -->
+</div>
+
+<div class="m-2">
+  <div class="">
+    <strong>In group:</strong>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PoiIconsFp.getIcondescriptor must work: 1 1`] = `
+Object {
+  "_tag": "Some",
+  "value": Object {
+    "color": "#265DB2",
+    "url": "amenity:casino",
+  },
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 2 1`] = `
+Object {
+  "_tag": "None",
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 3 1`] = `
+Object {
+  "_tag": "None",
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 4 1`] = `
+Object {
+  "_tag": "None",
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 5 1`] = `
+Object {
+  "_tag": "None",
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 6 1`] = `
+Object {
+  "_tag": "None",
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 7 1`] = `
+Object {
+  "_tag": "Some",
+  "value": Array [
+    Object {
+      "color": "#265DB2",
+      "url": "amenity:casino",
+    },
+    Object {
+      "color": "#108E4C",
+      "url": "generic:asterisco",
+    },
+  ],
+}
+`;
+
+exports[`PoiIconsFp.getIcondescriptor must work: 8 1`] = `
+Object {
+  "_tag": "None",
+}
+`;

@@ -1,0 +1,49 @@
+<div class="flex flex-col justify-between w-full">
+  <div class="pb-8">
+    <div class="flex flex-row justify-center">
+      <span
+        class="self-center mr-3 text-4xl font-black text-tertiary company-title"
+        >gtrack</span
+      ><span
+        class="self-center text-4xl font-black uppercase text-secondary company-title"
+        >outdoors</span
+      >
+    </div>
+    <gtrack-common-marketing></gtrack-common-marketing>
+  </div>
+  <div
+    class="flex flex-col items-center self-center w-full max-w-4xl pb-8 component-search"
+  >
+    <gtrack-title-search class="w-full"></gtrack-title-search>
+    <gtrack-location-search
+      class="w-full mt-6"
+      id="search"
+      (search)="redirectToSearch($event)"
+    >
+    </gtrack-location-search>
+  </div>
+  <div class="w-screen overflow-y-scroll text-center">
+    <div class="inline-block">
+      <app-component-busy-indicator
+        *ngIf="isWorking"
+      ></app-component-busy-indicator>
+      <ng-container *ngIf="showcaseHikes$ | async as hikes">
+        <gtrack-hike-card-list
+          *ngIf="hikes.length > 0; else no_hike_found"
+          [hikes$]="showcaseHikes$"
+          [vertical]="false"
+          class="inline-block p-2"
+        >
+        </gtrack-hike-card-list>
+        <ng-template #no_hike_found>
+          <div
+            class="p-4 pb-20 text-xs font-thin tracking-wide text-center text-white uppercase lg:text-lg"
+          >
+            {{ 'pages.common.home.page.noHikeFound' | translate }}
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+</div>
+

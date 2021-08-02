@@ -1,0 +1,16 @@
+$button-border-radius: 4px !default;
+$button-border-color: #afafaf !default;
+$button-border-width: 1px !default;
+
+$button-color: #363636;
+$button-background-color: white !default;
+$button-hover-background-color: #efefef !default;
+
+.button {
+  text-decoration: none;
+
+  border-radius: $button-border-radius;
+
+  text-align: center;
+  cursor: pointer;
+}

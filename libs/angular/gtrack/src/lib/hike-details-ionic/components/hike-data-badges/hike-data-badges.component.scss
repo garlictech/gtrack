@@ -1,0 +1,7 @@
+:host > * {
+  @apply inline-block border border-solid rounded-full p-4 m-2;
+}
+
+:host {
+  text-align: center;
+}

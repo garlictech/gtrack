@@ -1,0 +1,67 @@
+service: gtrack-rest-api
+configValidationMode: error
+frameworkVersion: ^1.83.2
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
+  - serverless-iam-roles-per-function
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${self:custom.common.stage}
+  region: #{AWS::Region}
+
+custom:
+  common: ${file(../../serverless.common.yml):custom}
+
+  bundle:
+    packager: yarn
+    linting: false
+
+  parameters:
+    stages:
+      googleApiConfig:
+        dev:
+          apiKey: 'AIzaSyDZjCPlj3vAGrVYfimxRlcKk72F1aoAPxo'
+        staging:
+          apiKey: 'AIzaSyDZjCPlj3vAGrVYfimxRlcKk72F1aoAPxo'
+        master:
+          apiKey: 'AIzaSyDThDhXfnod4-FfACelfn9K5I5XHkntZVE'
+      flickrApiConfig:
+        dev:
+          apiKey: '0191c7b116e215758a6c2450bf8a4c46'
+        staging:
+          apiKey: '0191c7b116e215758a6c2450bf8a4c46'
+        master:
+          apiKey: '0191c7b116e215758a6c2450bf8a4c46'
+
+    googleApiConfig: ${self:custom.parameters.stages.googleApiConfig.${self:provider.stage}}
+    flickrApiConfig: ${self:custom.parameters.stages.flickrApiConfig.${self:provider.stage}}
+
+iamRoleStatements:
+  - ${file(../../serverless.common.yml):lambdaPolicyXRay}
+
+functions:
+  gtrack-api:
+    handler: src/main.handler
+    memorySize: 512
+    timeout: 30
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+    environment:
+      NODE_ENV: ${self:custom.common.nodeEnv}
+      ISOCHRONE_API_KEY: 111444bf-7c37-499b-b87c-b324d7406715
+      DYNAMODB_ACCESS_KEY_ID: AKIAJJX5QTTKLZU6W6CA
+      DYNAMODB_REGION: ${self:provider.region}
+      DYNAMODB_SECRET_ACCESS_KEY: 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
+      USERPOOL_ID:
+        Ref: CognitoUserPool
+      USERPOOL_CLIENT_ID:
+        Ref: CognitoUserPoolClientUser
+      PROJECT_PREFIX: ${self:custom.common.projectPrefix}

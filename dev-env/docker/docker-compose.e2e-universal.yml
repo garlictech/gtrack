@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  gtrack.e2e-universal-tester:
+    build:
+      context: '../e2e'
+    volumes:
+      - '../e2e/universal:/protractor/src'
+      - '../artifacts/e2e-universal/dist:/protractor/dist'
+      - '../artifacts/reports/e2e-universal:/protractor/reports'
+      - '/dev/shm:/dev/shm'
+    privileged: true
+    network_mode: 'host'

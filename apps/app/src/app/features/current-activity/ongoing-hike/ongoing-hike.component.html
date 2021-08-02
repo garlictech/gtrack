@@ -1,0 +1,25 @@
+<gtrack-common-header></gtrack-common-header>
+
+<gtrack-trail-box
+  class="block"
+  [resolvedHike$]="resolvedHike$"
+  (map)="onTheMap($event)"
+  [extraFeatureOverlays$]="extraFeatureOverlays$"
+></gtrack-trail-box>
+<gtrack-app-hike-flow-control
+  [map]="theMap"
+  [isMoving]="isMoving$ | async"
+  [isSimulationMode]="isSimulationMode"
+  (activityCleared)="activityCleared()"
+></gtrack-app-hike-flow-control>
+<gtrack-app-hike-moving-info-control
+  [map]="theMap"
+  [isMoving]="isMoving$ | async"
+  [recordedTrack$]="recordedTrack$"
+></gtrack-app-hike-moving-info-control>
+<gtrack-app-hike-moving-timeline-control
+  [map]="theMap"
+  [isMoving]="isMoving$ | async"
+  [recordedTrack$]="recordedTrack$"
+  [nextPoiToPass$]="nextPoiToPass$"
+></gtrack-app-hike-moving-timeline-control>

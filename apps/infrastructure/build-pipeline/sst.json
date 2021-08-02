@@ -1,0 +1,6 @@
+{
+  "name": "gtrack-build-pipeline",
+  "type": "@serverless-stack/resources",
+  "stage": "prod",
+  "region": "us-east-1"
+}

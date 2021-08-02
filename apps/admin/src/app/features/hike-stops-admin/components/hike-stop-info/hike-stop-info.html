@@ -1,0 +1,37 @@
+<!-- <div *ngIf="poi.wikipedia">
+  <div [innerHTML]="poi.wikipedia.extract"></div>
+  <div class="mt-20">
+    <a [href]="poi.wikipedia.url" target="_blank">WikiPedia</a>
+  </div>
+</div>
+
+<div *ngIf="poi.google">
+  <div *ngIf="poi.google.formatted_address">
+    <strong>Address:</strong>
+    {{ poi.google.formatted_address }}
+  </div>
+
+  <div *ngIf="poi.google.international_phone_number">
+    <strong>Phone:</strong>
+    {{ poi.google.international_phone_number }}
+  </div>
+
+  <div
+    *ngIf="poi.google.opening_hours && poi.google.opening_hours.weekday_text"
+  >
+    <strong>Opening hours:</strong>
+    <div
+      *ngFor="let day of poi.google.opening_hours.weekday_text; trackBy: trackByFn"
+      [innerHTML]="day"
+    ></div>
+  </div>
+
+  <div class="mt-20">
+    <a
+      href="https://www.google.com/maps/place/?q=place_id:{{ poi.google.id }}"
+      target="_blank"
+      >Google</a
+    >
+  </div>
+</div>
+ -->

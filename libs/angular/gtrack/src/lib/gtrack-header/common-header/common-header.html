@@ -1,0 +1,20 @@
+<div class="header">
+  <ion-header mode="ios" translucent="true">
+    <ion-toolbar
+      class="flex items-center"
+      color="dark"
+      mode="ios"
+      translucent="true"
+    >
+      <ng-content></ng-content>
+      <ion-buttons slot="end" class="back-button md:hidden">
+        <ion-back-button
+          class="md:hidden"
+          *ngIf="canGoBack"
+          [defaultHref]="previousUrl"
+          text=""
+        ></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+</div>

@@ -1,0 +1,11 @@
+$util.toJson({
+	"objectId": $context.result.get('_source')['objectId'],
+	"id": $context.result.get('_source')['id'],
+	"type": $context.result.get('_source')['type'],
+	"lat": $context.result.get('_source')['location']['lat'],
+	"lon": $context.result.get('_source')['location']['lon'],
+	"title": $context.result.get('_source')['title'],
+	"processed": $context.result.get('_source')['processed'],
+	"banned": $context.result.get('_source')['banned']
+})
+

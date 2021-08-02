@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hash generator must pick the original url 1`] = `
+Object {
+  "error": null,
+  "value": "OBJECTTYPE-OBJECTID",
+}
+`;

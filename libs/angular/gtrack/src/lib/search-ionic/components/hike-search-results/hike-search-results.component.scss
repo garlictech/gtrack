@@ -1,0 +1,52 @@
+ion-fab-button {
+  @apply mx-2 my-0;
+  --box-shadow: 0px 0px 4px 3px #a52a2a80 !important;
+}
+
+.hike-search-results-container {
+  margin-bottom: var(--gtrack-tabbar-height);
+}
+.component-buttons {
+  top: calc(var(--gtrack-header-height, 0) + 0.9vw);
+  padding: 0.3rem;
+  z-index: 9999;
+  @screen sm {
+    z-index: 10;
+  }
+}
+.component-buttons-app {
+  top: calc(var(--gtrack-header-height, 0) + 1.4rem) !important;
+}
+.mobile-view {
+  padding-top: calc(var(--gtrack-header-height) + 20px);
+}
+ion-content {
+  --background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('/assets/img/image2.jpg') no-repeat center center / cover !important;
+}
+.padding-bottom {
+  padding-bottom: var(--gtrack-tabbar-height);
+}
+.hike-list-placement {
+  text-align: center;
+  width: 100%;
+  padding-top: 0.25rem;
+  @screen sm {
+    padding-top: 0.25rem;
+  }
+  @screen md {
+    padding-top: 4.5rem;
+  }
+  @screen lg {
+    padding-top: 4.5rem;
+  }
+  @screen xl {
+    padding-top: 0rem;
+  }
+}
+
+.hike-card-placing-xl {
+  @screen xl {
+    padding-top: 5.5rem;
+  }
+}

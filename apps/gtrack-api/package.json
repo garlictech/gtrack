@@ -1,0 +1,59 @@
+{
+  "name": "@garlictech/gtrack-api",
+  "private": true,
+  "description": "The gtrack REST backend",
+  "main": "dist/index.js",
+  "version": "0.0.5",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "SEE LICENSE IN license.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garlictech/gtrack.git"
+  },
+  "author": {
+    "name": "Garlictech",
+    "email": "contact@garlictech.com",
+    "url": "http://www.garlictech.com"
+  },
+  "contributors": [
+    "Zsolt R. Molnar <zsolt@zsoltmolnar.hu> (http://www.zsoltmolnar.hu)"
+  ],
+  "keywords": [
+    "garlictech"
+  ],
+  "bugs": {
+    "url": "https://github.com/garlictech/gtrack/issues"
+  },
+  "homepage": "https://github.com/garlictech/gtrack/wiki/Home",
+  "engines": {
+    "npm": ">=5.0.0",
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "@nestjs/platform-express": "^7.6.4",
+    "aws-serverless-express": "^3.3.6"
+  },
+  "devDependencies": {
+    "@types/aws-serverless-express": "^3.3.3"
+  },
+  "scripts": {
+    "test": "make test",
+    "deploy": "make deploy",
+    "start": "make start"
+  },
+  "watch": {
+    "dev:serverless": {
+      "patterns": [
+        "src/**"
+      ],
+      "extensions": "js, ts, json",
+      "ignore": [
+        "node_modules"
+      ],
+      "quiet": true
+    }
+  }
+}

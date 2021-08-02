@@ -1,0 +1,314 @@
+service: gtrack
+configValidationMode: error
+frameworkVersion: ^1.83.2
+enableLocalInstallationFallback: true
+
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+  - serverless-iam-roles-per-function
+  - serverless-appsync-plugin
+  - serverless-appsync-offline
+  - aws-amplify-serverless-plugin
+  - serverless-puresec-cli
+
+custom:
+  parameters:
+    nodeEnv:
+      dev: development
+      staging: production
+      master: production
+    esEndpoint:
+      dev: https://search-gtrack-staging-gnudk24yfzroxsuu2tgs7kjofu.us-east-1.es.amazonaws.com
+      staging: https://search-gtrack-staging-gnudk24yfzroxsuu2tgs7kjofu.us-east-1.es.amazonaws.com
+      master: https://search-gtrack-master-5bdk3ydce3fssjhukxipysnzsi.us-east-1.es.amazonaws.com
+    debug:
+      dev: true
+      staging: true
+      master: true
+    sesOrigin:
+      dev: http://localhost:8081
+      staging: https://gtrack-website-staging.firebaseapp.com
+      master: https://www.gtracksport.com
+    cognitoCallbackUrls:
+      dev:
+        admin:
+          - https://gtrack-admin-staging.firebaseapp.com
+          - http://localhost:8082
+          - http://localhost:9082
+          - http://localhost:3333
+        user:
+          - https://gtrack-website-staging.firebaseapp.com
+          - http://localhost:8081
+          - http://localhost:8083
+          - http://localhost:9081
+          - http://localhost:3333
+      staging:
+        admin:
+          - https://gtrack-admin-staging.firebaseapp.com
+          - http://localhost:8082
+          - http://localhost:9082
+          - http://localhost:3333
+        user:
+          - https://gtrack-website-staging.firebaseapp.com
+          - http://localhost:8081
+          - http://localhost:8083
+          - http://localhost:3333
+          - http://localhost:9081
+      master:
+        admin:
+          - https://admin.gtracksport.com
+        user:
+          - https://www.gtracksport.com
+    cognitoLogoutUrls:
+      dev:
+        admin:
+          - https://gtrack-admin-staging.firebaseapp.com
+          - http://localhost:8082
+          - http://localhost:9082
+        user:
+          - https://gtrack-website-staging.firebaseapp.com
+          - http://localhost:8081
+          - http://localhost:8083
+          - http://localhost:9081
+      staging:
+        admin:
+          - https://gtrack-admin-staging.firebaseapp.com
+          - http://localhost:8082
+          - http://localhost:9082
+        user:
+          - https://gtrack-website-staging.firebaseapp.com
+          - http://localhost:8083
+          - http://localhost:8081
+          - http://localhost:9081
+      master:
+        admin:
+          - https://admin.gtracksport.com
+        user:
+          - https://www.gtracksport.com
+    googleIdentityPool:
+      dev:
+        clientId: 686126282936-2jerlbi7mh5768ufr76mk2di00tg063a.apps.googleusercontent.com
+        clientSecret: e31Ta-eXok97oZDYq-p7sv1l
+      staging:
+        clientId: 686126282936-2jerlbi7mh5768ufr76mk2di00tg063a.apps.googleusercontent.com
+        clientSecret: e31Ta-eXok97oZDYq-p7sv1l
+      master:
+        clientId: 420351620633-vm4f5929r5ej2aecvnnmkq72h36r8ufb.apps.googleusercontent.com
+        clientSecret: 71qeMP7RYDR2aqvA-vFqC4Du
+    appleIdentityPool:
+      dev:
+        clientId: com.gtracksport.signin
+        teamId: LBDSEM9W4R
+        keyId: 5NS3SR2F8Y
+        privateKey: MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgWb1F6PwZqBInvJ1QTmJQvmdXnyszaBmHuFABDbs0tyugCgYIKoZIzj0DAQehRANCAASu8FvtHTEQ9MfL7hXvZfed440wuScd85TAtvel7dTKspyF0Ak0XazRNGfd48q0VXkV9g5AKz0yyev3hMnIC/Fm
+      staging:
+        clientId: com.gtracksport.signin
+        teamId: LBDSEM9W4R
+        keyId: 5NS3SR2F8Y
+        privateKey: MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgWb1F6PwZqBInvJ1QTmJQvmdXnyszaBmHuFABDbs0tyugCgYIKoZIzj0DAQehRANCAASu8FvtHTEQ9MfL7hXvZfed440wuScd85TAtvel7dTKspyF0Ak0XazRNGfd48q0VXkV9g5AKz0yyev3hMnIC/Fm
+      master:
+        clientId: com.gtracksport.signin
+        teamId: LBDSEM9W4R
+        keyId: 5NS3SR2F8Y
+        privateKey: MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgWb1F6PwZqBInvJ1QTmJQvmdXnyszaBmHuFABDbs0tyugCgYIKoZIzj0DAQehRANCAASu8FvtHTEQ9MfL7hXvZfed440wuScd85TAtvel7dTKspyF0Ak0XazRNGfd48q0VXkV9g5AKz0yyev3hMnIC/Fm
+    googleApiConfig:
+      dev:
+        apiKey: 'AIzaSyDZjCPlj3vAGrVYfimxRlcKk72F1aoAPxo'
+      staging:
+        apiKey: 'AIzaSyDZjCPlj3vAGrVYfimxRlcKk72F1aoAPxo'
+      master:
+        apiKey: 'AIzaSyDThDhXfnod4-FfACelfn9K5I5XHkntZVE'
+    flickrApiConfig:
+      dev:
+        apiKey: '0191c7b116e215758a6c2450bf8a4c46'
+      staging:
+        apiKey: '0191c7b116e215758a6c2450bf8a4c46'
+      master:
+        apiKey: '0191c7b116e215758a6c2450bf8a4c46'
+
+  nodeEnv: ${self:custom.parameters.nodeEnv.${self:provider.stage}}
+  esEndpoint: ${self:custom.parameters.esEndpoint.${self:provider.stage}}
+  debug: ${self:custom.parameters.debug.${self:provider.stage}}
+  sesOrigin: ${self:custom.parameters.sesOrigin.${self:provider.stage}}
+  cognitoCallbackUrls: ${self:custom.parameters.cognitoCallbackUrls.${self:provider.stage}}
+  cognitoLogoutUrls: ${self:custom.parameters.cognitoLogoutUrls.${self:provider.stage}}
+  googleIdentityPool: ${self:custom.parameters.googleIdentityPool.${self:provider.stage}}
+  appleIdentityPool: ${self:custom.parameters.appleIdentityPool.${self:provider.stage}}
+  googleApiConfig: ${self:custom.parameters.googleApiConfig.${self:provider.stage}}
+  flickrApiConfig: ${self:custom.parameters.flickrApiConfig.${self:provider.stage}}
+  projectPrefix: '${self:service}-${self:provider.stage}'
+
+  awsAccountId: 697486207432
+  esRoleName: AppSyncServiceRole
+  esDomainName: gtrack
+  esGeoIndex: places
+  esGeoMappingFile: src/resources/elasticsearch/location_geopoint_mapping.json
+  optimize:
+    debug: true
+
+  serverless-offline:
+    useChildProcesses: true
+
+  webpack:
+    packager: 'yarn'
+    includeModules: true
+    webpackConfig: 'webpack.config.js'
+
+  appSync: ${file(./src/resources/appsync.yml)}
+
+  appsync-offline:
+    port: 62222
+    schema: src/graphql-schema/schema.graphql
+    dynamodb:
+      client:
+        endpoint: 'http://localhost:8001'
+        region: localhost
+  package:
+    individually: true
+    exclude:
+      - node_modules/aws-sdk
+
+  dynamodb:
+    stages:
+      - dev
+      - staging
+      - prod
+    start:
+      port: 8001
+      inMemory: true
+      migrate: true
+      seed: true
+
+  s3:
+    port: 8002
+
+  amplify:
+    - filename: ../lib/universal/gtrack/config/amplify/amplify-config-${self:provider.stage}.ts
+      type: typescript
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  defaultStage: staging
+  stage: ${opt:stage, self:provider.defaultStage}
+  memorySize: 128
+  environment:
+    NODE_ENV: ${self:custom.nodeEnv}
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - '*'
+      Resource: '*'
+
+functions:
+  graphql:
+    handler: src/app/graphql-api/index.handler
+    memorySize: 192
+    timeout: 30
+    environment:
+      SLS_DEBUG: ${self:custom.debug}
+      NODE_ENV: ${self:custom.nodeEnv}
+      TABLE_PREFIX: ${self:service}-${self:provider.stage}
+
+  gtrack-api:
+    handler: src/app/gtrack-api/index.handler
+    memorySize: 512
+    timeout: 30
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+    environment:
+      ISOCHRONE_API_KEY: 111444bf-7c37-499b-b87c-b324d7406715
+      DYNAMODB_ACCESS_KEY_ID: AKIAJJX5QTTKLZU6W6CA
+      DYNAMODB_REGION: ${self:provider.region}
+      DYNAMODB_SECRET_ACCESS_KEY: 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
+      USERPOOL_ID:
+        Ref: CognitoUserPool
+      USERPOOL_CLIENT_ID:
+        Ref: CognitoUserPoolClientUser
+      PROJECT_PREFIX: ${self:custom.projectPrefix}
+
+  process-route-segment:
+    handler: src/app/process-route-segment/handler.handler
+    memorySize: 512
+    timeout: 90
+    environment:
+      GRAPHQL_ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+      GRAPHQL_SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+      PROJECT_CONFIG: ${self:provider.stage}
+      GOOGLE_API_KEY: ${self:custom.googleApiConfig.apiKey}
+      FLICKR_API_KEY: ${self:custom.flickrApiConfig.apiKey}
+      USERPOOL_ADMIN_CLIENT_ID:
+        Ref: CognitoUserPoolClientAdmin
+      USERPOOL_ADMIN_ID:
+        Ref: CognitoUserPool
+      COGNITO_API_KEY: 'da2-mpxgg3r2n5cjzgmumjztbhcldm'
+
+  pre-sign-up:
+    handler: src/app/passwordless-pre-sign-up/index.handler
+
+  define-auth-challenge:
+    handler: src/app/passwordless-define-auth-challenge/index.handler
+
+  create-auth-challenge:
+    handler: src/app/passwordless-create-auth-challenge/index.handler
+    environment:
+      SES_FROM_ADDRESS: noreply@gtracksport.com
+      ORIGIN: ${self:custom.sesOrigin}
+      USERPOOL_MOBILE_CLIENT_ID: 'CREATE_MOBILE_USER_POOL_CLIENT'
+      DEEP_LINK: gtrack://app
+
+  verify-auth-challenge-response:
+    handler: src/app/passwordless-verify-auth-challenge-response/index.handler
+
+  pre-authentication:
+    handler: src/app/pre-authentication/index.handler
+    environment:
+      USERPOOL_ADMIN_CLIENT_ID:
+        Ref: CognitoUserPoolClientAdmin
+      PROJECT_PREFIX: ${self:custom.projectPrefix}
+
+  pre-token-generation:
+    handler: src/app/pre-token-generation/index.handler
+
+  elasticsearch-indexer:
+    handler: src/app/elasticsearch-indexer/elasticsearch-indexer.handler
+    timeout: 60
+    events:
+      - stream:
+          type: dynamodb
+          arn:
+            'Fn::GetAtt': [HikeTable, StreamArn]
+      - stream:
+          type: dynamodb
+          arn:
+            'Fn::GetAtt': [PoiTable, StreamArn]
+      - stream:
+          type: dynamodb
+          arn:
+            'Fn::GetAtt': [ImageTable, StreamArn]
+
+    environment:
+      GRAPHQL_ENDPOINT:
+        Fn::GetAtt:
+          - GraphQlApi
+          - GraphQLUrl
+      GRAPHQL_ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+      GRAPHQL_SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+      STAGE: ${self:provider.stage}
+      SERVICE: ${self:service}
+
+  stack-init:
+    handler: src/app/stack-init/index.handler
+    environment:
+      PROJECT_PREFIX: ${self:custom.projectPrefix}
+
+resources:
+  - ${file(./src/resources/dynamodb/appsync-tables.yml)}
+  - ${file(./src/resources/elasticsearch.yml)}
+  - ${file(./src/resources/cognito-user-pools.yml)}
+  - ${file(./src/resources/outputs.yml)}
+  # - ${file(./src/resources/lambda-roles.yml)}

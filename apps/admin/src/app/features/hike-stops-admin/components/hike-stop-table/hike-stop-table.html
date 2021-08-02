@@ -1,0 +1,8 @@
+<div class="w-full flex flex-row justify-between my-1">
+  <div>Number of hike stops found: {{hikeStops?.length || 0}}</div>
+  <button nbButton status="danger" class="ml-4" (click)="deleteAllPois()">
+    Delete all
+  </button>
+</div>
+
+<ng2-smart-table  #theTable [settings]="settings" [source]="hikeStops" ></ng2-smart-table>

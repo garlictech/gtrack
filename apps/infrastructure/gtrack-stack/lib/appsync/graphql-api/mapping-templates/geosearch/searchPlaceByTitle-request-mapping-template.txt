@@ -1,0 +1,24 @@
+{
+  "version":"2017-02-28",
+  "operation":"GET",
+  "path":"/places/_search",
+  "params":{
+    "body":{
+      "size" : #if( ${context.arguments.pageSize} ) ${context.arguments.pageSize} #else 100 #end,
+      "from": #if( ${context.arguments.from} ) ${context.arguments.from} #else 0 #end,
+      "query": {
+        "bool": {
+          "must": [
+            { "match": { "title": {
+              "query": "$context.arguments.title",
+              "operator": "AND",
+              "fuzziness": 2,
+              "prefix_length": 1
+            }}},
+            { "match": { "type": "$context.arguments.type" }}
+          ]
+        }
+      }
+    }
+  }
+}

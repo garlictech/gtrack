@@ -1,0 +1,14 @@
+{
+    "version":"2017-02-28",
+    "operation":"POST",
+    "path":"/places/_delete_by_query",
+    "params": {
+      "body": {
+        "query": {
+            "match": {
+              "objectId": "${context.arguments.objectId}"
+            }
+        }
+    }
+   }
+}

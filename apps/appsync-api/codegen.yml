@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  [src/graphql-schema/schema.graphql, src/graphql-schema/schema.codegen.graphql]
+documents: src/graphql-schema/modules/*.graphql
+generates:
+  ../../libs/universal/gtrack/src/lib/graphql-api/api/graphql.ts:
+    hooks:
+      afterOneFileWrite:
+        - prettier --write
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-document-nodes
+    config:
+      declarationKind: 'interface'
+      namingConvention:
+        enumValues: change-case#lowerCase

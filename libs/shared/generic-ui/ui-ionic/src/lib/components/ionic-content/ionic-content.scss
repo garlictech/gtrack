@@ -1,0 +1,11 @@
+:host {
+  @apply h-full;
+}
+
+.padder {
+  display: block;
+  height: var(--gtrack-tabbar-height);
+}
+.top-padding {
+  padding-top: calc(var(--gtrack-header-height) + 0.5rem);
+}

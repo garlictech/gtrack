@@ -1,0 +1,16 @@
+{
+  "defaultProject": "app",
+  "projects": {
+    "app": {
+      "name": "gTrack",
+      "integrations": {
+        "cordova": {},
+        "capacitor": {}
+      },
+      "type": "angular",
+      "id": "dc785db8",
+      "root": "packages/app"
+    }
+  },
+  "npmClient": "yarn"
+}

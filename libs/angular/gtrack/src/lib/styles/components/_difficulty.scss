@@ -1,0 +1,30 @@
+.difficulty {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.difficulty-1 {
+  color: var(--color-blue);
+  border: 1px solid var(--color-blue);
+}
+
+.difficulty-2 {
+  color: var(--color-green);
+  border: 1px solid var(--color-green);
+}
+
+.difficulty-3 {
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+.difficulty-4 {
+  color: var(--color-orange-dark);
+  border: 1px solid var(--color-orange-dark);
+}
+
+.difficulty-5 {
+  color: var(--color-red-dark);
+  border: 1px solid var(--color-red-dark);
+}

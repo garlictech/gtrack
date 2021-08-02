@@ -1,0 +1,20 @@
+{
+  "name": "@bit/garlictech.angular-features.web.marker-popup",
+  "version": "0.0.21",
+  "homepage": "https://bit.dev/garlictech/angular-features/web/marker-popup",
+  "main": "index.ts",
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^8.2.2",
+    "@bit/garlictech.angular-features.common.marker-icons": "*",
+    "@bit/garlictech.angular-features.common.marker-popup": "*",
+    "@bit/garlictech.angular-features.common.utils": "*",
+    "@bit/garlictech.angular-features.shared.localize-ionic": "*",
+    "@bit/garlictech.angular-features.web.poi": "*"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+    "env": {}
+  }
+}

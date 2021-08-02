@@ -1,0 +1,38 @@
+<ion-item-divider>
+  <ion-label>
+    <span>{{ 'settings.account.label' | translate }}</span>
+    <span *ngIf="(userData$ | async)?.email">
+      : {{ (userData$ | async)?.email }}
+    </span>
+  </ion-label>
+</ion-item-divider>
+<gtrack-common-settings-account
+  [isLoggedIn]="isLoggedIn$ | async"
+  (login)="onLogin($event)"
+  (logout)="onLogout($event)"
+></gtrack-common-settings-account>
+<!-- <gtrack-common-settings-account
+  [account]="userData$ | async"
+  [isLoggedIn]="isLoggedIn$ | async"
+  (login)="onLogin($event)"
+  (logout)="onLogout($event)"
+></gtrack-common-settings-account> -->
+<!--><div class="flex flex-col justify-between mt-8 mb-8">
+  <gtrack-subscription-plan></gtrack-subscription-plan>
+</div>
+-->
+<ion-item-divider>
+  <ion-label> {{ 'settings.preferences.label' | translate }} </ion-label>
+</ion-item-divider>
+<gtrack-preferences-common></gtrack-preferences-common>
+<!--<ion-item-divider>
+  <ion-label> {{ 'settings.profile.label' | translate }} </ion-label>
+</ion-item-divider>
+ <gtrack-user-profile-form></gtrack-user-profile-form> --->
+<ion-item-divider>
+  <ion-label> {{ 'info.label' | translate }} </ion-label>
+</ion-item-divider>
+<gtrack-info
+  [privacyPolicySlug]="privacyPolicySlug$ | async"
+  [termsAndCondSlug]="termsAndCondSlug$ | async"
+></gtrack-info>

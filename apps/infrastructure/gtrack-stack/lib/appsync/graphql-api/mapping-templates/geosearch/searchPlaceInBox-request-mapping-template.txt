@@ -1,0 +1,32 @@
+{
+  "version": "2017-02-28",
+  "operation": "GET",
+  "path": "/places/_search",
+  "params": {
+    "body": {
+      "query": {
+        "bool": {
+          "must": [
+            { "match": { "type":   "${context.arguments.type}" }}
+          ],
+          "filter": {
+            ## In the schema, we have northEast-southWest bounds. We swap the coordinates so we create topleft/bottomright
+            ## coordinates, that the elastic search requires.
+            "geo_bounding_box": {
+              "location" : {
+                "top_left" : {
+                    "lat" : ${context.arguments.box.SouthWest.lat},
+                    "lon" : ${context.arguments.box.NorthEast.lon}
+                },
+                "bottom_right" : {
+                    "lat" : ${context.arguments.box.NorthEast.lat},
+                    "lon" : ${context.arguments.box.SouthWest.lon}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+:host {
+  .footer-container {
+    z-index: 1000;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--ionic-color-primary);
+    @apply uppercase;
+  }
+
+  .titles {
+    text-align: center;
+  }
+
+  a {
+    @apply px-1;
+  }
+}

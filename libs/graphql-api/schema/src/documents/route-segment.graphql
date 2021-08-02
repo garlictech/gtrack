@@ -1,0 +1,3 @@
+mutation ProcessRouteSegment($input: [[Float!]!]!) {
+  processRouteSegment(input: $input)
+}

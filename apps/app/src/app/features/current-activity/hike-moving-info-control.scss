@@ -1,0 +1,7 @@
+@import './current-activity.scss';
+
+:host {
+  @extend .info-control-host;
+  bottom: 15vh;
+  @apply control-content w-auto left-0;
+}

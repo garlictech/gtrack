@@ -1,0 +1,9 @@
+.search-hike-data {
+  cursor: pointer;
+
+  &:hover {
+    .leaflet-popup-content-wrapper {
+      background: var(--color-grey-lightest);
+    }
+  }
+}

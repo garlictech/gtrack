@@ -1,0 +1,81 @@
+version: '3.1'
+
+services:
+  deepstream:
+    image: docker.garlictech.com/gtrack-deepstream-staging
+    env_file:
+      - ./service.env
+    depends_on:
+      - rethinkdb
+      - redis
+    restart: always
+    secrets:
+      - DEEPSTREAM_PROVIDER_JWT_SECRET
+      - RETHINKDB_PASSWORD
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+    ports:
+      - 6020:6020
+
+  redis:
+    image: redis:alpine
+
+  redis-cache:
+    image: redis:alpine
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+
+  rethinkdb:
+    image: rethinkdb
+    env_file:
+      - ./service.env
+    volumes:
+      - ./volumes/rethinkdb_data:/data/rethinkdb_data
+    command: ['sh', '-c', 'rethinkdb --bind all --initial-password $${RETHINKDB_PASSWORD}']
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 250M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+    ports:
+      - '28016:28016'
+      - '8091:8080'
+
+  deepstream_providers:
+    image: docker.garlictech.com/gtrack-deepstream-providers-staging
+    env_file:
+      - ./service.env
+    depends_on:
+      - deepstream
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+
+secrets:
+  DEEPSTREAM_PROVIDER_JWT_SECRET:
+    file: secrets/DEEPSTREAM_PROVIDER_JWT_SECRET.secret.txt
+  DEEPSTREAM_USER_JWT_SECRET:
+    file: secrets/DEEPSTREAM_USER_JWT_SECRET.secret.txt
+  RETHINKDB_PASSWORD:
+    file: secrets/RETHINKDB_PASSWORD.secret.txt

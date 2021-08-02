@@ -1,0 +1,29 @@
+<div
+  leaflet
+  [ngClass]="{ 'rounded-full': rounded === true }"
+  [leafletOptions]="options"
+  [leafletLayersControl]="layersControl"
+  (leafletClick)="onLeafletClick($event)"
+  [leafletFitBounds]="bounds"
+  (leafletMapReady)="onMapReady($event)"
+  (resized)="onResized()"
+>
+  <div
+    class="h-full"
+    [garlictechSpinner]="showSpinner"
+    [fullSize]="rounded"
+  ></div>
+  <div
+    *ngFor="let l of featureOverlays"
+    [leafletLayer]="l"
+    style="z-index: -1"
+  ></div>
+ <!--  <leaflet-fullscreen-control
+    [options]="fullscreenOptions"
+    [map]="mapInstance"
+  ></leaflet-fullscreen-control> -->
+  <!-- <leaflet-locate-control
+        [options]="locateOptions"
+        [map]="mapInstance"
+      ></leaflet-locate-control> -->
+</div>

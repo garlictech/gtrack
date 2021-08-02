@@ -1,0 +1,65 @@
+mutation CreatePoi($input: CreatePoiInput!) {
+  createPoi(input: $input) {
+    ...poiFields
+  }
+}
+
+mutation CreateMultiplePois($input: [CreatePoiInput!]!) {
+  createMultiplePois(input: $input) {
+    ...poiFields
+  }
+}
+
+mutation UpdatePoi($input: UpdatePoiInput!) {
+  updatePoi(input: $input) {
+    ...poiFields
+  }
+}
+
+query GetPoi($id: ID!) {
+  getPoi(id: $id) {
+    ...poiFields
+  }
+}
+
+query GetMultiplePois($ids: [ID!]!) {
+  getMultiplePois(ids: $ids) {
+    data {
+      ...poiFields
+    }
+    unprocessedKeys {
+      id
+    }
+  }
+}
+
+mutation DeletePoi($id: ID!) {
+  deletePoi(id: $id) {
+    id
+  }
+}
+
+fragment poiFields on Poi {
+  id
+  description {
+    ...textualDescriptionFields
+  }
+  lat
+  lon
+  elevation
+  types
+  tags
+  sourceObject {
+    ...poiSourceObjectFields
+  }
+  address
+  phoneNumber
+  openingHours
+}
+
+fragment poiSourceObjectFields on PoiSourceObject {
+  objectType
+  languageKey
+  objectId
+  url
+}

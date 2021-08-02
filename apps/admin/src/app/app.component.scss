@@ -1,0 +1,18 @@
+::ng-deep {
+  nb-layout-header > nav {
+    width: 100%;
+  }
+  nb-layout-column {
+    z-index: 0;
+    overflow: scroll;
+    height: 90vh;
+  }
+  nb-layout-footer > nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+.title {
+  font-family: 'Timber Hitch';
+}

@@ -1,0 +1,110 @@
+<form *ngIf="filterForm$ | async as filterForm" [formGroup]="filterForm">
+  <ion-list>
+    <ion-item>
+      <div class="filter-container">
+        <div>
+          <ion-label>{{ 'search.max-radius' | translate }}</ion-label>
+          <ion-badge class="badge-title">
+            <div class="badge-title">
+              {{ currentRadius$ | async }}
+              {{ bigUnit$ | async }}
+            </div>
+          </ion-badge>
+        </div>
+        <ion-range *ngIf="maxSearchRadius$ | async as maxSearchRadius" formControlName="radius" debounce="250" min="1"
+          [max]="maxSearchRadius" pin="false" ticks="false" color="primary" snaps="true">
+          <!-- <ion-label slot="start"> 1 </ion-label>
+          <ion-label slot="end"> {{ maxSearchRadius }} </ion-label> -->
+        </ion-range>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <div class="filter-container">
+        <div>
+          <ion-label>{{
+            'common.hike.location-search.difficulty' | translate
+            }}</ion-label>
+          <ion-badge>
+            <div class="badge-title" class="badge-title" *ngIf="filterForm.controls.difficulty.value as difficulty">
+              {{ 'hikeDifficulty.' + difficulty.lower | translate }}
+              <span *ngIf="difficulty.lower !== difficulty.upper">
+                -
+                {{ 'hikeDifficulty.' + difficulty.upper | translate }}
+              </span>
+            </div>
+          </ion-badge>
+        </div>
+
+        <ion-range formControlName="difficulty" dualKnobs="true" debounce="250" min="0" max="4" pin="false"
+          ticks="false" color="primary" snaps="true">
+          <!-- <ion-label slot="start"> {{ 'hikeDifficulty.0' | translate }} </ion-label>
+          <ion-label slot="end"> {{ 'hikeDifficulty.4' | translate }} </ion-label> -->
+        </ion-range>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <div class="filter-container">
+        <div>
+          <ion-label>{{
+            'common.hike.location-search.walkingDistance' | translate
+            }}</ion-label>
+<!-- NEEDS TO CHECK LATER -->
+          <ion-badge>
+            <div class="badge-title"
+              *ngIf="filterForm.controls.length.value as walkDistance">
+              {{ $any((currentWalkDistance$ | async))[0] }}
+              <span *ngIf="walkDistance.lower !== walkDistance.upper">
+                -
+                {{
+                  $any((currentWalkDistance$ | async))[1] ||
+                (maxWalkDistance$ | async)
+                }}
+              </span>
+              <span *ngIf="
+              $any((currentWalkDistance$ | async))[1] ===
+                  (maxWalkDistance$ | async)
+                ">
+                +
+              </span>
+              {{ bigUnit$ | async }}
+            </div>
+          </ion-badge>
+        </div>
+        <ion-range *ngIf="maxWalkDistance$ | async as maxWalkDistance" formControlName="length" dualKnobs="true"
+          debounce="250" min="0" [max]="maxWalkDistance" pin="false" ticks="false" color="primary" snaps="true">
+          <!-- <ion-label slot="start"> 0 </ion-label>
+          <ion-label slot="end"> {{ maxWalkDistance }}+ </ion-label> -->
+        </ion-range>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <div class="filter-container">
+        <div>
+          <ion-label>{{
+            'common.hike.location-search.time' | translate
+            }}</ion-label>
+
+          <ion-badge>
+            <div class="badge-title" *ngIf="filterForm.controls.time.value as walkTime">
+              {{ walkTime.lower }}
+              <span *ngIf="walkTime.lower !== walkTime.upper">
+                -
+                {{ walkTime.upper }}
+              </span>
+              <span *ngIf="walkTime.upper === maxWalkTimeInHours"> + </span>
+              {{ 'time.h' | translate }}
+            </div>
+          </ion-badge>
+        </div>
+        <ion-range formControlName="time" dualKnobs="true" debounce="250" min="0" [max]="maxWalkTimeInHours" pin="false"
+          ticks="false" color="primary" snaps="true">
+          <!-- <ion-label slot="start"> 0 </ion-label>
+          <ion-label slot="end"> {{ maxWalkTimeInHours }}+ </ion-label> -->
+        </ion-range>
+      </div>
+    </ion-item>
+  </ion-list>
+</form>

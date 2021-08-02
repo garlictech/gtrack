@@ -1,0 +1,21 @@
+<div>
+  <div class="flow-root">
+    <div *ngIf="image" class="img"><img [src]="image" /></div>
+    <div class="popup-data">
+      <h3>{{ (data.poi.description | localizeDescription).title }}</h3>
+      <p>Elevation: {{ data.poi.elevation | distance | async }}</p>
+      <!-- <p>From origo: {{ data.stop.distanceFromOrigo | distance | async }}</p> -->
+      <!-- <gtrack-icon width="24" [poi]="data.poi"></gtrack-icon> -->
+      <button (click)="showPopup = true" class="button">More</button>
+    </div>
+  </div>
+</div>
+
+<p-dialog
+  [style]="{ 'max-width': '90%' }"
+  appendTo="body"
+  [(visible)]="showPopup"
+>
+  <p-header>{{ (data.poi.description | localizeDescription).title }}</p-header>
+  <!-- <gtrack-poi-page [poi]="data.poi"> </gtrack-poi-page> -->
+</p-dialog>

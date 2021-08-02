@@ -1,0 +1,17 @@
+Resources:
+  isochroneTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:service}_${self:provider.stage}-graphhopper-isochrone
+      # TableName: ${cf:gtrack.provider.stage}-graphhopper-isochrone
+      AttributeDefinitions:
+        - AttributeName: ip
+          AttributeType: S
+        # - AttributeName: servedAt
+        #   AttributeType: N
+      KeySchema:
+        - AttributeName: ip
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1

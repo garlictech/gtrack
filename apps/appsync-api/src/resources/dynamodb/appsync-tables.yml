@@ -1,0 +1,107 @@
+Resources:
+  PoiTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: '${self:service}-${self:provider.stage}-pois'
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      # BillingMode: PAY_PER_REQUEST
+
+  ImageTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: '${self:service}-${self:provider.stage}-images'
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      # BillingMode: PAY_PER_REQUEST
+
+  HikeTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: '${self:service}-${self:provider.stage}-hikes'
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+      # BillingMode: PAY_PER_REQUEST
+
+  HikeGroupTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: '${self:service}-${self:provider.stage}-hikeGroups'
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      # ProvisionedThroughput:
+      #   ReadCapacityUnits: 10
+      #   WriteCapacityUnits: 10
+      BillingMode: PAY_PER_REQUEST
+
+  CustomerTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: '${self:service}-${self:provider.stage}-customers'
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      # ProvisionedThroughput:
+      #   ReadCapacityUnits: 10
+      #   WriteCapacityUnits: 10
+      BillingMode: PAY_PER_REQUEST
+
+  IsochroneTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:service}-${self:provider.stage}-graphhopper-isochrone
+      AttributeDefinitions:
+        - AttributeName: ip
+          AttributeType: S
+      KeySchema:
+        - AttributeName: ip
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+  AdminsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:service}-${self:provider.stage}-admins
+      AttributeDefinitions:
+        - AttributeName: email
+          AttributeType: S
+      KeySchema:
+        - AttributeName: email
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST

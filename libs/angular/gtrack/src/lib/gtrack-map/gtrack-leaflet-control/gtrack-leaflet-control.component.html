@@ -1,0 +1,62 @@
+<div class="custom-control">
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button
+      size="small"
+      click="$event.stopPropagation()"
+      color="danger"
+      mode="ios"
+      ><fa-icon [icon]="cogIcon"></fa-icon
+    ></ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="onResetClick()"
+        ><fa-icon [icon]="syncIcon"></fa-icon
+      ></ion-fab-button>
+
+      <ion-fab-button
+        *ngIf="poiControlConfig.routeOnTop"
+        (click)="toggleRouteOnTop()"
+        ><fa-icon [icon]="routeOnTopIconOn"></fa-icon
+      ></ion-fab-button>
+
+      <ion-fab-button
+        *ngIf="!poiControlConfig.routeOnTop"
+        (click)="toggleRouteOnTop()"
+        ><fa-icon [icon]="routeOnTopIconOff"></fa-icon
+      ></ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start" *ngIf="poiControlShown">
+      <ion-fab-button
+        *ngIf="!poiControlConfig.onrouteShown"
+        (click)="toggleOnrouteMarkers()"
+        ><fa-icon [icon]="onrouteIcon"></fa-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        *ngIf="poiControlConfig.onrouteShown"
+        (click)="toggleOnrouteMarkers()"
+        ><fa-icon [icon]="onrouteIconOff"></fa-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        *ngIf="!poiControlConfig.offrouteShown"
+        (click)="toggleOffrouteMarkers()"
+        ><fa-icon [icon]="offrouteIcon"></fa-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        *ngIf="poiControlConfig.offrouteShown"
+        (click)="toggleOffrouteMarkers()"
+        ><fa-icon [icon]="offrouteIconOff"></fa-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        *ngIf="!poiControlConfig.checkpointsShown"
+        (click)="toggleCheckpointMarkers()"
+        ><fa-icon [icon]="checkpointIconOn"></fa-icon
+      ></ion-fab-button>
+      <ion-fab-button
+        *ngIf="poiControlConfig.checkpointsShown"
+        (click)="toggleCheckpointMarkers()"
+        ><fa-icon [icon]="checkpointIconOff"></fa-icon
+      ></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</div>

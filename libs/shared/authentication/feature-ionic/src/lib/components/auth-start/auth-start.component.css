@@ -1,0 +1,85 @@
+.main {
+  background: url('/assets/img/image3.jpg') no-repeat center center fixed;
+  background-size: 1225px 800px;
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.images {
+  padding-top: 55px;
+  display: block;
+  margin: auto;
+  width: 50%;
+  max-width: 320px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 51px;
+  width: 100%;
+}
+
+.logo-mountain {
+  width: 160px;
+}
+
+.logo-text {
+  width: 200px;
+}
+
+/* Shared */
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  padding: 10px 35px 10px 35px;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  color: #fff;
+  width: 80%;
+  max-width: 300px;
+
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(68, 68, 68, 0.51);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(68, 68, 68, 0.51);
+  box-shadow: 5px 5px 5px 0px rgba(68, 68, 68, 0.51);
+}
+
+.loginBtn:focus {
+  outline: none;
+}
+
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Facebook */
+.loginBtn--join {
+  background-color: #339933;
+  background-image: linear-gradient(#339933, #207610);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #339933;
+}
+
+.loginBtn--join:hover,
+.loginBtn--join:focus {
+  background-color: #53a953;
+  background-image: linear-gradient(#53a953, #339933);
+}
+
+/* Google */
+.loginBtn--login {
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+  background: #de9d1f;
+}
+
+.loginBtn--login:hover,
+.loginBtn--login:focus {
+  background: #febd3f;
+}

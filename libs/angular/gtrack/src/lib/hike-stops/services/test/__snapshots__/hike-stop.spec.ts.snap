@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDetailsOfStops the good case 1`] = `
+Object {
+  "_tag": "Some",
+  "value": Object {
+    "titleList": Array [
+      Object {
+        "icons": Array [
+          Object {
+            "color": "#265DB2",
+            "url": "amenity:bar",
+          },
+          Object {
+            "color": "#265DB2",
+            "url": "amenity:restaurant",
+          },
+        ],
+        "title": "Title hu",
+      },
+      Object {
+        "icons": Array [
+          Object {
+            "color": "#108E4C",
+            "url": "generic:asterisco",
+          },
+        ],
+        "title": "Title 2 hu",
+      },
+    ],
+    "typeDetails": Array [
+      Object {
+        "icon": Object {
+          "color": "#265DB2",
+          "url": "amenity:bar",
+        },
+        "translatedType": "TRANSLATED-iconTags.amenity:bar",
+      },
+      Object {
+        "icon": Object {
+          "color": "#265DB2",
+          "url": "amenity:restaurant",
+        },
+        "translatedType": "TRANSLATED-iconTags.amenity:restaurant",
+      },
+      Object {
+        "icon": Object {
+          "color": "#108E4C",
+          "url": "generic:asterisco",
+        },
+        "translatedType": "TRANSLATED-iconTags.natural:wood",
+      },
+    ],
+  },
+}
+`;
+
+exports[`getDetailsOfStops with null titles 1`] = `
+Object {
+  "_tag": "Some",
+  "value": Object {
+    "titleList": Array [],
+    "typeDetails": Array [
+      Object {
+        "icon": Object {
+          "color": "#108E4C",
+          "url": "generic:asterisco",
+        },
+        "translatedType": "TRANSLATED-iconTags.natural:wood",
+      },
+    ],
+  },
+}
+`;
+
+exports[`getDetailsOfStops with some bad stuff 1`] = `
+Object {
+  "_tag": "None",
+}
+`;
+
+exports[`getDetailsOfStops with some repetitions 1`] = `
+Object {
+  "_tag": "Some",
+  "value": Object {
+    "titleList": Array [
+      Object {
+        "icons": Array [
+          Object {
+            "color": "#265DB2",
+            "url": "amenity:bar",
+          },
+          Object {
+            "color": "#265DB2",
+            "url": "amenity:restaurant",
+          },
+        ],
+        "title": "Title hu",
+      },
+      Object {
+        "icons": Array [
+          Object {
+            "color": "#265DB2",
+            "url": "amenity:bar",
+          },
+          Object {
+            "color": "#265DB2",
+            "url": "amenity:restaurant",
+          },
+        ],
+        "title": "Title hu",
+      },
+    ],
+    "typeDetails": Array [
+      Object {
+        "icon": Object {
+          "color": "#265DB2",
+          "url": "amenity:bar",
+        },
+        "translatedType": "TRANSLATED-iconTags.amenity:bar",
+      },
+      Object {
+        "icon": Object {
+          "color": "#265DB2",
+          "url": "amenity:restaurant",
+        },
+        "translatedType": "TRANSLATED-iconTags.amenity:restaurant",
+      },
+    ],
+  },
+}
+`;

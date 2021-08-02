@@ -1,0 +1,15 @@
+<gtrack-leaflet-map
+  class="h-full"
+  [featureOverlays]="allFeatureOverlays$ | async"
+  [markers$]="stopMapMarkers$"
+  (theMap)="onTheMap($event)"
+  (mapClick)="onMapClick($event)"
+  [showSpinner]="showSpinner"
+  [routeOnTop]="routeOnTop$ | async"
+></gtrack-leaflet-map>
+<gtrack-leaflet-control
+  [map]="theMap"
+  [poiControlShown]="poiControlShown$ | async"
+  (poiControlChange)="onPoiConfigChange($event)"
+  (resetRequested)="resetMap()"
+></gtrack-leaflet-control>

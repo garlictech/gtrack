@@ -1,0 +1,88 @@
+<div class="m-auto cursor-pointer component-container">
+  <div
+    [routerLink]="['/', 'hike', hike?.data?.id]"
+    class="overflow-hidden rounded-lg component-aspect-ratio-box"
+    [ngClass]="{ 'image-place-color': !imageUrl }"
+  >
+    <div class="aspect-ratio-box-inside">
+      <ng-container *ngIf="imageUrl">
+        <div
+          class="absolute bottom-0 flex flex-row justify-center w-full h-full"
+        >
+          <img
+            [src]="imageUrl"
+            [src-fallback]="placeholderImageUrl"
+            (loaded)="onImageLoaded($event)"
+            class="img-fit"
+          />
+        </div>
+        <div
+          class="absolute top-0 left-0 w-1/5 p-1"
+          *ngIf="placeholderImageUrl"
+        >
+          <img [src]="placeholderImageUrl | trustedUrl" class="h-full" />
+        </div>
+      <!--   <div class="absolute top-0 right-0 w-1/5 p-1" *ngIf="elevationImageUrl">
+          <img [src]="elevationImageUrl | trustedUrl" class="h-full" />
+        </div> -->
+      </ng-container>
+      <ng-container *ngIf="!imageUrl">
+        <div
+          class="absolute top-0 right-0 block w-auto px-1 m-1 font-bold rounded route-label"
+        >
+          {{ 'pages.common.hike.route' | translate }}
+        </div>
+        <div
+          class="absolute bottom-0 flex flex-row justify-center w-full h-full p-2"
+        >
+          <img [src]="placeholderImageUrl | trustedUrl" class="h-full" />
+        </div>
+      </ng-container>
+      <div class="absolute bottom-0 block w-full p-2 text-xl text-left">
+        <div class="flex flex-row items-start content-center w-auto text-base">
+          <div
+            class="block mr-1 rounded-l-sm self-stratch text-label"
+            [ngClass]="{ 'text-label-inverted': !!imageUrl }"
+          >
+            <ion-icon
+              name="walk"
+              class="mr-1"
+              [ngClass]="{ 'icon-inverted ': !!imageUrl }"
+            ></ion-icon>
+          </div>
+          <div
+            class="block px-1 leading-none rounded-r-sm text-label"
+            [ngClass]="{ 'text-label-inverted ': !!imageUrl }"
+          >
+            {{ hike.route.distance | distance | async }}
+          </div>
+        </div>
+        <div class="w-full">
+          <div class="" [ngClass]="{ 'card-text-title': !!imageUrl }">
+            {{ (hike.data.description | localizeDescription)?.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center w-full p-2">
+    <div class="w-full justify-items-auto data-badges grid grid-cols-4 gap-2">
+      <gtrack-data-badge iconName="trending-up">
+        {{ hike.route.uphill | distance | async }}
+      </gtrack-data-badge>
+
+      <gtrack-data-badge iconName="fitness">
+        <gtrack-difficulty
+          [difficulty]="hike?.route?.difficulty"
+        ></gtrack-difficulty>
+      </gtrack-data-badge>
+
+      <gtrack-data-badge iconName="time">
+        {{ hike.route.averageTime | duration }}
+      </gtrack-data-badge>
+
+      <gtrack-bookmark-button></gtrack-bookmark-button>
+    </div>
+  </div>
+</div>

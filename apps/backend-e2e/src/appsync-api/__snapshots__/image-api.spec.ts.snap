@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image graphql integration tests it must be able to CRUD images 1`] = `
+Object {
+  "_tag": "Right",
+  "right": Array [
+    Object {
+      "__typename": "Image",
+      "attributions": null,
+      "card": Object {
+        "__typename": "ImageInfo",
+        "height": 12,
+        "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_z.jpg",
+        "width": 640,
+      },
+      "id": "flickr-8145547906",
+      "labels": null,
+      "lat": 47.481277,
+      "lon": 18.907341,
+      "original": Object {
+        "__typename": "ImageInfo",
+        "height": 12,
+        "url": "https://live.staticflickr.com/8471/8145547906_bf5900cb6f_o.jpg",
+        "width": 2592,
+      },
+      "sourceObject": Object {
+        "__typename": "PoiSourceObject",
+        "objectId": "8145547906",
+        "objectType": "flickr",
+      },
+      "thumbnail": Object {
+        "__typename": "ImageInfo",
+        "height": 12,
+        "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_n.jpg",
+        "width": 320,
+      },
+    },
+  ],
+}
+`;
+
+exports[`Image graphql integration tests it must be able to CRUD images 2`] = `
+Object {
+  "_tag": "Right",
+  "right": Object {
+    "__typename": "Image",
+    "attributions": null,
+    "card": Object {
+      "__typename": "ImageInfo",
+      "height": 12,
+      "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_z.jpg",
+      "width": 640,
+    },
+    "id": "flickr-8145547906",
+    "labels": null,
+    "lat": 47.481277,
+    "lon": 18.907341,
+    "original": Object {
+      "__typename": "ImageInfo",
+      "height": 12,
+      "url": "https://live.staticflickr.com/8471/8145547906_bf5900cb6f_o.jpg",
+      "width": 2592,
+    },
+    "sourceObject": Object {
+      "__typename": "PoiSourceObject",
+      "objectId": "8145547906",
+      "objectType": "flickr",
+    },
+    "thumbnail": Object {
+      "__typename": "ImageInfo",
+      "height": 12,
+      "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_n.jpg",
+      "width": 320,
+    },
+  },
+}
+`;
+
+exports[`Image graphql integration tests it must be able to CRUD images 3`] = `
+Object {
+  "_tag": "Right",
+  "right": Array [
+    Object {
+      "__typename": "Image",
+      "attributions": null,
+      "card": Object {
+        "__typename": "ImageInfo",
+        "height": 12,
+        "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_z.jpg",
+        "width": 640,
+      },
+      "id": "flickr-8145547906",
+      "labels": null,
+      "lat": 47.481277,
+      "lon": 18.907341,
+      "original": Object {
+        "__typename": "ImageInfo",
+        "height": 12,
+        "url": "https://live.staticflickr.com/8471/8145547906_bf5900cb6f_o.jpg",
+        "width": 2592,
+      },
+      "sourceObject": Object {
+        "__typename": "PoiSourceObject",
+        "objectId": "8145547906",
+        "objectType": "flickr",
+      },
+      "thumbnail": Object {
+        "__typename": "ImageInfo",
+        "height": 12,
+        "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_n.jpg",
+        "width": 320,
+      },
+    },
+  ],
+}
+`;
+
+exports[`Image graphql integration tests it must be able to CRUD images 4`] = `
+Object {
+  "_tag": "Right",
+  "right": Object {
+    "__typename": "Image",
+    "attributions": "foobar attribution",
+    "card": Object {
+      "__typename": "ImageInfo",
+      "height": 12,
+      "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_z.jpg",
+      "width": 640,
+    },
+    "id": "flickr-8145547906",
+    "labels": null,
+    "lat": 47.481277,
+    "lon": 18.907341,
+    "original": Object {
+      "__typename": "ImageInfo",
+      "height": 12,
+      "url": "https://live.staticflickr.com/8471/8145547906_bf5900cb6f_o.jpg",
+      "width": 2592,
+    },
+    "sourceObject": Object {
+      "__typename": "PoiSourceObject",
+      "objectId": "8145547906",
+      "objectType": "flickr",
+    },
+    "thumbnail": Object {
+      "__typename": "ImageInfo",
+      "height": 12,
+      "url": "https://live.staticflickr.com/8471/8145547906_0786c3d50c_n.jpg",
+      "width": 320,
+    },
+  },
+}
+`;
+
+exports[`Image graphql integration tests it must be able to CRUD images 5`] = `
+Object {
+  "_tag": "Right",
+  "right": true,
+}
+`;

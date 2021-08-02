@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the create hike group input schema it should reconstruct the CreateHikeGroupInput 1`] = `
+Object {
+  "description": Array [
+    Object {
+      "languageKey": "en_US",
+      "title": "The title",
+      "type": "markdown",
+    },
+  ],
+  "hikeIds": Array [
+    "hikeid-1",
+  ],
+  "publicationState": "draft",
+}
+`;
+
+exports[`Test the create hike group input schema it should report the wrong fields 1`] = `
+Array [
+  Object {
+    "exception": "any.required",
+    "message": "\\"publicationState\\" is required",
+    "path": Array [
+      "publicationState",
+    ],
+  },
+  Object {
+    "exception": "array.base",
+    "message": "\\"description\\" must be an array",
+    "path": Array [
+      "description",
+    ],
+  },
+  Object {
+    "exception": "object.allowUnknown",
+    "message": "\\"id\\" is not allowed",
+    "path": Array [
+      "id",
+    ],
+  },
+]
+`;
+
+exports[`Test the hike group schema it should reconstruct the HikeGroup 1`] = `
+Object {
+  "description": Array [
+    Object {
+      "languageKey": "en_US",
+      "title": "TITLE",
+      "type": "html",
+    },
+  ],
+  "id": "bd1e9454-aeb5-488f-9e0b-1a5b512fe1bf",
+  "publicationState": "draft",
+}
+`;
+
+exports[`Test the hike group schema it should report the wrong fields 1`] = `
+Array [
+  Object {
+    "exception": "any.empty",
+    "message": "\\"id\\" is not allowed to be empty",
+    "path": Array [
+      "id",
+    ],
+  },
+  Object {
+    "exception": "any.required",
+    "message": "\\"publicationState\\" is required",
+    "path": Array [
+      "publicationState",
+    ],
+  },
+  Object {
+    "exception": "array.base",
+    "message": "\\"description\\" must be an array",
+    "path": Array [
+      "description",
+    ],
+  },
+]
+`;

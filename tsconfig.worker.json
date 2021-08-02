@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["es2018", "webworker"]
+  },
+  "include": ["libs/angular/gtrack/src/lib/webworkers"]
+}

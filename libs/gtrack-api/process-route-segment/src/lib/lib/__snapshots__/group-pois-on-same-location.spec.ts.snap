@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter pois on same location 1`] = `
+Array [
+  Object {
+    "description": Object {
+      "languageKey": "lan3",
+      "summary": "summary 3",
+    },
+    "id": 3,
+    "lat": 2,
+    "lon": 2,
+    "sourceObject": Array [
+      Object {
+        "objectId": 3,
+      },
+    ],
+  },
+  Object {
+    "address": undefined,
+    "description": Array [
+      Object {
+        "languageKey": "lan1",
+        "summary": "summary 1",
+      },
+      Object {
+        "languageKey": "lan4",
+        "summary": "summary 4",
+      },
+    ],
+    "id": 1,
+    "lat": 1,
+    "lon": 1,
+    "sourceObject": Array [
+      Object {
+        "objectId": 4,
+      },
+      Object {
+        "objectId": 2,
+      },
+      Object {
+        "objectId": 1,
+      },
+    ],
+    "types": Array [
+      "t1",
+      "t2.1",
+      "t2.2",
+    ],
+  },
+]
+`;

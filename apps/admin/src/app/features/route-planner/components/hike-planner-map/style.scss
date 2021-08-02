@@ -1,0 +1,27 @@
+.map-container {
+  width: 100%;
+  height: 400px;
+
+  .leaflet-top,
+  .leaflet-left {
+    z-index: 800 !important;
+  }
+
+  .leaflet-container {
+    cursor: pointer;
+  }
+}
+
+.search-group {
+  margin-bottom: 10px;
+
+  .ui-inputgroup-addon {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .search-input {
+    padding: 2px 8px;
+    width: 300px;
+  }
+}

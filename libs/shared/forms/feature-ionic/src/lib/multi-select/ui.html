@@ -1,0 +1,10 @@
+<ion-select
+  [(ngModel)]="value"
+  multiple
+  [placeholder]="placeholder"
+  (ionChange)="doChange()"
+>
+  <ion-select-option *ngFor="let option of options" [value]="option.value"
+    >{{ option.label | translate }}</ion-select-option
+  >
+</ion-select>

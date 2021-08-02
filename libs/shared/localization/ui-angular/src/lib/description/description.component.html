@@ -1,0 +1,30 @@
+<ng-container *ngIf="description; else defaultText">
+  <ng-container
+    *ngIf="
+      description | localizeDescription as localizedDescription;
+      else defaultText
+    "
+  >
+    <ng-container *ngIf="localizedDescription[field]; else defaultText">
+      <gtrack-html-description
+        *ngIf="isHtml(localizedDescription); else markdown"
+        [field]="field"
+        [localizedDescription]="localizedDescription"
+        [charlimit]="charlimit"
+      ></gtrack-html-description>
+      <ng-template #markdown>
+        <gtrack-markdown-description
+          [localizedDescription]="localizedDescription"
+          [field]="field"
+        >
+        </gtrack-markdown-description>
+      </ng-template>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #defaultText>
+  <div class="text-center" *ngIf="defaultTextLabel">
+    {{ defaultTextLabel | translate }}
+  </div>
+</ng-template>

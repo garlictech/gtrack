@@ -1,0 +1,26 @@
+<gtrack-data-badge dataLabel="common.hike.data.distance" iconName="walk">
+  {{ hike.route.distance | distance | async }}
+</gtrack-data-badge>
+
+<gtrack-data-badge dataLabel="common.hike.data.uphill" iconName="trending-up">
+  {{ hike.route.uphill | distance | async }}
+</gtrack-data-badge>
+
+<gtrack-data-badge
+  dataLabel="common.hike.data.downhill"
+  iconName="trending-down"
+>
+  {{ hike.route.downhill | distance | async }}
+</gtrack-data-badge>
+
+<gtrack-data-badge dataLabel="common.hike.data.walkTime" iconName="time">
+  {{ hike.route.averageTime | duration }}
+</gtrack-data-badge>
+
+<gtrack-data-badge dataLabel="common.hike.data.score" iconName="trophy">
+  {{ hike.route.score }}
+</gtrack-data-badge>
+
+<gtrack-data-badge dataLabel="common.hike.data.difficulty" iconName="fitness">
+  <gtrack-difficulty [difficulty]="hike.route.difficulty"></gtrack-difficulty>
+</gtrack-data-badge>

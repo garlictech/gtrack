@@ -1,0 +1,35 @@
+mutation CreateHikeGroup($input: CreateHikeGroupInput!) {
+  createHikeGroup(input: $input) {
+    ...hikeGroupFields
+  }
+}
+
+mutation UpdateHikeGroup($input: UpdateHikeGroupInput!) {
+  updateHikeGroup(input: $input) {
+    ...hikeGroupFields
+  }
+}
+
+query ListHikeGroups {
+  listHikeGroups {
+    items {
+      ...hikeGroupFields
+    }
+    nextToken
+  }
+}
+
+query GetHikeGroup($id: ID!) {
+  getHikeGroup(id: $id) {
+    ...hikeGroupFields
+  }
+}
+
+fragment hikeGroupFields on HikeGroup {
+  id
+  description {
+    ...textualDescriptionFields
+  }
+  hikeIds
+  publicationState
+}

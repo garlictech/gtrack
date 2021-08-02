@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  gtrack.android-builder:
+    build:
+      context: ..
+      dockerfile: Dockerfile.android
+    volumes:
+      - '../:/app'
+    environment:
+      - NODE_ENV
+      - CI
+      - PROJECT_CONFIG
+      - COMPONENT
+      - ANDROID_RELEASE_KEY_PASS
+    entrypoint: ['sh', '-c', '${DOCKER_CMD}']

@@ -1,0 +1,14 @@
+.pac-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  @apply rounded-sm border-solid border-gray-700 border;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item,
+.pac-item-query,
+.pac-matched {
+  @apply text-gray-300;
+}

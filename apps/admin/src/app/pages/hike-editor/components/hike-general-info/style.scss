@@ -1,0 +1,15 @@
+.lang-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+img.svg {
+  width: 60px;
+  margin-left: 15px;
+  border: 1px solid lightgray;
+
+  &.svg-elevation {
+    top: -3px;
+  }
+}

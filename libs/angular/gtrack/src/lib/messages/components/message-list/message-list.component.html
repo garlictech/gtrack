@@ -1,0 +1,93 @@
+<ion-header>
+  <!-- NORMAL TOOLBAR -->
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <img class="h-8 mx-auto" src="/assets/img/logo_hill.svg" />
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <!-- COMMENT POI INFORMATION [name]="!messageFormOpened ? 'add-circle-outline' : 'close-circle-outline'" -->
+    <ion-item lines="none" (click)="openCloseMessageForm()">
+      <ion-icon
+        color="primary"
+        slot="end"
+        [name]="
+          !messageFormOpened ? 'add-circle-outline' : 'close-circle-outline'
+        "
+      ></ion-icon>
+      <ion-label>{{
+        messageData.type === 'COORD'
+          ? messageData.description
+          : (messageData.description | localizeDescription).title
+      }}</ion-label>
+    </ion-item>
+
+    <!-- NEW COMMENT FORM -->
+    <form
+      [formGroup]="commentForm"
+      class="ion-padding"
+      [@openClose]="messageFormOpened ? 'open' : 'closed'"
+    >
+      <ion-label position="top">{{ 'messages.message' | translate }}</ion-label>
+      <ion-textarea
+        rows="5"
+        placeholder="{{ 'messages.placeholder' | translate }}"
+        formControlName="message"
+      ></ion-textarea>
+
+      <ion-button
+        color="primary"
+        expand="block"
+        [disabled]="!commentForm.valid"
+        (click)="addComment()"
+      >
+        {{ 'messages.add_comment' | translate }}
+      </ion-button>
+
+      <div *ngIf="error$ | async; let error">
+        <ion-label color="danger">{{
+          error?.payload?.data?.error?.message
+        }}</ion-label>
+      </div>
+    </form>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- FILTERING EXAMPLE
+  <ion-segment (ionChange)="filterComments($event)">
+    <ion-segment-button value="HIKE">
+      <ion-label>Hike</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="POI">
+      <ion-label>POI</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="COORD">
+      <ion-label>Coordinates</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  -->
+  <ion-list>
+    <ion-list-header
+      >{{ 'messages.comments' | translate }} ({{
+        count$ | async
+      }})</ion-list-header
+    >
+    <ion-item *ngFor="let message of messages$ | async">
+      <ion-avatar slot="start">
+        <img src="/assets/icons/weather/wi-alien.svg" />
+      </ion-avatar>
+      <ion-label class="ion-text-wrap">
+        <!-- TODO should be change this userId to the name of the user after integrate GraphQL -->
+        <h2>{{ message.userId }}</h2>
+        <h3>{{ message.createdDate | date: 'medium' }}</h3>
+        <p class="ion-text-wrap">{{ message.body }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,24 @@
+:host {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 12000;
+
+  .settings-container {
+    background: var(--color-primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    width: 260px;
+    height: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      height: 18px;
+      justify-content: flex-end;
+    }
+  }
+}

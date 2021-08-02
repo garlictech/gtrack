@@ -1,0 +1,44 @@
+version: '3.1'
+
+services:
+  gtrack.website.cypress:
+    image: garlictech2/workflows-cypress:23.0.1
+    volumes:
+      - '${PROJECT_ROOT}/packages/website/cypress:/app/packages/package/cypress'
+      - '${PROJECT_ROOT}/packages/website/cypress.json:/app/packages/package/cypress.json'
+      - '${PROJECT_ROOT}/artifacts:/app/artifacts'
+    environment:
+      - CYPRESS_baseUrl=http://site
+    depends_on:
+      - gtrack.website-prod
+    links:
+      - gtrack.website-prod:site
+
+  gtrack.admin.cypress:
+    image: garlictech2/workflows-cypress:23.0.1
+    volumes:
+      - '${PROJECT_ROOT}/packages/admin/cypress:/app/packages/package/cypress'
+      - '${PROJECT_ROOT}/packages/admin/cypress.json:/app/packages/package/cypress.json'
+      - '${PROJECT_ROOT}/artifacts:/app/artifacts'
+    environment:
+      - CYPRESS_baseUrl=http://site
+    depends_on:
+      - gtrack.admin-prod
+    links:
+      - gtrack.admin-prod:site
+
+  gtrack.admin-prod:
+    build:
+      context: ..
+      dockerfile: packages/admin/Dockerfile.prod
+    environment:
+      - NODE_ENV
+      - CI
+
+  gtrack.website-prod:
+    build:
+      context: ..
+      dockerfile: packages/website/Dockerfile.prod
+    environment:
+      - NODE_ENV
+      - CI

@@ -1,0 +1,5 @@
+{
+  "*.{js,ts,json,css,scss,html,pug}": ["make fix-bit-imports prettier", "git add" ],
+  "*.{svg}": ["make prepare-svg-icons", "git add" ],
+  "*.{ts}": ["make lint-fix", "git add" ]
+}

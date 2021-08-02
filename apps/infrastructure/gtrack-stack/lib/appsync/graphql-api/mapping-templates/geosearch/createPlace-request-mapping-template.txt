@@ -1,0 +1,21 @@
+#set( $id = $util.autoId() )
+
+{
+    "version":"2017-02-28",
+    "operation":"PUT",
+    "path":"/places/_doc/$id",
+    "params":{
+        "body": {
+          "id": "$id",
+          "type": "$ctx.args.input.type",
+          "objectId": "$ctx.args.input.objectId",
+          "location": {
+              "lat": $ctx.args.input.lat,
+              "lon": $ctx.args.input.lon
+          },
+          "title": "$ctx.args.input.title",
+          "processed": "$ctx.args.input.processed",
+          "banned": "$ctx.args.input.banned"
+    	}
+    }
+}

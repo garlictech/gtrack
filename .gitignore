@@ -1,0 +1,116 @@
+# --------------------
+# OSX Files
+# --------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# --------------------
+# Node Files
+# --------------------
+.nodemonignore
+npm-debug.log
+node_modules
+reports/
+report.*.json
+
+# --------------------
+# SASS Files
+# --------------------
+.sass-cache/
+
+# --------------------
+# Bower Files
+# --------------------
+.bower-*/
+bower_components
+
+# --------------------
+# App Files
+# --------------------
+.tmp/
+logs/
+dist/
+*.bak
+credentials.json
+e2e/src/.pki
+e2e/src/supervisord.log
+
+# --------------------
+# Text editor files
+# --------------------
+*.sublime-project
+*.sublime-workspace
+
+# Typing #
+/src/typings/tsd/
+/typings/
+/tsd_typings/
+
+# Dist #
+/dist
+/public/__build__/
+/src/*/__build__/
+/__build__/**
+/public/dist/
+/src/*/dist/
+/dist/**
+/.awcache
+.webpack.json
+
+# IDE #
+.idea/
+*.swp
+
+tokens.env
+secrets.tgz
+.vscode
+firebase-debug.log
+.setup.sh
+reports
+
+docker/volumes
+artifacts
+workflows-angular
+.firebase
+yarn-error.log
+yarn.lock
+docker/lambda.env
+
+# TEST #
+/coverage
+
+# amplify
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+build/
+dist/
+node_modules/
+# aws-exports.js
+awsconfiguration.json
+package-lock.json
+secrets
+packages/app/resources
+.dynamodb
+
+#amplify
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+generated
+.serverless
+.metals
+.build

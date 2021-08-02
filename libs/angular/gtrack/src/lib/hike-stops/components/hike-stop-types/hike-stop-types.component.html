@@ -1,0 +1,8 @@
+<div class="text-center">
+  <gtrack-poi-icon-labelled
+    *ngFor="let stopType of stopSetDetails?.typeDetails"
+    [icon]="stopType?.icon"
+    [label]="stopType?.translatedType"
+    class="inline-block mr-2 leading-8"
+  ></gtrack-poi-icon-labelled>
+</div>

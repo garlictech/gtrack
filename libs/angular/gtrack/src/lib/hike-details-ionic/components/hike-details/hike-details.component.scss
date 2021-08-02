@@ -1,0 +1,39 @@
+ion-fab {
+  @apply fixed inline-block top-0 right-0;
+}
+
+.searching-row {
+  @apply w-full p-6 text-2xl text-center flex flex-row content-center justify-center;
+
+  color: var(--ion-color-warning);
+
+  span {
+    @apply pr-2;
+  }
+}
+
+:host {
+  @apply block;
+}
+
+.headline-outline,
+.headline-nearby {
+  @apply text-3xl uppercase text-center font-semibold;
+}
+
+.grid > * {
+  @apply border-solid border-0 border-b-2 pb-3;
+  border-color: var(--ion-color-dark);
+}
+
+gtrack-trail-box {
+  height: 400px;
+  width: 100%;
+}
+
+.timeline-container {
+  @screen lg {
+    width: calc(100% / 2);
+    @apply m-auto;
+  }
+}

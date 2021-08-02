@@ -1,0 +1,25 @@
+<ion-header mode="ios" translucent>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-back-button
+        mode="ios"
+        defaultHref="/"
+        color="dark"
+        icon="chevron-back-outline"
+        *ngIf="navLevel > 0"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()" size="small">
+        <ion-icon
+          slot="icon-only"
+          name="close"
+          [style.color]="'var(--ion-color-dark)'"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="titleLabel">{{ titleLabel | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ng-content></ng-content>

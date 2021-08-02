@@ -1,0 +1,130 @@
+mutation CreateHike($input: CreateHikeInput!) {
+  createHike(input: $input) {
+    ...hikeFields
+  }
+}
+
+mutation UpdateHike($input: UpdateHikeInput!) {
+  updateHike(input: $input) {
+    ...hikeFields
+  }
+}
+
+mutation DeleteHike($id: ID!) {
+  deleteHike(id: $id) {
+    id
+  }
+}
+
+query GetHike($id: ID!) {
+  getHike(id: $id) {
+    ...hikeFields
+  }
+}
+
+query ListHikes {
+  listHikes {
+    ...hikeConnectionFields
+  }
+}
+
+query GetMultipleHikes($ids: [ID!]!) {
+  getMultipleHikes(ids: $ids) {
+    data {
+      ...hikeFields
+    }
+    unprocessedKeys {
+      id
+    }
+  }
+}
+
+mutation CreateMultipleHikes($input: [CreateHikeInput!]!) {
+  createMultipleHikes(input: $input) {
+    ...hikeFields
+  }
+}
+
+fragment pointFragment on Point {
+  lon
+  lat
+}
+
+fragment boundingBoxFields on BoundingBox {
+  NorthEast {
+    ...pointFragment
+  }
+  SouthWest {
+    ...pointFragment
+  }
+}
+
+fragment routeDataFields on RouteData {
+  distance
+  uphill
+  downhill
+  track
+  bigBuffer
+  smallBuffer
+  averageTime
+  score
+  difficulty
+  isRoundTrip
+  poiSearchBox {
+    ...boundingBoxFields
+  }
+  bounds {
+    ...boundingBoxFields
+  }
+}
+
+fragment hikeConnectionFields on HikeConnection {
+  items {
+    ...hikeFields
+  }
+  nextToken
+  scannedCount
+}
+
+fragment hikeStopFields on HikeStopData {
+  poiId
+  description {
+    ...textualDescriptionFields
+  }
+}
+
+fragment pointFields on Point {
+  lat
+  lon
+  elevation
+}
+
+fragment checkpointFields on Checkpoint {
+  poiId
+  point {
+    ...pointFields
+  }
+}
+
+fragment hikeFields on HikeData {
+  id
+  description {
+    ...textualDescriptionFields
+  }
+  location
+  publicationState
+  featured
+  rate
+  offlineMap
+  featuredStops {
+    ...hikeStopFields
+  }
+  checkpoints {
+    ...checkpointFields
+  }
+  tags
+  route {
+    ...routeDataFields
+  }
+  segments
+}

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selectCurrentLocation with input {"features.common.current-geolocation":{"tracking":false}} 1`] = `undefined`;
+
+exports[`selectTracking with input {"features.common.current-geolocation":{"tracking":false}} 1`] = `false`;

@@ -1,0 +1,16 @@
+<a
+  *ngIf="(profile$ | async)?.profilePicture"
+  [routerLink]="(profile$ | async)?.profileUrl.split(',')"
+  [ngStyle]="{
+    'background-image': 'url(' + (profile$ | async)?.profilePicture + ')'
+  }"
+></a>
+<a
+  *ngIf="!(profile$ | async)?.profilePicture"
+  [routerLink]="(profile$ | async)?.profileUrl.split(',')"
+>
+  <fa-icon
+    class="pr-2 sm:pr-4 text-white flex items-center"
+    [icon]="icon"
+  ></fa-icon>
+</a>
